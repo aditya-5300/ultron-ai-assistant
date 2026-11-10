@@ -1,0 +1,17 @@
+# Smart application routing
+
+`appCatalog.ts` is the shared allowlist and alias table for typed commands, browser voice, desktop voice and agent tasks. Supported apps: Notepad, Calculator, Paint, File Explorer, Task Manager, VS Code, WhatsApp, Spotify, Telegram, Instagram, YouTube, Gmail, Google and GitHub. This is not arbitrary executable support.
+
+Every open/close refreshes a read-only Windows inventory: current-user Start apps/AppIDs, known App Paths registry entries, expected executable locations, and allowlisted visible process identities. Executables must exist. Registered apps (including Store apps) launch by their discovered AppID, never an assumed protocol handler. Unknown inventory is an error, not proof that an app is missing. Portable/custom installs and localized names outside the catalog may need explicit support; no systemwide disk scan runs.
+
+When no desktop installation is found, supported web apps open their fixed official HTTPS URL. The default Chrome or Edge is used in a **separate ULTRON profile** under `.ultron/app-browser-profile`; the normal profile is never automated or reused. This profile persists login cookies locally, is unencrypted application data governed by browser/OS protections, and is gitignored. Logging into it is a user action, not something the AI does automatically. Each app has its own owned tab. Other default browsers receive a normal Windows URL launch; ULTRON explicitly says those tabs cannot be closed automatically.
+
+Closing checks both visible native app windows and owned web tabs. If both exist, the most recently opened ULTRON route is preferred; the other remains untouched. Native close approvals are bound to exact PID/start-time/name identities and revalidated before CloseMainWindow. No taskkill, force termination, shell shutdown, arbitrary process termination or browser-wide close is used. A successful close request may still leave an unsaved-work prompt. Browser approvals bind the current owned tab URL; no unrelated tab is searched or closed. Restarting the server loses live tab ownership; the application does not guess ownership from page titles afterward.
+
+Registered PWAs or apps hosted by shared processes can launch via AppID but may not have a safely identifiable native close target. Such windows, manually opened normal-browser tabs and protected File Explorer shell processes are left open with an explicit explanation. Full arbitrary default-browser tab control would require a separately approved browser integration/extension. This limitation must not be described as universal closing support.
+
+References: Microsoft Get-StartApps and AppUserModelID documentation; Playwright BrowserType documentation (separate persistent profile required for browser automation). No model training or cloud inventory upload is involved.
+
+## Drive navigation
+
+“Open D drive”, “open D:” and “open File Manager and D Drive” resolve to the fixed `openDrive` action. The last example opens Explorer directly at the requested root rather than opening an empty Explorer window and interpreting the rest as a filename. Only a single A–Z drive letter is accepted by the backend; unavailable or inaccessible drives produce an explicit error. This local command does not call an AI provider, read file contents, accept arbitrary paths or execute shell strings. Quote a filename after “open file” if it starts with a reserved app alias such as Manager or Explorer.

@@ -4,6 +4,8 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+import { createChromeEnvironment, createGyroAssembly } from "./gyroAssembly";
 
 export interface OrbSceneApi {
   /** Rotate the camera around the orb by the given angles (radians). */
@@ -20,18 +22,28 @@ const HOME_POSITION = new THREE.Vector3(0, 0.5, 5.5);
 const MIN_DISTANCE = 0.6;
 const MAX_DISTANCE = 40;
 
-export function createOrbScene(container: HTMLElement): OrbSceneApi {
+export function createOrbScene(container: HTMLElement, presentation: boolean | "dashboard" = false): OrbSceneApi {
   const width = container.clientWidth;
   const height = container.clientHeight;
 
   // ——— SCENE ———
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 500);
-  camera.position.copy(HOME_POSITION);
+  const homePosition = presentation === "dashboard" ? new THREE.Vector3(0, 0.4, 4.8) : presentation ? new THREE.Vector3(0, 0.8, Math.max(7.2, 6.2 / (width / height))) : HOME_POSITION;
+  camera.position.copy(homePosition);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  function renderPixelRatio(viewWidth: number, viewHeight: number) {
+    // Keep the orb sharp while staying within the GPU limit and the 8K-sized pixel budget.
+    const maxDimension = Math.min(renderer.capabilities.maxTextureSize, 7680);
+    return Math.min(
+      Math.max(window.devicePixelRatio || 1, 2),
+      maxDimension / Math.max(viewWidth, viewHeight, 1),
+      Math.sqrt((7680 * 4320) / Math.max(viewWidth * viewHeight, 1)),
+    );
+  }
+  renderer.setPixelRatio(renderPixelRatio(width, height));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.8;
   container.appendChild(renderer.domElement);
@@ -44,7 +56,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     new THREE.Vector2(width, height),
     1.8, // strength
     0.4, // radius
-    0.2, // threshold
+    presentation ? 1.2 : 0.2, // threshold
   );
   composer.addPass(bloom);
 
@@ -53,7 +65,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     uniforms: {
       tDiffuse: { value: null },
       uTime: { value: 0 },
-      uIntensity: { value: 0.003 },
+      uIntensity: { value: 0.0006 },
     },
     vertexShader: `
       varying vec2 vUv;
@@ -76,14 +88,13 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
         vec4 cr = texture2D(tDiffuse, vUv + dir * offset);
         vec4 cg = texture2D(tDiffuse, vUv);
         vec4 cb = texture2D(tDiffuse, vUv - dir * offset * 0.5);
-        gl_FragColor = vec4(cr.r, cg.g * 1.05, cb.b * 0.6, 1.0) * flicker;
-        // Push towards amber/orange tone
-        gl_FragColor.rgb = mix(gl_FragColor.rgb, gl_FragColor.rgb * vec3(1.15, 0.85, 0.55), 0.3);
+        gl_FragColor = vec4(cr.r, cg.g, cb.b, 1.0) * flicker;
       }
     `,
   };
   const chromaticPass = new ShaderPass(chromaticShader);
   composer.addPass(chromaticPass);
+  if (presentation) composer.addPass(new OutputPass());
 
   // Controls
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -95,17 +106,34 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
   controls.enablePan = false;
 
   // ——— COLORS ———
-  const C_BRIGHT = 0xffaa30;
-  const C_MID = 0xdd7700;
-  const C_DIM = 0x884400;
-  const C_FAINT = 0x553300;
-  const C_HOT = 0xffcc66;
+  const C_BRIGHT = 0x30bfff;
+  const C_MID = 0x007cdd;
+  const C_DIM = 0x004488;
+  const C_FAINT = 0x002855;
+  const C_HOT = 0xc5f5ff;
 
   // ——— ORB ROOT ———
   // Every part of the orb (shells, core, orbiting debris, text, dust, rings)
   // lives under this group.
   const orbGroup = new THREE.Group();
   scene.add(orbGroup);
+  let environmentTarget: THREE.WebGLRenderTarget | undefined;
+  let presentationAssembly: ReturnType<typeof createGyroAssembly> | undefined;
+  if (presentation) {
+    environmentTarget = createChromeEnvironment(renderer);
+    scene.environment = environmentTarget.texture;
+    scene.add(new THREE.HemisphereLight(0xc9efff, 0x102448, 0.15));
+    const keyLight = new THREE.PointLight(0x80dfff, 3);
+    keyLight.position.set(2, 3, 4);
+    scene.add(keyLight);
+    const whiteLight = new THREE.PointLight(0xffffff, 4);
+    whiteLight.position.set(-3, 2, 3);
+    scene.add(whiteLight);
+    const warmLight = new THREE.PointLight(0xffdeba, 3);
+    warmLight.position.set(3, 0, -2);
+    scene.add(warmLight);
+    presentationAssembly = createGyroAssembly(scene, presentation !== "dashboard");
+  }
 
   // ——— MATERIAL HELPERS ———
   function lineMat(color: number, opacity = 1) {
@@ -393,7 +421,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     opacity: 0.15,
     blending: THREE.AdditiveBlending,
   });
-  const coreSphere = new THREE.Mesh(new THREE.SphereGeometry(0.15, 16, 16), coreSphereMat);
+  const coreSphere = new THREE.Mesh(new THREE.SphereGeometry(0.15, 64, 48), coreSphereMat);
   orbGroup.add(coreSphere);
 
   // Larger faint glow — very subtle
@@ -403,7 +431,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     opacity: 0.04,
     blending: THREE.AdditiveBlending,
   });
-  const glowSphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), glowSphereMat);
+  const glowSphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 64, 48), glowSphereMat);
   orbGroup.add(glowSphere);
 
   // ═══════════════════════════════════════════════
@@ -427,22 +455,35 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     speed: number;
   }
 
-  function makeTextSprite(text: string, size = 0.08) {
+  const textTextures = new Map<string, THREE.CanvasTexture>();
+
+  function getTextTexture(text: string) {
+    const cached = textTextures.get(text);
+    if (cached) return cached;
     const c = document.createElement("canvas");
-    c.width = 256;
-    c.height = 32;
+    c.width = 512;
+    c.height = 64;
     const ctx = c.getContext("2d")!;
-    ctx.font = "bold 14px Courier New";
-    const alpha = 0.35 + Math.random() * 0.55;
-    ctx.fillStyle = `rgba(255, ${(130 + Math.random() * 80) | 0}, ${(20 + Math.random() * 30) | 0}, ${alpha})`;
+    ctx.font = "bold 28px Courier New";
+    ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(text, 128, 16);
+    ctx.fillText(text, 256, 32);
     const tex = new THREE.CanvasTexture(c);
     tex.minFilter = THREE.LinearFilter;
+    tex.generateMipmaps = false;
+    textTextures.set(text, tex);
+    return tex;
+  }
+
+  function makeTextSprite(text: string, size = 0.08) {
+    const alpha = 0.35 + Math.random() * 0.55;
+    const color = new THREE.Color(`rgb(${(20 + Math.random() * 30) | 0}, ${(150 + Math.random() * 80) | 0}, 255)`);
     const s = new THREE.Sprite(
       new THREE.SpriteMaterial({
-        map: tex,
+        map: getTextTexture(text),
+        color,
+        opacity: alpha,
         transparent: true,
         blending: THREE.AdditiveBlending,
         depthWrite: false,
@@ -590,10 +631,10 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
   dotC.width = dotC.height = 64;
   const dCtx = dotC.getContext("2d")!;
   const g = dCtx.createRadialGradient(32, 32, 0, 32, 32, 32);
-  g.addColorStop(0, "rgba(255,170,48,1)");
-  g.addColorStop(0.2, "rgba(255,120,20,0.6)");
-  g.addColorStop(0.5, "rgba(200,80,0,0.15)");
-  g.addColorStop(1, "rgba(100,40,0,0)");
+  g.addColorStop(0, "rgba(197,245,255,1)");
+  g.addColorStop(0.2, "rgba(48,191,255,0.6)");
+  g.addColorStop(0.5, "rgba(0,100,200,0.15)");
+  g.addColorStop(1, "rgba(0,40,100,0)");
   dCtx.fillStyle = g;
   dCtx.fillRect(0, 0, 64, 64);
 
@@ -673,6 +714,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
   }
 
   function zoomBy(factor: number) {
+    if (!Number.isFinite(factor) || factor <= 0) return;
     offsetScratch.copy(camera.position).sub(controls.target);
     const dist = THREE.MathUtils.clamp(
       offsetScratch.length() * factor,
@@ -684,7 +726,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
   }
 
   function resetView() {
-    camera.position.copy(HOME_POSITION);
+    camera.position.copy(homePosition);
     controls.target.set(0, 0, 0);
     camera.lookAt(controls.target);
     controls.update();
@@ -694,6 +736,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
   // ANIMATION
   // ═══════════════════════════════════════════════
   const clock = new THREE.Clock();
+  orbGroup.visible = !presentation;
   let flickerTimer = 0;
   let rafId = 0;
   let disposed = false;
@@ -702,6 +745,14 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     if (disposed) return;
     rafId = requestAnimationFrame(animate);
     const t = clock.getElapsedTime();
+    presentationAssembly?.update(t);
+    if (presentation) {
+      bloom.strength = 0.24;
+      chromaticPass.uniforms.uTime.value = t;
+      controls.update();
+      composer.render();
+      return;
+    }
 
     // Outer shell rotation
     outerShell.rotation.y += 0.0015;
@@ -731,15 +782,15 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     const fadeOut = Math.pow(Math.max(0, Math.sin(t * 0.25)), 3); // periodic full transparency
     const surge = wave3 * 1.5 + wave4 * 2.0;
     const coreScale = 1 + surge + Math.sin(t * 5) * 0.05;
-    coreSphere.scale.setScalar(coreScale);
+    coreSphere.scale.setScalar(presentation ? 1.5 + Math.sin(t * 1.2) * 0.05 : coreScale);
     // Opacity: mostly very low (0-0.15), sometimes fully transparent, brief bright on surge
     const coreOpacity = Math.max(
       0,
       (0.08 + wave1 * 0.05 + surge * 0.2) * (1 - fadeOut * 0.95),
     );
-    coreSphereMat.opacity = Math.min(0.6, coreOpacity);
+    coreSphereMat.opacity = presentation ? 0.85 : Math.min(0.6, coreOpacity);
     glowSphere.scale.setScalar(1 + surge * 0.8);
-    glowSphereMat.opacity = Math.max(0, (0.03 + surge * 0.08) * (1 - fadeOut * 0.9));
+    glowSphereMat.opacity = presentation ? 0.12 : Math.max(0, (0.03 + surge * 0.08) * (1 - fadeOut * 0.9));
     // Icosahedron wireframe stays visible even when glow fades
     icoWire.scale.setScalar(1 + surge * 0.6);
     icoWireMat.opacity = Math.min(1, 0.5 + surge * 0.4);
@@ -803,7 +854,7 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
     }
 
     // Bloom pulse
-    bloom.strength = 1.6 + Math.sin(t * 0.8) * 0.3;
+    bloom.strength = presentation ? 0.24 : 1.15 + Math.sin(t * 0.8) * 0.2;
 
     // Update chromatic aberration time
     chromaticPass.uniforms.uTime.value = t;
@@ -816,33 +867,51 @@ export function createOrbScene(container: HTMLElement): OrbSceneApi {
 
   // ——— RESIZE ———
   function onResize() {
-    const w = container.clientWidth;
-    const h = container.clientHeight;
+    const w = Math.max(container.clientWidth, 1);
+    const h = Math.max(container.clientHeight, 1);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    const pixelRatio = renderPixelRatio(w, h);
+    renderer.setPixelRatio(pixelRatio);
     renderer.setSize(w, h);
+    composer.setPixelRatio(pixelRatio);
     composer.setSize(w, h);
   }
   window.addEventListener("resize", onResize);
+  const resizeObserver = new ResizeObserver(onResize);
+  resizeObserver.observe(container);
 
   // ——— CLEANUP ———
   function dispose() {
     disposed = true;
     cancelAnimationFrame(rafId);
     window.removeEventListener("resize", onResize);
+    resizeObserver.disconnect();
     controls.dispose();
+    const disposedTextures = new Set<THREE.Texture>();
+    const disposedMaterials = new Set<THREE.Material>();
+    const disposedGeometries = new Set<THREE.BufferGeometry>();
     scene.traverse((obj) => {
       const mesh = obj as THREE.Mesh;
-      if (mesh.geometry) mesh.geometry.dispose();
+      if (mesh.geometry && !disposedGeometries.has(mesh.geometry)) {
+        disposedGeometries.add(mesh.geometry);
+        mesh.geometry.dispose();
+      }
       const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
       for (const mat of mats) {
-        if (!mat) continue;
+        if (!mat || disposedMaterials.has(mat)) continue;
+        disposedMaterials.add(mat);
         const anyMat = mat as THREE.Material & { map?: THREE.Texture };
-        anyMat.map?.dispose();
+        if (anyMat.map && !disposedTextures.has(anyMat.map)) {
+          disposedTextures.add(anyMat.map);
+          anyMat.map.dispose();
+        }
         mat.dispose();
       }
     });
+    textTextures.clear();
     composer.dispose();
+    environmentTarget?.dispose();
     renderer.dispose();
     renderer.domElement.remove();
   }

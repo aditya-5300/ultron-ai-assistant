@@ -10,6 +10,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#000000",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -18,8 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    // Browser extensions can add attributes before React starts; tolerate those outer-page differences.
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="darkreader-lock" />
+      </head>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

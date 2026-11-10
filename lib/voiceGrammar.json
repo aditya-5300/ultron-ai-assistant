@@ -1,0 +1,25 @@
+{
+  "fixedCommands": [
+    "open Desktop", "open Documents", "open Downloads", "open project",
+    "open Desktop folder", "open Documents folder", "open Downloads folder", "open project folder",
+    "browser inspect", "browser back", "browser close", "browser scroll up", "browser scroll down",
+    "browser open YouTube", "browser open Google", "browser open GitHub", "browser open sandbox",
+    "list phone devices", "show phone devices", "list Android devices", "list ADB devices",
+    "phone screenshot", "phone screen shot", "Android screenshot",
+    "phone home", "phone back", "phone enter", "phone power",
+    "Android home", "Android back", "Android enter", "Android power",
+    "phone swipe up", "phone swipe down", "phone swipe left", "phone swipe right",
+    "Android swipe up", "Android swipe down", "Android swipe left", "Android swipe right",
+    "phone open YouTube", "phone open Chrome", "phone open settings", "phone open camera",
+    "open YouTube on my phone", "open Chrome on my phone", "open settings on my phone",
+    "show commands", "help with commands"
+  ],
+  "dictationPrefixes": [
+    "browser open", "browser go to", "browser click", "browser fill",
+    "open file", "summarize file", "summarise file", "summarize", "summarise",
+    "find files", "find file", "search files", "search for files",
+    "phone open", "Android open", "phone tap", "Android tap",
+    "phone type", "Android type", "phone use device", "Android use device",
+    "research", "plan", "make a report", "write a report", "create a report", "book"
+  ]
+}

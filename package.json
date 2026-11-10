@@ -1,15 +1,23 @@
 {
-  "name": "ultron-orb-ui",
+  "name": "ultron-ai-assistant",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "monitor": "node scripts/health-worker.cjs",
+    "check:agent": "node scripts/agent-selfcheck.cjs",
+    "check:browser-tabs": "node scripts/browser-tabs-selfcheck.cjs",
+    "check:commands": "node scripts/commands-selfcheck.cjs",
+    "check:native-speech": "node scripts/native-speech-selfcheck.cjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "^0.10.35",
+    "mammoth": "1.13.0",
     "next": "^16.2.10",
+    "pdf-parse": "2.4.5",
+    "playwright-core": "1.64.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "three": "^0.185.1"

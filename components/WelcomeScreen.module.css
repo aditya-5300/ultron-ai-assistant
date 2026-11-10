@@ -1,0 +1,50 @@
+.page { position: fixed; inset: 0; overflow: auto; padding: 12px; background: #010711; color: #deedff; font-family: "Segoe UI", Arial, sans-serif; color-scheme: dark; }
+.frame { position: relative; isolation: isolate; min-height: calc(100dvh - 24px); display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(340px, 1fr); border: 1px solid #60cbff; border-radius: 24px; overflow: hidden; background: radial-gradient(ellipse at 29% 44%, #00366b 0, #021329 42%, #010915 80%); box-shadow: inset 0 0 6px #c0f2ff, inset 0 0 24px #0064ae, 0 0 10px #087ecd; }
+.frame::after { content: ""; position: absolute; inset: 6px; border: 1px solid #23658a; border-radius: 19px; pointer-events: none; z-index: 5; box-shadow: inset 0 1px 2px #9fe5ff; }
+.brand { position: absolute; top: 32px; left: 38px; z-index: 4; pointer-events: none; text-shadow: 0 0 16px #388fff; }
+.brand span { display: block; font-size: clamp(24px, 3vw, 40px); font-weight: 400; letter-spacing: 7px; line-height: 1.2; }
+.brand small { display: block; font-size: 9px; letter-spacing: 3px; margin: 5px 0 0 4px; }
+.visual { position: relative; min-height: 650px; }
+.stage { position: absolute; inset: 0; cursor: grab; }
+.stage:active { cursor: grabbing; }
+.stage canvas { display: block; width: 100%; height: 100%; mix-blend-mode: screen; touch-action: none; }
+.stars { position: absolute; inset: 0; opacity: .55; background-image: radial-gradient(circle at 20% 18%, #a3eaff 0 1px, transparent 3px), radial-gradient(circle at 64% 35%, #25abff 0 1px, transparent 3px), linear-gradient(135deg, transparent 43%, #067bcc30 44%, transparent 45%); background-size: 129px 139px, 181px 167px, 100% 100%; pointer-events: none; }
+.orbControls { position: absolute; bottom: 96px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; }
+.orbControls button { border: 1px solid #1a567b; border-radius: 8px; background: #031428d9; color: #a1dbff; padding: 8px 12px; font: 12px "Segoe UI", sans-serif; cursor: pointer; }
+.orbControls button:disabled { opacity: .5; cursor: wait; }
+.caption { position: absolute; bottom: 50px; left: 0; right: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; font-size: 11px; letter-spacing: 2.5px; text-shadow: 0 0 8px #7fcaff; }
+.hint { position: absolute; bottom: 25px; width: 100%; text-align: center; font-size: 10px; color: #749ab9; padding: 0 15px; }
+.loading { position: absolute; inset: 40% 15% auto; color: #91deff; text-align: center; font-size: 13px; }
+.formArea { display: flex; align-items: center; padding: 100px 42px 70px 12px; z-index: 3; }
+.card { width: 100%; max-width: 420px; margin: auto; padding: 29px 25px 21px; border: 1px solid #2773a1; border-radius: 13px; background: linear-gradient(125deg, #092b46ee, #020d1cf5 38%, #03162bee); box-shadow: inset 0 1px 3px #85d9ff, inset 0 0 24px #0063a52b, 0 25px 55px #000b, 0 0 20px #006b9b22; }
+.card h1 { font-size: clamp(21px, 2vw, 28px); font-weight: 500; margin: 0 0 8px; letter-spacing: -.7px; text-shadow: 0 0 12px #7b7dff70; }
+.intro { color: #b7c6df; font-size: 13px; line-height: 1.55; margin: 0 0 24px; }
+.field { display: flex; align-items: center; gap: 11px; padding: 0 13px; height: 44px; margin-bottom: 12px; border: 1px solid #14638e; border-radius: 6px; background: linear-gradient(#020b16, #041629); box-shadow: inset 0 2px 6px #0008, 0 1px 3px #078eff20; color: #b2d2ed; }
+.field:focus-within { outline: 2px solid #72d9ff; outline-offset: 2px; }
+.field input { flex: 1; min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: #e5f4ff; font: 12px "Segoe UI", sans-serif; }
+.field input::placeholder { color: #829ab5; }
+.eye { border: 0; background: transparent; color: #a7bfdb; cursor: pointer; padding: 6px; }
+.forgot { display: block; margin: -3px 0 16px auto; background: none; border: 0; color: #3bd3ff; font-size: 10px; cursor: pointer; }
+.signIn { width: 100%; height: 44px; border: 1px solid #82edff; border-radius: 7px; background: linear-gradient(110deg, #22ddfa, #00b4fb 50%, #007ff1); box-shadow: inset 0 2px 3px #d0ffff90, 0 0 18px #00b6ff66; color: white; font: 500 13px "Segoe UI", sans-serif; cursor: pointer; }
+.signIn span { margin-left: 6px; }
+.divider { display: flex; align-items: center; gap: 12px; color: #718da8; font-size: 10px; margin: 21px 0 16px; }
+.divider::before, .divider::after { content: ""; height: 1px; background: #174567; flex: 1; }
+.providers { display: flex; gap: 7px; }
+.providers button { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 36px; flex: 1; font: 10px "Segoe UI", sans-serif; color: #d2e5fb; background: linear-gradient(#0b2135, #020c1c); border: 1px solid #1e5274; border-radius: 5px; cursor: pointer; box-shadow: inset 0 1px 2px #5f98bf55; }
+.providers b { font-size: 15px; }
+.microsoft { display: inline-block; width: 12px; height: 12px; background: conic-gradient(#7fba00 0 25%, #ffb900 0 50%, #00a4ef 0 75%, #f25022 0); }
+.signup { margin: 22px 0 0; text-align: center; font-size: 10px; color: #93a9c5; }
+.signup button { border: 0; background: none; color: #26caff; font-size: 10px; cursor: pointer; }
+.local { margin-top: 22px; padding-top: 15px; border-top: 1px solid #16354c; text-align: center; }
+.local > span { display: block; font-size: 9px; letter-spacing: 1px; color: #799bb9; }
+.local a { display: inline-block; margin-top: 7px; color: #78dfff; font-size: 12px; text-decoration: none; }
+.notice { margin: 12px 0 0; color: #c1ddf2; font-size: 11px; line-height: 1.6; }
+.demo { display: grid; gap: 5px; padding: 12px; margin-top: 16px; border: 1px solid #1e5274; border-radius: 7px; background: #031426; font-size: 11px; color: #bad5e9; overflow-wrap: anywhere; }
+.demo strong { color: #79dcff; font-weight: 500; }
+.demo code { font-family: ui-monospace, monospace; }
+.demo button { justify-self: start; margin-top: 3px; background: none; border: 0; color: #42cfff; font: inherit; cursor: pointer; text-decoration: underline; padding: 4px 0; }
+.demo small { color: #95b3cc; font-size: 10px; line-height: 1.5; }
+.loginError { color: #ffb6ad; font-size: 12px; margin-top: 12px; }
+.capture { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+@media (max-width: 760px) { .frame { grid-template-columns: 1fr; } .visual { min-height: 540px; } .brand { top: 25px; left: 26px; } .formArea { padding: 0 24px 36px; } .caption { gap: 12px; font-size: 9px; } .hint { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { .page * { scroll-behavior: auto; } }

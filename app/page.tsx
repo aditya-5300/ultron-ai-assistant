@@ -1,5 +1,5 @@
-import JarvisOrb from "@/components/JarvisOrb";
+import WelcomeScreen from "@/components/WelcomeScreen";
 
 export default function Home() {
-  return <JarvisOrb />;
+  return <WelcomeScreen />;
 }

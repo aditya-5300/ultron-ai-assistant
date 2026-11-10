@@ -20,7 +20,11 @@ yarn-error.log*
 # env files
 .env*
 !.env.example
+!.env.local.example
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private local assistant data
+/.ultron/

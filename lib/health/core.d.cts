@@ -1,0 +1,25 @@
+import type { DatabaseSync } from "node:sqlite";
+import type { HealthSample, HealthAnalysis, HealthArticle, HealthConfig, HealthIssue, HealthEvent } from "./types";
+export const KB: HealthArticle[];
+export function analyze(sample: HealthSample, history: HealthSample[]): HealthAnalysis;
+export function regression(points: number[][]): { slope: number; r2: number; count: number; spanHours: number } | null;
+export function median(values: number[]): number | null;
+export function contiguous(samples: HealthSample[], predicate: (sample: HealthSample) => boolean, maxGapMs?: number): HealthSample[];
+export function createStore(root?: string): {
+  db: DatabaseSync;
+  setting<T>(key: string, fallback: T): T;
+  set(key: string, value: unknown): unknown;
+  config(): HealthConfig;
+  latest(): HealthSample | null;
+  history(hours?: number, limit?: number): HealthSample[];
+  modelHistory(): HealthSample[];
+  chartHistory(hours?: number): HealthSample[];
+  getSample(id: string): HealthSample | null;
+  getIssues(): HealthIssue[];
+  saveSample(sample: HealthSample): void;
+  event(kind: string, detail: string): unknown;
+  events(): HealthEvent[];
+  analyses(): Array<{ id: string; time: string; text: string }>;
+  saveAnalysis(text: string): void;
+  clear(): void;
+};
