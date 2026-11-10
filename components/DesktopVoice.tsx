@@ -85,17 +85,24 @@ export default function DesktopVoice({ onActive, onInterrupt, onStopListening }:
     catch (failure) { callback.current(state?.enabled || false); setError(String(failure)); }
     finally { setChanging(false); }
   }
-return <section className={styles.handsFreeBar} aria-label="Desktop background voice"><div>
-  <strong>{state?.enabled ? '● Desktop microphone enabled' : 'Desktop wake-word voice'}</strong>
-  <small>{state?.status || 'Checking desktop listener…'} · {state?.queued || 0} queued</small>
+return <section className={`${styles.handsFreeBar} ${styles.desktopVoicePanel}`} aria-label="Desktop background voice">
+  <details className={styles.desktopVoiceDisclosure}>
+    <summary aria-label="Desktop voice settings"><span>
+      <strong>{state?.enabled ? '● Desktop microphone enabled' : 'Desktop wake-word voice'}</strong>
+      <small>{state?.status || 'Checking desktop listener…'} · {state?.queued || 0} queued</small>
+    </span><span className={styles.desktopVoiceChevron} aria-hidden="true" /></summary>
+    <div className={styles.desktopVoiceBody}><div>
   <small>Windows local speech. Say “Ultron” before every command. Works outside this tab while the ULTRON server runs. Your opt-in is remembered across server restarts; no Windows autostart. Say “Ultron stop” to interrupt without disabling voice. Say “Ultron stop listening” to release the microphone. These controls work during speech; headphones help prevent echo.</small>
   {state?.capability && <small>{state.capability}</small>}
   <small>Apps, folders, browser controls, files, phone commands and research plans use the same permission-gated controllers as chat. Say “Ultron show commands” for examples. Free-text recognition may make mistakes; check the displayed target before approval.</small>
   <small>Research planning sends the recognized goal and any opted-in memory to your configured AI provider. Plans must be reviewed before tools run.</small>
   <div aria-label="Windows microphone input check"><small>Windows default recording input · no raw audio saved</small><label>Input level <meter min={0} max={100} value={state?.audio?.stale ? 0 : state?.audio?.level ?? 0} /> {state?.audio?.stale ? "No recent level reading" : `${state?.audio?.level ?? 0}/100`} · peak {state?.audio?.peak ?? "—"}</label><small>{state?.audio?.signal || "Waiting for signal diagnostics"}. Speak and watch the meter. If it stays at zero, check your microphone mute and Windows Sound → Input. A moving meter confirms sound, not correct word recognition.</small><a href="ms-settings:sound">Open Windows sound input settings ↗</a></div>
-  {error && <p role="alert">{error}</p>}
-  {state?.approval && <div role="alertdialog" aria-label="Desktop voice approval"><p>{state.approval.label}</p><button disabled={changing} onClick={() => void act('approve', state.approval?.token)}>Approve once</button><button disabled={changing} onClick={() => void act('decline')}>Decline</button></div>}
   {state?.result && <VoiceResult key={state.result.id} result={state.result} />}
   <details><summary>Desktop voice activity</summary>{state?.events.map((event, index) => <p key={`${event.time}-${index}`}>{new Date(event.time).toLocaleTimeString()} · {event.text}</p>)}</details>
-</div><button disabled={changing || !state} onClick={() => void act(state?.enabled ? 'disable' : 'enable')}>{state?.enabled ? 'Disable desktop voice' : 'Enable desktop voice'}</button></section>;
+</div><button disabled={changing || !state} onClick={() => void act(state?.enabled ? 'disable' : 'enable')}>{state?.enabled ? 'Disable desktop voice' : 'Enable desktop voice'}</button></div>
+  </details>
+  {/* Closing the settings must not hide errors or permission requests. */}
+  {error && <p className={styles.desktopVoiceNotice} role="alert">{error}</p>}
+  {state?.approval && <div className={styles.desktopVoiceNotice} role="alertdialog" aria-label="Desktop voice approval"><p>{state.approval.label}</p><button disabled={changing} onClick={() => void act('approve', state.approval?.token)}>Approve once</button><button disabled={changing} onClick={() => void act('decline')}>Decline</button></div>}
+</section>;
 }
