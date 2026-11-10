@@ -28,3 +28,10 @@ next-env.d.ts
 
 # private local assistant data
 /.ultron/
+
+# Offline Python tooling and generated telemetry (never production history)
+/ml/.venv/
+/ml/generated/
+__pycache__/
+.pytest_cache/
+*.egg-info/

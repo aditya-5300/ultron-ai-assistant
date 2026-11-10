@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=80,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ultron-health-ml"
+version = "0.1.0"
+description = "Offline synthetic telemetry foundation; no live monitoring integration"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.2,<3",
+  "pandas>=2.2,<4",
+  "pydantic>=2.10,<3",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
