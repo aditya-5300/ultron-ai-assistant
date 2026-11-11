@@ -163,6 +163,18 @@
 .handsFreeBar small { display: block; font-size: 10px; line-height: 1.6; color: #92afc8; max-width: 720px; }
 .handsFreeBar button { flex-shrink: 0; font-size: 11px; padding: 10px 13px; border: 1px solid #2875a4; border-radius: 7px; background: linear-gradient(135deg, #103856, #061b2e); color: #b8eaff; box-shadow: inset 0 1px 3px #6ccfff33; cursor: pointer; }
 .handsFreeBar button[aria-pressed="true"] { border-color: #49e4c5; color: #a4ffe9; background: #0a373b; }
+.desktopVoicePanel { display: block; padding: 0; }
+.desktopVoiceDisclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 17px; list-style: none; cursor: pointer; border-radius: 10px; }
+.desktopVoiceDisclosure > summary::-webkit-details-marker { display: none; }
+.desktopVoiceDisclosure > summary:hover { background: #12324b66; }
+.desktopVoiceDisclosure > summary:focus-visible { outline: 2px solid var(--dash-accent); outline-offset: 3px; }
+.desktopVoiceChevron { flex-shrink: 0; width: 8px; height: 8px; margin-right: 4px; border-right: 2px solid #74dfff; border-bottom: 2px solid #74dfff; transform: rotate(45deg); }
+.desktopVoiceDisclosure[open] > summary .desktopVoiceChevron { transform: rotate(225deg); }
+.desktopVoiceBody { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 14px 17px 17px; border-top: 1px solid #174467; }
+.desktopVoiceBody > div { min-width: 0; flex: 1; }
+.desktopVoiceNotice { margin: 0; padding: 12px 17px; border-top: 1px solid #174467; }
+.desktopVoiceNotice button + button { margin-left: 8px; }
+@media (max-width: 900px) { .desktopVoiceBody { flex-direction: column; } }
 .agentComposer { display: grid; gap: 12px; margin: 22px 0; }
 .agentComposer label { display: grid; gap: 8px; color: #a3cee9; font-size: 13px; }
 .agentComposer textarea { width: 100%; min-height: 105px; resize: vertical; }
