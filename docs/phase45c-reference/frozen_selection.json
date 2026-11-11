@@ -1,0 +1,39 @@
+{
+  "points": {
+    "fixed": {
+      "method": "fixed",
+      "level": 1.2,
+      "persistence": 1.5
+    },
+    "mad": {
+      "method": "mad",
+      "level": 1.35,
+      "persistence": 2.0
+    },
+    "sustained": {
+      "method": "sustained",
+      "level": 1.35,
+      "persistence": 2.0
+    },
+    "hybrid": {
+      "method": "hybrid",
+      "level": 1.35,
+      "persistence": 2.0
+    }
+  },
+  "preholdout_qualified": {
+    "fixed": true,
+    "mad": true,
+    "sustained": true,
+    "hybrid": true
+  },
+  "closest_validation_overbudget": {
+    "fixed": "fixed-t1-p1.5",
+    "mad": "mad-t0.85-p1",
+    "sustained": "sustained-t1-p1.5",
+    "hybrid": "hybrid-t1.2-p1.5"
+  },
+  "input_manifest_sha256": "3bf1ebd1d6d641da5854c4b07a8c784bd2ebe8b8ffdbc048f6e0886e8278efff",
+  "scope_sha256": "c48b5a52244629ebf8bdce30a52b3826bb109b0014744c6183531bd78bca0f94",
+  "selection_protocol_sha256": "d260ceb7b25db7b98d24b810fa4ebb9e10ca957269f50af8787f38e77c5838cb"
+}

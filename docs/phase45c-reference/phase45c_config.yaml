@@ -1,0 +1,363 @@
+base:
+  train_seeds:
+  - 7101
+  - 7102
+  - 7103
+  - 7104
+  - 7105
+  validation_seeds:
+  - 7201
+  - 7202
+  - 7203
+  - 7204
+  - 7205
+  - 7206
+  holdout_seeds:
+  - 7301
+  - 7302
+  - 7303
+  - 7304
+  - 7305
+  - 7306
+  - 7307
+  - 7308
+  - 7309
+  - 7310
+  - 7311
+  - 7312
+  hours_per_run: 18.0
+  candidates:
+  - 1.0
+  - 1.25
+  - 1.5
+  - 2.0
+  false_budget_per_day: 0.5
+  workload_budget: 0.05
+  budget_match_tolerance: 0.5
+  recovery_fraction: 0.55
+  missing_grace_seconds: 180.0
+  flap_window_seconds: 600.0
+  ewma_seconds: 150.0
+  reference_seconds: 1800.0
+  subsystems:
+    cpu:
+      metric: cpu_usage_pct
+      direction: high
+      attention_level: 80.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 6.0
+      trend_window_seconds: 900
+      minimum_slope_per_hour: 20.0
+      minimum_delta: 12.0
+      min_observations: 6
+      min_duration: 240.0
+      recovery_seconds: 180.0
+      max_observation_gap: 100.0
+      ewma_shift: 14.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - mad
+      - sustained
+      - ewma
+      require_unplugged: false
+    memory:
+      metric: memory_usage_pct
+      direction: high
+      attention_level: 68.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 2.0
+      trend_window_seconds: 900
+      minimum_slope_per_hour: 7.0
+      minimum_delta: 3.5
+      min_observations: 3
+      min_duration: 180.0
+      recovery_seconds: 180.0
+      max_observation_gap: 100.0
+      ewma_shift: 5.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - mad
+      - sustained
+      - ewma
+      - cusum
+      require_unplugged: false
+    disk_capacity:
+      metric: disk_free_pct
+      direction: low
+      attention_level: 25.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 1.2
+      trend_window_seconds: 3600
+      minimum_slope_per_hour: 7.0
+      minimum_delta: 4.0
+      min_observations: 3
+      min_duration: 560.0
+      recovery_seconds: 290.0
+      max_observation_gap: 680.0
+      ewma_shift: 5.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - mad
+      - sustained
+      require_unplugged: false
+    disk_health:
+      metric: disk_temperature_c
+      direction: high
+      attention_level: 58.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 3.0
+      trend_window_seconds: 3600
+      minimum_slope_per_hour: 7.0
+      minimum_delta: 4.0
+      min_observations: 3
+      min_duration: 560.0
+      recovery_seconds: 290.0
+      max_observation_gap: 680.0
+      ewma_shift: 6.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - mad
+      - sustained
+      require_unplugged: false
+    battery_drain:
+      metric: battery_pct
+      direction: low
+      attention_level: 75.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 3.0
+      trend_window_seconds: 900
+      minimum_slope_per_hour: 20.0
+      minimum_delta: 4.0
+      min_observations: 3
+      min_duration: 240.0
+      recovery_seconds: 180.0
+      max_observation_gap: 100.0
+      ewma_shift: 6.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - sustained
+      require_unplugged: true
+    battery_capacity:
+      metric: battery_capacity_pct
+      direction: low
+      attention_level: 75.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 4.0
+      trend_window_seconds: 3600
+      minimum_slope_per_hour: 7.0
+      minimum_delta: 4.0
+      min_observations: 3
+      min_duration: 560.0
+      recovery_seconds: 290.0
+      max_observation_gap: 680.0
+      ewma_shift: 6.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes: []
+      require_unplugged: false
+    process:
+      metric: selected_process_nonresponding_count
+      direction: high
+      attention_level: 2.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 1.0
+      trend_window_seconds: 900
+      minimum_slope_per_hour: 3.0
+      minimum_delta: 1.0
+      min_observations: 3
+      min_duration: 120.0
+      recovery_seconds: 120.0
+      max_observation_gap: 100.0
+      ewma_shift: 1.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - ewma
+      - cusum
+      require_unplugged: false
+    events:
+      metric: relevant_event_count
+      direction: high
+      attention_level: 4.0
+      mad_z: 4.0
+      mad_history_points: 5
+      noise_floor: 1.0
+      trend_window_seconds: 3600
+      minimum_slope_per_hour: 3.0
+      minimum_delta: 2.0
+      min_observations: 3
+      min_duration: 560.0
+      recovery_seconds: 290.0
+      max_observation_gap: 680.0
+      ewma_shift: 2.0
+      cusum_drift: 0.5
+      cusum_limit: 8.0
+      modes:
+      - ewma
+      require_unplugged: false
+experiment:
+  protocol: phase45c-v1
+  scope:
+  - cpu
+  - disk_capacity
+  - process
+  rules:
+    budget: At most 0.5 false WARNING/CRITICAL episodes/device-day and 5% backup/build
+      session nuisance.
+    selection: For each family, select the best point qualifying on both development
+      and validation. Rank by validation recall, median delay, p95 delay, lower false
+      episodes, lower workload nuisance, then grid order. Otherwise freeze the closest
+      validation point as diagnostic only.
+    useful: A simpler method needs at least 20% scoped recall and must pass safety
+      and budget at its locked point.
+    matching: One episode per same-subsystem actionable event; first notice in [actionable
+      onset, event end). Early OBSERVE is silent. Scope excludes RAM safety from primary
+      recall, not from safety or nuisance.
+    value: Hybrid must pass safety and budget, achieve >=50% scoped recall, and beat
+      every useful budget-qualified simpler point by >=10 percentage points recall
+      or >=20% lower median delay on common detected events without >5 point overall
+      recall loss. No subsystem may lose >10 points. Require >=10 events per subsystem,
+      >=8 runs, and positive lower paired bootstrap bound for the winning metric.
+    noninferiority: 'Descriptive: simpler method within 10 points overall and in each
+      subsystem, and common-hit median delay <=125% of hybrid; at least 10 common
+      events, same alert cap.'
+    uncertainty: Percentile bootstrap over paired holdout runs (1000 replicates, seed
+      45103). Descriptive synthetic uncertainty.
+    decision: GO only when safety, nuisance, value, reproducibility and latency pass.
+      Repeat for concrete missing evidence or a nonqualifying hybrid without a useful
+      simpler substitute; stop for a qualified noninferior simpler point.
+  points:
+  - method: fixed
+    level: 0.85
+    persistence: 1.0
+  - method: fixed
+    level: 1.0
+    persistence: 1.0
+  - method: fixed
+    level: 1.0
+    persistence: 1.5
+  - method: fixed
+    level: 1.2
+    persistence: 1.5
+  - method: fixed
+    level: 1.35
+    persistence: 2.0
+  - method: fixed
+    level: 1.5
+    persistence: 2.5
+  - method: mad
+    level: 0.85
+    persistence: 1.0
+  - method: mad
+    level: 1.0
+    persistence: 1.0
+  - method: mad
+    level: 1.0
+    persistence: 1.5
+  - method: mad
+    level: 1.2
+    persistence: 1.5
+  - method: mad
+    level: 1.35
+    persistence: 2.0
+  - method: mad
+    level: 1.5
+    persistence: 2.5
+  - method: sustained
+    level: 0.85
+    persistence: 1.0
+  - method: sustained
+    level: 1.0
+    persistence: 1.0
+  - method: sustained
+    level: 1.0
+    persistence: 1.5
+  - method: sustained
+    level: 1.2
+    persistence: 1.5
+  - method: sustained
+    level: 1.35
+    persistence: 2.0
+  - method: sustained
+    level: 1.5
+    persistence: 2.5
+  - method: hybrid
+    level: 0.85
+    persistence: 1.0
+  - method: hybrid
+    level: 1.0
+    persistence: 1.0
+  - method: hybrid
+    level: 1.0
+    persistence: 1.5
+  - method: hybrid
+    level: 1.2
+    persistence: 1.5
+  - method: hybrid
+    level: 1.35
+    persistence: 2.0
+  - method: hybrid
+    level: 1.5
+    persistence: 2.5
+  scenarios:
+    benign:
+    - build
+    - backup
+    - short_build
+    - legitimate_high_cpu
+    - application_burst
+    - temporary_disk
+    - temporary_memory
+    - sleep_gap
+    - sensor_outage
+    - stable_high_memory
+    faults:
+    - cpu_contention
+    - cpu_oscillating
+    - disk_decline
+    - disk_critical
+    - process_stall
+    - process_repeated
+    - memory_critical
+  source_sha256:
+    reduced/__init__.py: f3b54779d447b1c13634caf355e8a6cef9a645e4b40b11bea35a6a408dd153e8
+    reduced/datasets.py: e7b06077d3fe5d62d86e66d2a76109f73b749f42eafbf23128f8cab81426a7f4
+    reduced/policy.py: 96894e7807c5a1e64b7286cedbc466b5a9166427222d4ac36a554fbbd9ccb8b0
+    reduced/protocol.py: 6623e71dd48fa6a781b48ea2ae443211e6c485c46c677b1e810b1e54b40cc13c
+    reduced/replay.py: b953f1bfa0e87e2e399e9ed7502fdb45a86db0f5a21fb8b19e8b522f10a6bd98
+    features/__init__.py: f7eda1c7daac3e7cc69ab1623ac4684f4cefffc82c14344c860ba45bd0e8f328
+    features/config.py: 3d5685ebc40ec6273df663738de9f6f5ca6608156821123c0338b8b107a7d0e4
+    features/engineering.py: ce3d86069ab4a47ff88eb66bd4b23873595f9fd5dd29900a69075172bb45832d
+    features/export.py: f89afd9d37c59590a6520790ebd97f6a890bb39bf02d9b1a29c9dd38a50b1b3b
+    features/schema.py: 00272404249dc88aa6c25c93d85969d5349041359b26368c4ba2d765aa5f2d5c
+    features/statistics.py: 563b2dc31abbf7a610d7772502ed468dde3a5c60114d2f331eb04f410083c411
+    features/validation.py: 58305d9f2c8a5c79d92dc31f65cfeba7d41fb168452bbaffd97ed09704f4a311
+    features/windows.py: bfbce677891ac185e7693dda98be4199a24f6f5a213297c64c4b18f81900689e
+    hybrid/__init__.py: ac62e0a2d91c481a85fb210bf52ee7db693014a3d3a8c7338cca080e785677b8
+    hybrid/config.py: 897e107d3be7953a2aacc57a832eca3da0aecba81c604af31053c1c9ed820215
+    hybrid/datasets.py: c1b041b705a6ab6655c7655f7ee519301c084c161e74f276c8b20e5ea6fbb978
+    hybrid/detector.py: 899408bbb75f8324ddd12a7f432348df727c736f47afa328a4415188bd91408a
+    hybrid/evaluation.py: 5d6bf63a5adb5cde9238eb630f26523d1a963fb5017ec28ac6206f30e6d93015
+    hybrid/replay.py: 86b6abab783b34861c8d54edd06bb810f27670451d16f83039b50fbf1e0badc7
+    hybrid/signals.py: a216337b2542c963686408c1519dd9dd2204fd58f84458653803e8a4898bf461
+    nuisance/__init__.py: 212182a6113e543abcb5ed8903f0c650432926da41e143fd813f7342dd6a3286
+    nuisance/datasets.py: f10e8c460bd3668587590e8389c68f20877258f0009d0c3fad40732dcea8e0d8
+    nuisance/policy.py: 8091a5361f09c43ca5f903f95da16d3cd24a222a6555dfebf3826aae71e70653
+    nuisance/protocol.py: e698cce0193c5c1bad92ee1ef4c71f76edf8155ebf3c44b1815f4213b3578e02
+    nuisance/replay.py: 58445e6716f796c7dd9af158e82453bbc0109aceedda981cbfd3ab596001dbc6
+    data_generation/__init__.py: b58403e4bcebc4aee3a767f0673405ea86927747d6ad40eb09485085c6db8509
+    data_generation/config.py: 56b224aa3b5bcff4746934f50dafb4312b8a920119fddf8b038a9c5250915fc3
+    data_generation/generator.py: ac1ab4525af12d9846cf981273909096967ac2b9e3285a1cfa0a67e86549c0bf
+    data_generation/scenarios.py: d4e40c98076d01be0574ec67c1805cf5ddedaa07b133308fcddf31314fec0611

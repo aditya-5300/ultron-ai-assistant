@@ -1,0 +1,5 @@
+protocol: phase45b-v1
+development_seeds: [6101, 6102, 6103, 6104, 6105, 6106]
+validation_seeds: [6201, 6202, 6203, 6204, 6205, 6206]
+holdout_seeds: [6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309]
+hours_per_run: 12

@@ -1,0 +1,22 @@
+train_seeds: [4501, 4502, 4503, 4504]
+validation_seeds: [4511, 4512, 4513, 4514, 4515, 4516]
+holdout_seeds: [4521, 4522, 4523, 4524, 4525, 4526]
+hours_per_run: 12
+candidates: [1.0, 1.25, 1.5, 2.0]
+false_budget_per_day: 0.5
+workload_budget: 0.05
+budget_match_tolerance: 0.5
+recovery_fraction: 0.55
+missing_grace_seconds: 180
+flap_window_seconds: 600
+ewma_seconds: 150
+reference_seconds: 1800
+subsystems:
+  cpu: {metric: cpu_usage_pct, direction: high, attention_level: 80, noise_floor: 6, minimum_slope_per_hour: 20, minimum_delta: 12, min_observations: 6, min_duration: 240, recovery_seconds: 180, max_observation_gap: 100, ewma_shift: 14, modes: [mad, sustained, ewma]}
+  memory: {metric: memory_usage_pct, direction: high, attention_level: 68, noise_floor: 2, minimum_slope_per_hour: 7, minimum_delta: 3.5, min_duration: 180, recovery_seconds: 180, max_observation_gap: 100, ewma_shift: 5, modes: [mad, sustained, ewma, cusum]}
+  disk_capacity: {metric: disk_free_pct, direction: low, attention_level: 25, noise_floor: 1.2, trend_window_seconds: 3600, minimum_slope_per_hour: 7, minimum_delta: 4, min_duration: 560, recovery_seconds: 290, max_observation_gap: 680, ewma_shift: 5, modes: [mad, sustained]}
+  disk_health: {metric: disk_temperature_c, direction: high, attention_level: 58, noise_floor: 3, trend_window_seconds: 3600, minimum_slope_per_hour: 7, minimum_delta: 4, min_duration: 560, recovery_seconds: 290, max_observation_gap: 680, ewma_shift: 6, modes: [mad, sustained]}
+  battery_drain: {metric: battery_pct, direction: low, attention_level: 75, noise_floor: 3, minimum_slope_per_hour: 20, minimum_delta: 4, min_duration: 240, recovery_seconds: 180, max_observation_gap: 100, ewma_shift: 6, modes: [sustained], require_unplugged: true}
+  battery_capacity: {metric: battery_capacity_pct, direction: low, attention_level: 75, noise_floor: 4, trend_window_seconds: 3600, minimum_slope_per_hour: 7, minimum_delta: 4, min_duration: 560, recovery_seconds: 290, max_observation_gap: 680, ewma_shift: 6, modes: []}
+  process: {metric: selected_process_nonresponding_count, direction: high, attention_level: 2, noise_floor: 1, minimum_slope_per_hour: 3, minimum_delta: 1, min_duration: 120, recovery_seconds: 120, max_observation_gap: 100, ewma_shift: 1, modes: [ewma, cusum]}
+  events: {metric: relevant_event_count, direction: high, attention_level: 4, noise_floor: 1, trend_window_seconds: 3600, minimum_slope_per_hour: 3, minimum_delta: 2, min_duration: 560, recovery_seconds: 290, max_observation_gap: 680, ewma_shift: 2, modes: [ewma]}

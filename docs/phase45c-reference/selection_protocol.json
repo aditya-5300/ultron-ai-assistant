@@ -1,0 +1,10 @@
+{
+  "budget": "At most 0.5 false WARNING/CRITICAL episodes/device-day and 5% backup/build session nuisance.",
+  "selection": "For each family, select the best point qualifying on both development and validation. Rank by validation recall, median delay, p95 delay, lower false episodes, lower workload nuisance, then grid order. Otherwise freeze the closest validation point as diagnostic only.",
+  "useful": "A simpler method needs at least 20% scoped recall and must pass safety and budget at its locked point.",
+  "matching": "One episode per same-subsystem actionable event; first notice in [actionable onset, event end). Early OBSERVE is silent. Scope excludes RAM safety from primary recall, not from safety or nuisance.",
+  "value": "Hybrid must pass safety and budget, achieve >=50% scoped recall, and beat every useful budget-qualified simpler point by >=10 percentage points recall or >=20% lower median delay on common detected events without >5 point overall recall loss. No subsystem may lose >10 points. Require >=10 events per subsystem, >=8 runs, and positive lower paired bootstrap bound for the winning metric.",
+  "noninferiority": "Descriptive: simpler method within 10 points overall and in each subsystem, and common-hit median delay <=125% of hybrid; at least 10 common events, same alert cap.",
+  "uncertainty": "Percentile bootstrap over paired holdout runs (1000 replicates, seed 45103). Descriptive synthetic uncertainty.",
+  "decision": "GO only when safety, nuisance, value, reproducibility and latency pass. Repeat for concrete missing evidence or a nonqualifying hybrid without a useful simpler substitute; stop for a qualified noninferior simpler point."
+}

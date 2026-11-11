@@ -1,0 +1,407 @@
+{
+  "gates": {
+    "safety": true,
+    "nuisance": true,
+    "incremental_value": true,
+    "reproducibility": true,
+    "performance": true
+  },
+  "decision": "GO TO PHASE 5 WITH REDUCED SUBSYSTEM SCOPE",
+  "paired_comparisons": [
+    {
+      "comparator": "fixed",
+      "budget_qualified": true,
+      "useful": true,
+      "value": "PASS",
+      "hybrid_recall_gain": 0.20833333333333334,
+      "paired_recall_interval_95": [
+        0.1527777777777778,
+        0.2638888888888889
+      ],
+      "common_hits": 30,
+      "hybrid_common_median": 460.3956401348114,
+      "comparator_common_median": 136.6969610452652,
+      "hybrid_delay_reduction": -2.3680020141951665,
+      "paired_delay_interval_95": [
+        -7.093574574244055,
+        -0.9671525678774425
+      ],
+      "per_subsystem": {
+        "cpu": {
+          "events": 24,
+          "recall_gain": 0.5833333333333334
+        },
+        "disk_capacity": {
+          "events": 24,
+          "recall_gain": 0.041666666666666664
+        },
+        "process": {
+          "events": 24,
+          "recall_gain": 0.0
+        }
+      },
+      "simpler_descriptively_noninferior": false
+    },
+    {
+      "comparator": "mad",
+      "budget_qualified": true,
+      "useful": true,
+      "value": "PASS",
+      "hybrid_recall_gain": 0.2638888888888889,
+      "paired_recall_interval_95": [
+        0.18055555555555555,
+        0.3333333333333333
+      ],
+      "common_hits": 26,
+      "hybrid_common_median": 258.2264164686203,
+      "comparator_common_median": 272.7091563940048,
+      "hybrid_delay_reduction": 0.05310690743533431,
+      "paired_delay_interval_95": [
+        0.0,
+        0.4504475349761971
+      ],
+      "per_subsystem": {
+        "cpu": {
+          "events": 24,
+          "recall_gain": 0.2916666666666667
+        },
+        "disk_capacity": {
+          "events": 24,
+          "recall_gain": 0.041666666666666664
+        },
+        "process": {
+          "events": 24,
+          "recall_gain": 0.4583333333333333
+        }
+      },
+      "simpler_descriptively_noninferior": false
+    },
+    {
+      "comparator": "sustained",
+      "budget_qualified": true,
+      "useful": true,
+      "value": "PASS",
+      "hybrid_recall_gain": 0.0,
+      "paired_recall_interval_95": [
+        0.0,
+        0.0
+      ],
+      "common_hits": 45,
+      "hybrid_common_median": 264.7457866668701,
+      "comparator_common_median": 1191.6054530143738,
+      "hybrid_delay_reduction": 0.7778242907523212,
+      "paired_delay_interval_95": [
+        0.7096740296721332,
+        0.7952308008815282
+      ],
+      "per_subsystem": {
+        "cpu": {
+          "events": 24,
+          "recall_gain": 0.0
+        },
+        "disk_capacity": {
+          "events": 24,
+          "recall_gain": 0.0
+        },
+        "process": {
+          "events": 24,
+          "recall_gain": 0.0
+        }
+      },
+      "simpler_descriptively_noninferior": false
+    }
+  ],
+  "selected": {
+    "fixed": "fixed-t1.2-p1.5",
+    "mad": "mad-t1.35-p2",
+    "sustained": "sustained-t1.35-p2",
+    "hybrid": "hybrid-t1.35-p2"
+  },
+  "summaries": {
+    "fixed": {
+      "events": 72,
+      "detected": 30,
+      "event_recall": 0.4166666666666667,
+      "recall_interval_95": [
+        0.3098503822249644,
+        0.5319251077436016
+      ],
+      "false_noncritical_episodes": 0,
+      "monitored_device_days": 8.808661003041047,
+      "false_episodes_per_day": 0.1135246321381611,
+      "zero_false_upper_95": 0.3400894043396338,
+      "median_delay_seconds": 136.6969610452652,
+      "p95_delay_seconds": 2297.0487171053887,
+      "critical_expected": 19,
+      "critical_missed": 0,
+      "critical_delayed": 0,
+      "critical_unobservable": 5,
+      "flap_count": 12,
+      "duplicate_advisories": 12,
+      "median_recovery_delay_seconds": 179.13957905769348,
+      "median_episode_duration_seconds": 603.8692450523376,
+      "insufficient_telemetry_rate": 0.005750802245183772,
+      "insufficient_rows": 1043,
+      "eligible_subsystem_rows": 181366,
+      "workload_sessions": 36,
+      "nuisance_sessions": 0,
+      "workload_nuisance_rate": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.09642183044857634
+      ],
+      "workload_by_kind": {
+        "backup": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "short_build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        }
+      },
+      "safety_checks": 294,
+      "safety_misses": 0,
+      "statistical_failures": 0,
+      "row_precision": 0.801202034211743,
+      "row_recall": 0.2447048856255295,
+      "row_f1": 0.3749053542455381,
+      "tp": 1733,
+      "fp": 430,
+      "fn": 5349,
+      "tn": 17603,
+      "false_warning_episodes": 0,
+      "false_critical_episodes": 1,
+      "observe_episodes": 159,
+      "interrupting_episodes": 55,
+      "all_episodes": 214,
+      "associated_cpu_episodes": 0,
+      "global_events": 84,
+      "global_detected": 42,
+      "insufficient_scope_rows": 797,
+      "eligible_scope_rows": 75345
+    },
+    "mad": {
+      "events": 72,
+      "detected": 26,
+      "event_recall": 0.3611111111111111,
+      "recall_interval_95": [
+        0.25981514475687584,
+        0.4764773385240676
+      ],
+      "false_noncritical_episodes": 0,
+      "monitored_device_days": 8.808661003041047,
+      "false_episodes_per_day": 0.1135246321381611,
+      "zero_false_upper_95": 0.3400894043396338,
+      "median_delay_seconds": 272.7091563940048,
+      "p95_delay_seconds": 2298.0251974463463,
+      "critical_expected": 19,
+      "critical_missed": 0,
+      "critical_delayed": 0,
+      "critical_unobservable": 5,
+      "flap_count": 0,
+      "duplicate_advisories": 5,
+      "median_recovery_delay_seconds": 201.69422268867493,
+      "median_episode_duration_seconds": 558.5447775125504,
+      "insufficient_telemetry_rate": 0.005750802245183772,
+      "insufficient_rows": 1043,
+      "eligible_subsystem_rows": 181366,
+      "workload_sessions": 36,
+      "nuisance_sessions": 0,
+      "workload_nuisance_rate": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.09642183044857634
+      ],
+      "workload_by_kind": {
+        "backup": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "short_build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        }
+      },
+      "safety_checks": 294,
+      "safety_misses": 0,
+      "statistical_failures": 0,
+      "row_precision": 0.6850044365572315,
+      "row_recall": 0.10900875458909913,
+      "row_f1": 0.18808624680229016,
+      "tp": 772,
+      "fp": 355,
+      "fn": 6310,
+      "tn": 17678,
+      "false_warning_episodes": 0,
+      "false_critical_episodes": 1,
+      "observe_episodes": 61,
+      "interrupting_episodes": 44,
+      "all_episodes": 105,
+      "associated_cpu_episodes": 7,
+      "global_events": 84,
+      "global_detected": 38,
+      "insufficient_scope_rows": 797,
+      "eligible_scope_rows": 75345
+    },
+    "sustained": {
+      "events": 72,
+      "detected": 45,
+      "event_recall": 0.625,
+      "recall_interval_95": [
+        0.5095268590406966,
+        0.7278099060064543
+      ],
+      "false_noncritical_episodes": 0,
+      "monitored_device_days": 8.808661003041047,
+      "false_episodes_per_day": 0.1135246321381611,
+      "zero_false_upper_95": 0.3400894043396338,
+      "median_delay_seconds": 1191.6054530143738,
+      "p95_delay_seconds": 2237.0837198257445,
+      "critical_expected": 19,
+      "critical_missed": 0,
+      "critical_delayed": 0,
+      "critical_unobservable": 5,
+      "flap_count": 0,
+      "duplicate_advisories": 6,
+      "median_recovery_delay_seconds": 151.58852458000183,
+      "median_episode_duration_seconds": 630.6542716026306,
+      "insufficient_telemetry_rate": 0.005750802245183772,
+      "insufficient_rows": 1043,
+      "eligible_subsystem_rows": 181366,
+      "workload_sessions": 36,
+      "nuisance_sessions": 0,
+      "workload_nuisance_rate": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.09642183044857634
+      ],
+      "workload_by_kind": {
+        "backup": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "short_build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        }
+      },
+      "safety_checks": 294,
+      "safety_misses": 0,
+      "statistical_failures": 0,
+      "row_precision": 0.7615715823466093,
+      "row_recall": 0.19980231573001977,
+      "row_f1": 0.31655480984340045,
+      "tp": 1415,
+      "fp": 443,
+      "fn": 5667,
+      "tn": 17590,
+      "false_warning_episodes": 0,
+      "false_critical_episodes": 1,
+      "observe_episodes": 181,
+      "interrupting_episodes": 64,
+      "all_episodes": 245,
+      "associated_cpu_episodes": 14,
+      "global_events": 84,
+      "global_detected": 57,
+      "insufficient_scope_rows": 797,
+      "eligible_scope_rows": 75345
+    },
+    "hybrid": {
+      "events": 72,
+      "detected": 45,
+      "event_recall": 0.625,
+      "recall_interval_95": [
+        0.5095268590406966,
+        0.7278099060064543
+      ],
+      "false_noncritical_episodes": 0,
+      "monitored_device_days": 8.808661003041047,
+      "false_episodes_per_day": 0.1135246321381611,
+      "zero_false_upper_95": 0.3400894043396338,
+      "median_delay_seconds": 264.7457866668701,
+      "p95_delay_seconds": 2174.150250053405,
+      "critical_expected": 19,
+      "critical_missed": 0,
+      "critical_delayed": 0,
+      "critical_unobservable": 5,
+      "flap_count": 0,
+      "duplicate_advisories": 12,
+      "median_recovery_delay_seconds": 208.8618369102478,
+      "median_episode_duration_seconds": 1193.1859019994736,
+      "insufficient_telemetry_rate": 0.005750802245183772,
+      "insufficient_rows": 1043,
+      "eligible_subsystem_rows": 181366,
+      "workload_sessions": 36,
+      "nuisance_sessions": 0,
+      "workload_nuisance_rate": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.09642183044857634
+      ],
+      "workload_by_kind": {
+        "backup": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        },
+        "short_build": {
+          "sessions": 12,
+          "nuisance": 0,
+          "nuisance_rate": 0.0
+        }
+      },
+      "safety_checks": 294,
+      "safety_misses": 0,
+      "statistical_failures": 0,
+      "row_precision": 0.8393412057178372,
+      "row_recall": 0.38138943801186104,
+      "row_f1": 0.5244660194174757,
+      "tp": 2701,
+      "fp": 517,
+      "fn": 4381,
+      "tn": 17516,
+      "false_warning_episodes": 0,
+      "false_critical_episodes": 1,
+      "observe_episodes": 186,
+      "interrupting_episodes": 70,
+      "all_episodes": 256,
+      "associated_cpu_episodes": 14,
+      "global_events": 84,
+      "global_detected": 57,
+      "insufficient_scope_rows": 797,
+      "eligible_scope_rows": 75345
+    }
+  },
+  "performance": {
+    "samples": 25115,
+    "median_ms": 0.9818999897106551,
+    "p95_ms": 1.6813999995065387
+  }
+}

@@ -1,0 +1,5 @@
+protocol: phase45c-v1
+development_seeds: [7101, 7102, 7103, 7104, 7105]
+validation_seeds: [7201, 7202, 7203, 7204, 7205, 7206]
+holdout_seeds: [7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309, 7310, 7311, 7312]
+hours_per_run: 18

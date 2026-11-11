@@ -124,6 +124,18 @@ Quality summaries describe the completed export (missingness, ranges, constant/n
 
 The `models` package trains Isolation Forest on the approved Phase 3 projection and compares it with fixed thresholds and past-only MAD on independent synthetic holdouts. It does not connect to the worker, database, or dashboard. See the [Phase 4 report](../docs/PHASE-4-ISOLATION-FOREST.md) for the reproducible command, model artifact contract and measured results.
 
+## Phase 4.5 offline hybrid detection
+
+The `hybrid.replay` CLI prepares a separate hash-locked synthetic holdout, freezes development choices, and compares subsystem alerts with the fixed and past-only MAD baselines. The [Phase 4.5 report](../docs/PHASE-4-5-HYBRID-DETECTION.md) gives the commands, results, and acceptance decision. Phase 4 references are read-only, and no detector is connected to live monitoring.
+
+## Phase 4.5-B offline nuisance reduction
+
+The `nuisance.replay` CLI uses new locked inputs to compare stricter warning policies and silent observations while leaving the Phase 4.5-A safety pass and reference files unchanged. See the [Phase 4.5-B report](../docs/PHASE-4-5-B-NUISANCE-REDUCTION.md) for the locked evaluation, acceptance gates and reproduction steps.
+
+## Phase 4.5-C reduced scope validation
+
+The `reduced.replay` CLI selects budget-qualified fixed, MAD, sustained-change and hybrid operating points before opening a new locked synthetic holdout. See the [Phase 4.5-C report](../docs/PHASE-4-5-C-REDUCED-SCOPE-VALIDATION.md) for the fair comparison, limits and reproduction steps. Prior references and production monitoring remain unchanged.
+
 ## Tests and limitations
 
 Tests cover seed reproducibility, all intervals/counts, irregular timing, skips/overruns, nulls/coverage, deep cache/staleness, schema bounds, chronology/as-of validation, all scenarios/labels/incidents, tendency/correlation/recovery, YAML/CLI and output separation/checksums.

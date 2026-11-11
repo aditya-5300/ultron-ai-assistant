@@ -1,0 +1,33 @@
+{
+  "primary": [
+    "cpu",
+    "disk_capacity",
+    "process"
+  ],
+  "global_critical": {
+    "memory": [
+      "memory_usage_pct",
+      95.0,
+      "high"
+    ],
+    "disk_capacity": [
+      "disk_free_pct",
+      5.0,
+      "low"
+    ]
+  },
+  "entry": {
+    "cpu": [
+      5,
+      210.0
+    ],
+    "disk_capacity": [
+      3,
+      560.0
+    ],
+    "process": [
+      6,
+      300.0
+    ]
+  }
+}
