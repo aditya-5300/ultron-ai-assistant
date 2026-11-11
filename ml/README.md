@@ -120,6 +120,10 @@ Run training/evaluation/inference with the same feature profile, fingerprint, un
 
 Quality summaries describe the completed export (missingness, ranges, constant/near-constant fields, invalid windows, breaks and deep duplicates); none of those global summaries feed back into row features. Do not use feature or label metadata as inputs. Preserve nulls, split chronologically before fitting any scaler/imputer, and fit only on training data. Evaluation may join label sidecars by sample ID after feature generation. Keep simulations from the same scenario/run together when measuring holdout behavior and retain legitimate workload negatives. No existing diagnostic CPU retrospective baseline was changed or used by the feature pipeline.
 
+## Phase 4 offline anomaly detection
+
+The `models` package trains Isolation Forest on the approved Phase 3 projection and compares it with fixed thresholds and past-only MAD on independent synthetic holdouts. It does not connect to the worker, database, or dashboard. See the [Phase 4 report](../docs/PHASE-4-ISOLATION-FOREST.md) for the reproducible command, model artifact contract and measured results.
+
 ## Tests and limitations
 
 Tests cover seed reproducibility, all intervals/counts, irregular timing, skips/overruns, nulls/coverage, deep cache/staleness, schema bounds, chronology/as-of validation, all scenarios/labels/incidents, tendency/correlation/recovery, YAML/CLI and output separation/checksums.
@@ -128,4 +132,4 @@ Feature tests cover label isolation, future-prefix invariance, loader integrity,
 
 **Deferred existing-code issue:** Phase 1's CPU median/MAD retrospective history path can accept future rows. This remains tracked in `docs/PHASE-1-MONITORING-ARCHITECTURE.md` section H and is intentionally unchanged. Do not use that diagnostic function as a past-only feature pipeline. Its fix needs separate approval.
 
-Known limitations: simplified physics/thresholds; no real device identity or calibrated workload distribution; finite sampling can miss short events; overlapping scenarios can saturate metrics; abrupt synthetic cleanup is explicit. Short windows on deep sensors are often invalid by design. Window statistics weight each distinct observation equally, not by duration. There are no empirical failure labels, trained model metrics, causal proof or real-world predictive validation.
+Known limitations: simplified physics/thresholds; no real device identity or calibrated workload distribution; finite sampling can miss short events; overlapping scenarios can saturate metrics; abrupt synthetic cleanup is explicit. Short windows on deep sensors are often invalid by design. Window statistics weight each distinct observation equally, not by duration. Phase 4 metrics are synthetic only; there are no empirical failure labels, causal proof or real-world predictive validation.

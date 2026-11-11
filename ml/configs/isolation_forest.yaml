@@ -1,0 +1,22 @@
+seed: 42
+train_seeds: [101, 102]
+validation_seeds: [201, 202]
+test_seeds: [301, 302]
+days_per_run: 0.25
+max_missing_fraction: 0.45
+min_observations: 12
+near_constant_tolerance: 0.00000001
+excluded_features: []
+episode_cooldown_seconds: 60
+max_gap_seconds: 90
+cpu_limit_pct: 85
+memory_limit_pct: 90
+disk_free_limit_pct: 10
+mad_cutoff: 4
+mad_persistence: 2
+workload_penalty: 0.5
+false_positive_penalty: 0.25
+candidates:
+  - {n_estimators: 100, max_samples: auto, max_features: 1.0, scale: false}
+  - {n_estimators: 200, max_samples: 0.5, max_features: 0.75, scale: false}
+  - {n_estimators: 100, max_samples: auto, max_features: 1.0, scale: true}

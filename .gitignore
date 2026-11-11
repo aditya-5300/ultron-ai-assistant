@@ -32,6 +32,7 @@ next-env.d.ts
 # Offline Python tooling and generated telemetry (never production history)
 /ml/.venv/
 /ml/generated/
+/ml/artifacts/
 __pycache__/
 .pytest_cache/
 *.egg-info/
