@@ -1,0 +1,19 @@
+features:
+  profile: real_ultron
+  windows_seconds: [120, 300, 900, 3600]
+  minimum_observations: 3
+  minimum_coverage: 0.5
+  gap_factor: 2.5
+  deep_interval_seconds: 300
+  max_cached_age_seconds: 660
+  baseline_seconds: 3600
+  baseline_min_observations: 5
+  baseline_min_coverage: 0.5
+  minimum_trend_seconds: 60
+  cross_window_seconds: 900
+  epsilon: 1.0e-8
+  constant_tolerance: 1.0e-8
+  # Margins are engineering inputs, not predictions or existing ULTRON alerts.
+  thresholds:
+    memory_usage_pct: {value: 90, direction: high}
+    disk_free_pct: {value: 10, direction: low}
