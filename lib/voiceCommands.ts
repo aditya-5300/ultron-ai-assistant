@@ -66,6 +66,13 @@ function tapCoordinates(text: string): [number, number] | null {
 export function parseVoiceCommand(text: string): VoiceCommand | null {
   // Convert known phrases into named actions, never into commands for a system terminal.
   const command = normalizeCommand(text);
+  const power = command.match(/^(shut\s*down|restart|reboot)\s+(?:(?:the|my|this)\s+)?(?:pc|computer)$/i);
+  if (power) {
+    const kind = /^shut/i.test(power[1]) ? "shutdown" : "restart";
+    return { payload: { action: "schedulePower", kind }, label: `Schedule PC ${kind}`, confirm: true };
+  }
+  const cancelPower = command.match(/^cancel\s+(?:the\s+)?(shut\s*down|restart)$/i);
+  if (cancelPower) return { payload: { action: "cancelPower", kind: /^shut/i.test(cancelPower[1]) ? "shutdown" : "restart" }, label: "Cancel the pending power action" };
   if (/^(?:show commands|help with commands)$/i.test(command)) return { payload: { action: "commandHelp" }, label: "Show supported command examples" };
   if (/^(?:browser\s+)?(?:(?:open|create)\s+(?:(?:a|the)\s+)?)?new tab$/i.test(command)) return { payload: { action: "browserNewTab" }, label: "Open a new blank tab in ULTRON's managed Edge browser" };
   const onPhone = command.match(/^(?:open|launch) ([a-z0-9_.]+) on (?:my )?(?:phone|android)$/i);
@@ -145,7 +152,7 @@ export function parseVoiceCommand(text: string): VoiceCommand | null {
 }
 
 export function isSystemCommand(text: string) {
-  return /^(open|launch|start|close|quit|exit|go to|find|search|summarize|summarise|phone|android|adb|browser|task|click|type|delete|run|execute|show commands|help with commands)\b/i.test(normalizeCommand(text));
+  return /^(open|launch|start|close|quit|exit|go to|find|search|summarize|summarise|phone|android|adb|browser|task|click|type|delete|run|execute|show commands|help with commands|shut\s*down|restart|reboot|cancel\s+(?:the\s+)?(?:shut\s*down|restart))\b/i.test(normalizeCommand(text));
 }
 
 export function parseVoicePlan(text: string): VoiceCommand[] | null {
@@ -163,5 +170,6 @@ export function parseVoicePlan(text: string): VoiceCommand[] | null {
   const parts = normalized.split(/\s+(?:and then|then)\s+|;\s*|\s+and\s+(?=(?:(?:hey\s+)?ultron[\s,.!:;-]*)?(?:open|launch|close|end|stop|browser|phone|android|find|search|summarize)\b)/i);
   if (parts.length > 6) return null;
   const commands = parts.map(parseVoiceCommand);
+  if (commands.length > 1 && commands.some(command => command?.payload.action === "schedulePower" || command?.payload.action === "cancelPower")) return null;
   return commands.every((command): command is VoiceCommand => command !== null) ? commands : null;
 }

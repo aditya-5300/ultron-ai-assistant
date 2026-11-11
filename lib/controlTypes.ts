@@ -6,10 +6,18 @@ export interface BrowserSnapshot {
   elements: Array<{ id: number; label: string; tag: string; type: string; sensitive: boolean; destination?: string }>;
 }
 
+export interface PowerCountdown {
+  id: string;
+  kind: "shutdown" | "restart";
+  deadline: number;
+}
+
 export interface ControlReply {
   ok: boolean;
   error?: string;
   message?: string;
+  power?: PowerCountdown | null;
+  powerNotice?: string;
   output?: string;
   summary?: string;
   text?: string;

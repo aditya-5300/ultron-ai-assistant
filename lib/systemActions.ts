@@ -7,6 +7,7 @@ import { approvalFor, controlEvents, type ControlPayload } from "./controlSecuri
 import { DOCUMENT_LIMIT, DOCUMENT_EXTENSIONS, extractDocument } from "./documents";
 import { executeSmartApp } from './smartApps';
 import { APP_CATALOG } from './appCatalog';
+import { executePowerAction } from './powerActions';
 
 const exec = promisify(execFile);
 const project = /* turbopackIgnore: true */ process.cwd();
@@ -122,6 +123,7 @@ async function android(payload: ControlPayload) {
 }
 
 export async function executeSystemAction(payload: ControlPayload) {
+  if (['schedulePower', 'cancelPower', 'powerStatus'].includes(payload.action)) return executePowerAction(payload);
   // Each supported action has its own checks; unknown actions never become arbitrary shell commands.
   if (payload.action === "commandHelp") return { ok: true, message: "Supported command examples. Approvals must be clicked, not spoken.", text: [
     "ULTRON, Stop. — interrupt without disabling listening",
@@ -131,6 +133,7 @@ export async function executeSystemAction(payload: ControlPayload) {
     "Open Documents / Downloads / Desktop / project; open D drive; find files named report in documents; open file <full path>; summarize file <full path>.",
     "List phone devices; phone screenshot; phone open YouTube; phone home; phone back; phone swipe up; phone tap 300 500; phone type hello. Requires authorized ADB.",
     "Run a Defender quick scan. Requires approval; does not guarantee a malware-free computer.",
+    "Shut down the PC; restart the PC. Standalone commands with on-screen approval and a cancellable 60-second countdown. Say cancel shutdown or cancel restart.",
     "Research SSD versus HDD and make a cited report. Creates a plan for review; no tools run automatically.",
     "Chain up to six supported actions with then. For fills and phone typing, the rest of the phrase is literal text.",
     "Desktop free-text recognition depends on the installed English dictation engine. Exact URLs and paths are more reliable when typed."

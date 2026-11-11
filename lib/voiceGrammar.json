@@ -12,7 +12,9 @@
     "Android swipe up", "Android swipe down", "Android swipe left", "Android swipe right",
     "phone open YouTube", "phone open Chrome", "phone open settings", "phone open camera",
     "open YouTube on my phone", "open Chrome on my phone", "open settings on my phone",
-    "show commands", "help with commands"
+    "show commands", "help with commands",
+    "shut down the PC", "shutdown the PC", "shut down my computer",
+    "restart the PC", "restart my computer", "reboot the PC", "cancel shutdown", "cancel restart"
   ],
   "dictationPrefixes": [
     "browser open", "browser go to", "browser click", "browser fill",

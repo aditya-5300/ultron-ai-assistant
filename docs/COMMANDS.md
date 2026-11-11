@@ -63,6 +63,8 @@ Screen-changing actions need approval. Coordinates must be inside the actual dev
 
 `ULTRON, scan my computer` or `ULTRON, run a Defender quick scan` requests a Windows Defender quick scan with approval. It can consume resources and Defender may quarantine according to existing policy. No protection settings are changed. A timeout is reported as uncertain, not a successful or malware-free scan.
 
+On Windows, say or type `ULTRON, shut down the PC` or `ULTRON, restart the PC` as a standalone command. Nothing is scheduled until you click **Approve once**. Save your work. During the 60-second countdown, use the banner's Cancel button or say or type `ULTRON, cancel shutdown` / `ULTRON, cancel restart`. Closing the browser does not cancel a countdown; stopping the ULTRON server before it submits the Windows request does. Once submitted to Windows, the countdown cannot be cancelled from ULTRON. ULTRON requests normal shutdown or restart without forcing apps closed. These commands are not available to agent plans.
+
 ## Agent goals (AI provider required)
 
 - `ULTRON, research SSD versus HDD and make a cited report`
