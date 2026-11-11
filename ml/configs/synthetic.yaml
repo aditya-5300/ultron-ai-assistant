@@ -1,0 +1,41 @@
+generator:
+  days: 7
+  interval_seconds: 30
+  random_seed: 42
+  start_time: '2026-01-01T00:00:00Z'
+  jitter_seconds: 2
+  skip_probability: 0.005
+  overrun_probability: 0.01
+  overrun_seconds: 45
+  missing_probability: 0.002
+  deep_interval_seconds: 300
+  deep_stale_after_seconds: 660
+  noise:
+    cpu: 2.5
+    memory: 0.12
+    network: 1.5
+  incidents:
+    memory_pct: 90
+    disk_free_pct: 10
+    cpu_pct: 85
+    sustained_seconds: 300
+    network_latency_ms: 180
+    response_time_ms: 800
+    error_rate: 0.1
+  # Fractional windows scale with --days, and each enabled entry has separate truth.
+  scenarios:
+    - {scenario_type: NORMAL, start_fraction: 0.02, duration_fraction: 0.045}
+    - {scenario_type: CPU_SPIKE, start_fraction: 0.10, duration_fraction: 0.001}
+    - {scenario_type: SUSTAINED_CPU_PRESSURE, start_fraction: 0.18, duration_fraction: 0.045}
+    - {scenario_type: MEMORY_LEAK, start_fraction: 0.26, duration_fraction: 0.045}
+    - {scenario_type: DISK_EXHAUSTION, start_fraction: 0.34, duration_fraction: 0.045}
+    - {scenario_type: NETWORK_DEGRADATION, start_fraction: 0.42, duration_fraction: 0.045}
+    - {scenario_type: RESPONSE_TIME_DEGRADATION, start_fraction: 0.50, duration_fraction: 0.045}
+    - {scenario_type: ERROR_BURST, start_fraction: 0.58, duration_fraction: 0.045}
+    - {scenario_type: THROUGHPUT_SURGE, start_fraction: 0.66, duration_fraction: 0.045}
+    - {scenario_type: MULTI_METRIC_DEGRADATION, start_fraction: 0.74, duration_fraction: 0.045}
+    - {scenario_type: BACKUP_WORKLOAD, start_fraction: 0.82, duration_fraction: 0.045}
+    - {scenario_type: COMPILATION_OR_BUILD_WORKLOAD, start_fraction: 0.90, duration_fraction: 0.045}
+  quality_events:
+    - {metric: cpu_usage_pct, kind: MISSING_SENSOR, start_fraction: 0.12, duration_fraction: 0.01}
+    - {metric: disk_free_pct, kind: DEEP_COLLECTION_OUTAGE, start_fraction: 0.60, duration_fraction: 0.025}
