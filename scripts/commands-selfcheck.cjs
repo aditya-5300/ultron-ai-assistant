@@ -6,10 +6,10 @@ const vm = require('node:vm');
 const { EventEmitter } = require('node:events');
 const ts = require('typescript');
 const root = path.resolve(__dirname, '..');
-function load(filename, dependencies = {}) {
+function load(filename, dependencies = {}, globals = {}) {
   const exports = {};
   const code = ts.transpileModule(fs.readFileSync(path.join(root, filename), 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true } }).outputText;
-  vm.runInNewContext(code, { exports, require: name => Object.hasOwn(dependencies, name) ? dependencies[name] : require(name), process, console, URL, Response, ReadableStream, TextEncoder, AbortController, AbortSignal, setTimeout, clearTimeout, setInterval, clearInterval });
+  vm.runInNewContext(code, { exports, require: name => Object.hasOwn(dependencies, name) ? dependencies[name] : require(name), process, console, URL, Response, ReadableStream, TextEncoder, AbortController, AbortSignal, setTimeout, clearTimeout, setInterval, clearInterval, ...globals });
   return exports;
 }
 const catalog = load('lib/appCatalog.ts');
@@ -46,6 +46,13 @@ assert.equal(parser.parseVoiceCommand('phone tap one thousand two hundred comma 
 assert.equal(parser.parseVoicePlan('phone type hello then open Notepad')[0].payload.text, 'hello then open Notepad');
 assert.equal(parser.parseVoicePlan('browser fill two with hello then open Notepad')[0].payload.text, 'hello then open Notepad');
 assert.equal(parser.parseVoicePlan('delete everything'), null);
+assert.equal(parser.parseVoicePlan('ULTRON, shutdown the PC.')[0].payload.kind, 'shutdown');
+assert.equal(parser.parseVoicePlan('restart my computer')[0].confirm, true);
+assert.equal(parser.parseVoicePlan('cancel restart')[0].payload.kind, 'restart');
+for (const phrase of ['shutdown /f', 'restart the PC then open Notepad', 'open Notepad then shut down the PC']) {
+  assert.equal(parser.parseVoicePlan(phrase), null);
+  assert.equal(parser.isSystemCommand(phrase), true);
+}
 assert.equal(parser.parseVoicePlan('Ultron open YouTube and Ultron open the Notepad').length, 2);
 assert.equal(parser.parseVoicePlan('Ultron open YouTube and hey Ultron open Notepad')[1].payload.app, 'notepad');
 assert.equal(parser.parseVoicePlan(Array(7).fill('open Notepad').join(' then ')), null);
@@ -94,8 +101,71 @@ const voice = load('lib/desktopVoice.ts', {
   } },
 });
 const tick = () => new Promise(resolve => setImmediate(resolve));
+async function checkPower() {
+  // Both the clock and Windows executable are simulated; this test cannot power off a PC.
+  let now = 100_000;
+  let sequence = 0;
+  const timers = new Map();
+  const launches = [];
+  const globals = {
+    process: { platform: 'win32', env: { SystemRoot: 'C:\\Windows' } },
+    Date: class extends Date { static now() { return now; } },
+    setTimeout: (callback, delay) => { timers.set(++sequence, { callback, deadline: now + delay }); return sequence; },
+    clearTimeout: timer => timers.delete(timer),
+  };
+  const powerSecurity = load('lib/controlSecurity.ts', {}, globals);
+  const { executePowerAction: power } = load('lib/powerActions.ts', {
+    './controlSecurity': powerSecurity,
+    'node:child_process': { execFile: (file, args, options, callback) => {
+      launches.push({ file, args: Array.from(args), timeout: options.timeout });
+      callback(null, '', '');
+    } },
+  }, globals);
+  async function advance(elapsed) {
+    now += elapsed;
+    for (const [id, timer] of timers) if (timer.deadline <= now) { timers.delete(id); timer.callback(); }
+    await tick();
+  }
+  const shutdown = { action: 'schedulePower', kind: 'shutdown' };
+  const restart = { action: 'schedulePower', kind: 'restart' };
+  const first = power(shutdown);
+  assert.ok(first.approval);
+  assert.equal(timers.size, 0);
+  assert.throws(() => power({ ...shutdown, force: true }));
+  assert.throws(() => power({ ...restart, approvalToken: first.approval.token }), /does not match/);
+  const cancelledToken = power(shutdown).approval.token;
+  const scheduled = power({ ...shutdown, approvalToken: cancelledToken });
+  assert.equal(scheduled.power.deadline, now + 60_000);
+  assert.equal(power({ action: 'powerStatus' }).power.id, scheduled.power.id);
+  assert.throws(() => power(restart), /already pending/);
+  assert.throws(() => power({ action: 'cancelPower', kind: 'restart' }), /No matching/);
+  assert.throws(() => power({ action: 'cancelPower', countdownId: 'stale-id' }), /No matching/);
+  assert.equal(power({ action: 'cancelPower', countdownId: scheduled.power.id }).power, null);
+  assert.throws(() => power({ ...shutdown, approvalToken: cancelledToken }), /already used/);
+  await advance(60_000);
+  assert.equal(launches.length, 0);
+  const expired = power(restart).approval.token;
+  await advance(60_001);
+  assert.throws(() => power({ ...restart, approvalToken: expired }), /expired/);
+  for (const [request, flag] of [[restart, '/r'], [shutdown, '/s']]) {
+    const before = launches.length;
+    power({ ...request, approvalToken: power(request).approval.token });
+    await advance(59_999);
+    assert.equal(launches.length, before);
+    await advance(1);
+    assert.equal(launches.length, before + 1);
+    assert.deepEqual(launches.at(-1), { file: 'C:\\Windows\\System32\\shutdown.exe', args: [flag, '/t', '0'], timeout: 10_000 });
+    assert.equal(power({ action: 'powerStatus' }).power, null);
+  }
+  power({ ...shutdown, approvalToken: power(shutdown).approval.token });
+  await advance(66_000);
+  assert.equal(launches.length, 2, 'A late countdown must not resume after interruption.');
+  assert.match(power({ action: 'powerStatus' }).powerNotice, /expired/);
+  console.log('PASS: power approval binding, one-use/expired tokens, countdown, scoped cancellation and non-forced Windows arguments (mock only).');
+}
 async function hear(command) { receiver(JSON.stringify({ type: 'command', text: `Ultron ${command}` })); await tick(); }
 async function main() {
+  await checkPower();
   await voice.setDesktopVoice(true);
   receiver(JSON.stringify({ type: 'ready', text: 'Fixture listener' }));
   await hear('browser inspect');

@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     const origin = `${new URL(request.url).protocol}//${request.headers.get("host")}`;
     const result = action.startsWith("browser") ? await (await import("@/lib/browserControl")).executeBrowserControl(payload, origin) : await executeSystemAction(payload);
     if ("approval" in result && result.approval) return Response.json(result, { status: 202 });
-    recordControl(action, true, "Action completed; inspect the returned result. Launch acceptance does not guarantee a visible window.");
+    if (action !== "powerStatus") recordControl(action, true, "Action completed; inspect the returned result. Launch acceptance does not guarantee a visible window.");
     return Response.json(result);
   } catch (error) {
     const message = error instanceof Error ? error.message : "System action failed.";

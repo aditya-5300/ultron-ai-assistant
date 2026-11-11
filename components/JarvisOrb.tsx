@@ -12,6 +12,7 @@ import MemoryWorkspace from "./MemoryWorkspace";
 import { useConversationMemory } from "@/lib/useConversationMemory";
 import { useHandsFree } from "@/lib/useHandsFree";
 import DesktopVoice from './DesktopVoice';
+import PowerCountdown from './PowerCountdown';
 import { voiceControl } from '@/lib/voiceControl';
 import DashboardIcon from "./DashboardIcon";
 import DashboardSections, { type DashboardView } from "./DashboardSections";
@@ -309,12 +310,13 @@ export default function JarvisOrb() {
   }, [addLog, stopSpeechOutput]);
 
   const sendToAssistant = useCallback(
-    async (content: string, handsFreeInput = false) => {
+    async (content: string, voiceInput = false, approvedOnScreen = false) => {
       // Handle known local commands before contacting AI, so basic controls do not need API credit.
       const prompt = content.trim();
       if (!prompt || abortControllerRef.current) return;
-      if (handsFreeInput && /^(yes|confirm|yes confirm|confirm action)$/.test(normalizeCommand(prompt).toLowerCase())) {
-        setError("Use the on-screen approval button. Hands-free audio cannot approve actions.");
+      const confirms = /^(yes|confirm|yes confirm|confirm action)$/.test(normalizeCommand(prompt).toLowerCase());
+      if (confirms && (voiceInput || (!approvedOnScreen && pendingCommandRef.current?.command.payload.action === "schedulePower"))) {
+        setError("Use the on-screen approval button to approve this action.");
         return;
       }
       if (isAgentCommand(prompt)) {
@@ -590,7 +592,7 @@ export default function JarvisOrb() {
           const control = voiceControl(finalTranscript, true);
           if (control === 'interrupt') { cancelAssistant(); stopVoice(); setAgentStop(value => value + 1); return; }
           if (control === 'stopListening') { stopVoice(); return; }
-          void sendToAssistant(finalTranscript);
+          void sendToAssistant(finalTranscript, true);
         }
       };
       recognition.onerror = (event) => {
@@ -791,12 +793,13 @@ export default function JarvisOrb() {
           <div className={styles.headerActions}><button aria-label="View recent activity" onClick={() => setView("analytics")}><DashboardIcon name="bell" /></button><button aria-label="Appearance settings" onClick={() => setView("settings")}><DashboardIcon name="settings" /></button><Link href="/" className={styles.profile} aria-label={`${userName} — local workspace`}><span>{userName[0]?.toUpperCase()}</span><div>{userName}<small>Local workspace</small></div></Link></div>
         </header>
         <div className={styles.workspace}>
+        <PowerCountdown />
         <DesktopVoice onActive={setDesktopVoiceActive} onInterrupt={() => { cancelAssistant(); stopVoice(); setAgentStop(value => value + 1); }} onStopListening={() => { handsFree.setEnabled(false); stopVoice(); }} />
 <div className={styles.handsFreeBar}><div><strong>{handsFree.enabled ? "● Hands-free microphone on" : "Hands-free voice"}</strong><small>{handsFree.status}{handsFree.enabled ? " · Say ‘Ultron stop’ to interrupt. Use headphones to prevent speaker echo." : " · Opt-in wake phrase and 30-second follow-ups. Browser speech recognition may use a cloud service."}</small>{handsFree.enabled && handsFree.transcript && <small>Heard: {handsFree.transcript}</small>}</div><button disabled={desktopVoiceActive} aria-pressed={handsFree.enabled} onClick={() => { stopVoice(); if (!handsFree.enabled) cancelAssistant(); handsFree.setEnabled(!handsFree.enabled); }}>{handsFree.enabled ? "Turn hands-free off" : "Enable hands-free"}</button></div>
         {memory.error && <p role="alert">Local memory unavailable: {memory.error}</p>}
         <AgentWorkspace visible={view === "automations"} initialGoal={agentGoal} onState={setAgentBusy} stopSignal={agentStop} />
         {view === "memory" && <MemoryWorkspace state={memory.state} refresh={memory.refresh} fileLabel={fileLabel} fileContext={fileContext} onSelect={id => { cancelAssistant(); stopVoice(); memory.select(id); setView("chat"); }} onClear={() => { cancelAssistant(); memory.newChat(); setMessages(INITIAL_MESSAGES); }} />}
-        {approval && <section className={styles.approvalPanel} role="alertdialog" aria-labelledby="control-permission-title" aria-describedby="control-permission-detail"><div><strong id="control-permission-title">Permission required · one action only</strong><p id="control-permission-detail">{approval.label}</p><small>Expires after 60 seconds. Review the destination and exact action. Say “confirm” or “cancel”, or use the buttons.</small></div><div className={styles.inlineActions}><button disabled={controlBusy || isStreaming} onClick={() => void sendToAssistant("confirm")}>Approve once</button><button onClick={() => { pendingCommandRef.current = null; setApproval(undefined); setSystemResult("Cancelled. Pending action and remaining task steps were discarded."); }}>Cancel action</button></div></section>}
+        {approval && <section className={styles.approvalPanel} role="alertdialog" aria-labelledby="control-permission-title" aria-describedby="control-permission-detail"><div><strong id="control-permission-title">Permission required · one action only</strong><p id="control-permission-detail">{approval.label}</p><small>Expires after 60 seconds. Review the exact action, then use the buttons.</small></div><div className={styles.inlineActions}><button disabled={controlBusy || isStreaming} onClick={() => void sendToAssistant("confirm", false, true)}>Approve once</button><button onClick={() => { pendingCommandRef.current = null; setApproval(undefined); setSystemResult("Cancelled. Pending action and remaining task steps were discarded."); }}>Cancel action</button></div></section>}
         <section className={styles.hero} aria-label="Interactive assistant orb">
           <div ref={containerRef} className={`orb-root assistant-${assistantMode}`} />
           <div className={styles.heroShade} />
