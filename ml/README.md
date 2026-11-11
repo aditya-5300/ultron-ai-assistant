@@ -1,6 +1,6 @@
-# ULTRON ML foundation — Phase 2
+# ULTRON offline telemetry tooling
 
-This is an **offline synthetic-data module**, not a replacement for the Windows health worker. It does not connect to SQLite, the monitoring API, the dashboard, providers or controllers. ULTRON works without Python. There is no model, feature-engineering pipeline, training, FastAPI service, MLflow or RAG here.
+This is an **offline telemetry module**, not a replacement for the Windows health worker. It does not connect to SQLite, the monitoring API, the dashboard, providers or controllers. ULTRON works without Python. The module generates synthetic data and computes versioned, past-only features; there is no model, training, FastAPI service, MLflow or RAG.
 
 **Synthetic telemetry is not evidence that ULTRON predicts real hardware failures.**
 
@@ -13,6 +13,7 @@ python -m venv ml/.venv
 ml/.venv/Scripts/python.exe -m pip install -e './ml[test]'
 ml/.venv/Scripts/python.exe -m pytest ml
 ml/.venv/Scripts/python.exe -m ultron_health_ml.data_generation.generator --config ml/configs/synthetic.yaml --days 7 --interval 30 --seed 42 --output ml/generated/run-42
+ml/.venv/Scripts/python.exe -m ultron_health_ml.features.engineering --input ml/generated/run-42 --config ml/configs/features.yaml --profile real_ultron --output ml/generated/features-run-42
 ```
 
 The output directory must be empty. The generator never overwrites existing datasets. Omit `--config` to use validated built-in defaults; supplied CLI days/interval/seed override YAML values. Example small run: `--days 1 --interval 60`. Supported intervals are 15, 30, 60, 120 and 300 seconds. A size guard prevents more than 50,000 potential records per run; use smaller runs on memory-constrained machines.
@@ -87,12 +88,44 @@ Quality events are separate from scenarios: `MISSING_SENSOR` nulls one metric in
 
 Labels never appear in `TelemetryRecord`, `TelemetryWindow` or `DECLARED_MODEL_INPUT_FIELDS`. The metric allowlist is only a candidate input registry, **not** a trained model feature schema. The scenario/manifest files must never be concatenated into training rows. Incident definitions are evaluation heuristics, not labeled real hardware failures. No large datasets are tracked; `ml/generated/`, virtual environments and caches are ignored.
 
-## Tests and Phase 3 implications
+## Phase 3 feature engineering
+
+**Feature engineering does not itself predict failures.** The same `iter_features(window, config)` function accepts validated Phase 2 `TelemetryWindow` objects for offline training, evaluation and future inference. The CLI loads checksummed `telemetry.csv` and `manifest.json` and writes `features.csv` and `feature_manifest.json`. Loading `scenarios.json` requires the separate evaluation-only loader; feature generation never opens it.
+
+Telemetry and feature schema versions are independent; both are currently **1.0.0**. The manifest stores the ordered model columns, feature units, source/version, generator version, input/output checksums, resolved configuration and quality report. The configuration fingerprint is SHA-256 of canonical sorted JSON containing the feature version and settings, including the resolved metric order. IDs, timestamps, source and fingerprint metadata are not model columns. Use `row.model_features()` or the manifest's explicit `model_columns`, not all CSV columns.
+
+- `real_ultron` uses only eight real-supported channels: aggregate CPU, physical RAM, selected-volume free space, battery charge/capacity ratio, selected-disk temperature, selected-process nonresponding count and bounded relevant event count. Synthetic records can exercise this profile without hypothetical application inputs.
+- `synthetic_extended` adds network latency, response time, error-rate fraction, request throughput and simulated disk-write MB/s. It rejects a real ULTRON input window. A future real adapter must supply stable device selection and validated timestamps; it is not implemented here.
+- A profile can select a smaller ordered subset of its allowed metrics in YAML. Defaults and exact column names are described in the [Phase 3 report](../docs/PHASE-3-FEATURE-ENGINEERING.md). The manifest lists each generated column explicitly.
+
+### Windows and quality
+
+Each row's `as_of` is its acquisition time `T`. A trailing window of length `W` uses distinct usable observation timestamps in inclusive `[T − W, T]` from the current continuity segment, and only records acquired by `T`. Default windows are 120, 300, 900 and 3,600 seconds. There is no row-count approximation, interpolation, future fill or statistical fit. A valid rolling window needs at least three observations and observed first-to-last span at least 50% of its duration by default. This span ratio is an evidence gate, not an estimate of sensor uptime. Counts, coverage and largest internal gap are available as per-row diagnostics, not model columns.
+
+Current numeric features preserve nulls for missing, omitted and stale readings. Binary available/fresh/cached/stale flags and age in seconds are explicit model inputs: availability means a raw reading was supplied, so stale readings may be available but not usable. Age is computed from acquisition and original observation time, never the wall clock. Cached data at or past the configured age limit is treated as stale. Reused deep observations count only once; inconsistent values at the same timestamp or backward measurement times are rejected.
+
+An acquisition gap above `gap_factor × min(previous cadence, current cadence)` resets history. An observation gap above the same factor times the metric's expected cadence also resets that metric (deep cadence defaults to 300 seconds). Unusable data breaks that metric's continuity. Cached readings observed before a reset cannot restore the old history; an unexpired cache can still provide a current value. Changes to AC state or power plan reset CPU and battery-charge histories and CPU-based pairs; other metrics retain their independent histories. AC/plan and change/gap flags are metadata.
+
+### Statistics and relationships
+
+- Valid windows emit mean, median, population standard deviation, minimum and maximum. Dynamic metrics also emit signed delta, absolute change, relative percent change, endpoint rate per hour, least-squares slope per hour, and trend R². Count channels and battery capacity omit short-term trend/change and movement features.
+- Rates and slopes use actual elapsed time. Slopes need at least three distinct observations and 60 seconds of span by default. A valid constant channel has zero slope but no R². Relative changes with a zero/near-zero reference and non-finite calculated values are null. There is no learned clipping or imputation.
+- The baseline uses the same metric's contiguous history strictly **before** the current measurement timestamp, inside a configured lookback (default 60 minutes). The median absolute deviation is `median(abs(history − median))`. Robust Z is `(current − median) / (1.4826 × MAD + epsilon)`, and is null when MAD is at or below epsilon. Insufficient history or an unusable current reading yields null baseline features.
+- Consecutive movements count the latest same-direction run of unique observations inside the longest configured window; ties end the run. A threshold margin is positive on the configured safe side (default RAM 90%, free space 10%). Neither a margin nor a trend is an incident decision.
+- `cpu_memory_pressure` is the smaller of usable CPU and RAM percentages: a high value requires both to be high. The extended profile also measures Pearson correlation for CPU/response, latency/response and throughput/error over matched fresh observations in a default 900-second contiguous window. Missing pairs break their history; constant inputs yield null correlation. These are descriptive relationships, not causal diagnoses.
+
+### Parity and evaluation
+
+Run training/evaluation/inference with the same feature profile, fingerprint, units and window evidence. Replay enough preceding acquisitions for the longest rolling/baseline/correlation horizon, plus cache age and preceding continuity context. Truncated replay can legitimately produce fewer valid features; never fill the resulting gaps with zero. Future records outside a requested `as_of` are rejected at the telemetry boundary.
+
+Quality summaries describe the completed export (missingness, ranges, constant/near-constant fields, invalid windows, breaks and deep duplicates); none of those global summaries feed back into row features. Do not use feature or label metadata as inputs. Preserve nulls, split chronologically before fitting any scaler/imputer, and fit only on training data. Evaluation may join label sidecars by sample ID after feature generation. Keep simulations from the same scenario/run together when measuring holdout behavior and retain legitimate workload negatives. No existing diagnostic CPU retrospective baseline was changed or used by the feature pipeline.
+
+## Tests and limitations
 
 Tests cover seed reproducibility, all intervals/counts, irregular timing, skips/overruns, nulls/coverage, deep cache/staleness, schema bounds, chronology/as-of validation, all scenarios/labels/incidents, tendency/correlation/recovery, YAML/CLI and output separation/checksums.
 
-Phase 3 should implement a CSV/window loader that reconstructs and validates every reading, rejects missing metadata/version drift, and selects only approved numeric metrics. Apply explicit quality/age masks before any training-only fitted imputation; never count cached deep values as new independent observations. Use past-only elapsed-time windows (including power/device context and gaps), temporal splits before fitting, and do not train on labels, post-incident metadata or global future statistics. Fit/apply transformations must share a versioned implementation, but no such transformation is built in Phase 2.
+Feature tests cover label isolation, future-prefix invariance, loader integrity, irregular intervals, cache deduplication, null handling, elapsed-time trends and context boundaries.
 
 **Deferred existing-code issue:** Phase 1's CPU median/MAD retrospective history path can accept future rows. This remains tracked in `docs/PHASE-1-MONITORING-ARCHITECTURE.md` section H and is intentionally unchanged. Do not use that diagnostic function as a past-only feature pipeline. Its fix needs separate approval.
 
-Known limitations: simplified physics/thresholds; no real device identity or calibrated workload distribution; finite sampling can miss short events; overlapping scenarios can saturate metrics; abrupt synthetic cleanup is explicit; no empirical failure labels, model accuracy, causal proof or real-world validation. This phase stops at generation and contract validation.
+Known limitations: simplified physics/thresholds; no real device identity or calibrated workload distribution; finite sampling can miss short events; overlapping scenarios can saturate metrics; abrupt synthetic cleanup is explicit. Short windows on deep sensors are often invalid by design. Window statistics weight each distinct observation equally, not by duration. There are no empirical failure labels, trained model metrics, causal proof or real-world predictive validation.
