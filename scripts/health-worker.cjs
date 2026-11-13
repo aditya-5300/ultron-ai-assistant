@@ -3,6 +3,7 @@ const path = require('node:path');
 const { randomUUID } = require('node:crypto');
 const { createStore, analyze } = require('../lib/health/core.cjs');
 const { createCollector } = require('../lib/health/collector.cjs');
+const { createShadowScheduler } = require('../lib/health/shadow/scheduler.cjs');
 const root = path.resolve(__dirname, '..');
 const store = createStore(root);
 const lockPath = path.join(root, '.ultron', 'health-worker.lock');
@@ -28,6 +29,7 @@ async function main() {
   if (!acquire()) { console.log('ULTRON monitoring collector already running.'); return; }
   if (!process.argv.includes('--background')) store.set('config', { ...store.config(), enabled: true });
   const collect = createCollector(root);
+  const shadow = createShadowScheduler(root);
   store.event('lifecycle', 'Monitoring collector started. Local counters only; no desktop capture or automatic system changes.');
   const pulse = setInterval(() => heartbeat(stopping ? 'stopping' : 'running'), 10000);
   pulse.unref();
@@ -43,10 +45,12 @@ async function main() {
         store.saveSample(sample);
         store.set('lastSample', sample.time);
         heartbeat('running');
+        shadow?.submit(sample.id);
       } catch (error) { heartbeat('error', 'Telemetry collection failed; old samples are not current.'); store.event('collector-error', String(error.message || error)); }
       while (!stopping && store.config().enabled && store.setting('resample', 0) <= started && Date.now() - started < store.config().intervalSeconds * 1000) await new Promise(resolve => setTimeout(resolve, 1000));
     }
   } finally {
+    await shadow?.close();
     clearInterval(pulse); heartbeat('stopped'); store.event('lifecycle', 'Monitoring collector stopped.');
     try { if (JSON.parse(fs.readFileSync(lockPath, 'utf8')).nonce === nonce) fs.unlinkSync(lockPath); } catch {}
   }
