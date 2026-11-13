@@ -140,6 +140,10 @@ The `reduced.replay` CLI selects budget-qualified fixed, MAD, sustained-change a
 
 The `forecast.replay` CLI freezes actionable targets and compares simple forecast baselines before opening a new locked synthetic holdout. See the [Phase 5 report](../docs/PHASE-5-EARLY-WARNING-FORECASTING.md) for the process-only recommendation, evidence limits, and reproduction steps. No forecast is connected to live monitoring.
 
+## Phase 6 local inference contract
+
+The optional `service` extra provides a token-authenticated loopback API for standalone, bounded replay. See the [Phase 6 report](../docs/PHASE-6-LOCAL-INFERENCE-SERVICE.md) for the launcher, contract, limitations and benchmarks. There is no production monitoring adapter.
+
 ## Tests and limitations
 
 Tests cover seed reproducibility, all intervals/counts, irregular timing, skips/overruns, nulls/coverage, deep cache/staleness, schema bounds, chronology/as-of validation, all scenarios/labels/incidents, tendency/correlation/recovery, YAML/CLI and output separation/checksums.

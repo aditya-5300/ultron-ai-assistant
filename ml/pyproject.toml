@@ -17,7 +17,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest>=8,<10"]
+test = ["pytest>=8,<10", "httpx>=0.28,<0.29"]
+service = ["fastapi>=0.141,<0.142", "uvicorn>=0.52,<0.53"]
+
+[tool.setuptools.package-data]
+"ultron_health_ml.service" = ["approved_policy.json"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

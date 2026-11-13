@@ -1,0 +1,316 @@
+{
+  "detection": {
+    "train_seeds": [
+      7101,
+      7102,
+      7103,
+      7104,
+      7105
+    ],
+    "validation_seeds": [
+      7201,
+      7202,
+      7203,
+      7204,
+      7205,
+      7206
+    ],
+    "holdout_seeds": [
+      7301,
+      7302,
+      7303,
+      7304,
+      7305,
+      7306,
+      7307,
+      7308,
+      7309,
+      7310,
+      7311,
+      7312
+    ],
+    "hours_per_run": 18,
+    "candidates": [
+      1,
+      1.25,
+      1.5,
+      2
+    ],
+    "false_budget_per_day": 0.5,
+    "workload_budget": 0.05,
+    "budget_match_tolerance": 0.5,
+    "recovery_fraction": 0.55,
+    "missing_grace_seconds": 180,
+    "flap_window_seconds": 600,
+    "ewma_seconds": 150,
+    "reference_seconds": 1800,
+    "subsystems": {
+      "cpu": {
+        "metric": "cpu_usage_pct",
+        "direction": "high",
+        "attention_level": 80,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 6,
+        "trend_window_seconds": 900,
+        "minimum_slope_per_hour": 20,
+        "minimum_delta": 12,
+        "min_observations": 6,
+        "min_duration": 240,
+        "recovery_seconds": 180,
+        "max_observation_gap": 100,
+        "ewma_shift": 14,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "mad",
+          "sustained",
+          "ewma"
+        ],
+        "require_unplugged": false
+      },
+      "memory": {
+        "metric": "memory_usage_pct",
+        "direction": "high",
+        "attention_level": 68,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 2,
+        "trend_window_seconds": 900,
+        "minimum_slope_per_hour": 7,
+        "minimum_delta": 3.5,
+        "min_observations": 3,
+        "min_duration": 180,
+        "recovery_seconds": 180,
+        "max_observation_gap": 100,
+        "ewma_shift": 5,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "mad",
+          "sustained",
+          "ewma",
+          "cusum"
+        ],
+        "require_unplugged": false
+      },
+      "disk_capacity": {
+        "metric": "disk_free_pct",
+        "direction": "low",
+        "attention_level": 25,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 1.2,
+        "trend_window_seconds": 3600,
+        "minimum_slope_per_hour": 7,
+        "minimum_delta": 4,
+        "min_observations": 3,
+        "min_duration": 560,
+        "recovery_seconds": 290,
+        "max_observation_gap": 680,
+        "ewma_shift": 5,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "mad",
+          "sustained"
+        ],
+        "require_unplugged": false
+      },
+      "disk_health": {
+        "metric": "disk_temperature_c",
+        "direction": "high",
+        "attention_level": 58,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 3,
+        "trend_window_seconds": 3600,
+        "minimum_slope_per_hour": 7,
+        "minimum_delta": 4,
+        "min_observations": 3,
+        "min_duration": 560,
+        "recovery_seconds": 290,
+        "max_observation_gap": 680,
+        "ewma_shift": 6,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "mad",
+          "sustained"
+        ],
+        "require_unplugged": false
+      },
+      "battery_drain": {
+        "metric": "battery_pct",
+        "direction": "low",
+        "attention_level": 75,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 3,
+        "trend_window_seconds": 900,
+        "minimum_slope_per_hour": 20,
+        "minimum_delta": 4,
+        "min_observations": 3,
+        "min_duration": 240,
+        "recovery_seconds": 180,
+        "max_observation_gap": 100,
+        "ewma_shift": 6,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "sustained"
+        ],
+        "require_unplugged": true
+      },
+      "battery_capacity": {
+        "metric": "battery_capacity_pct",
+        "direction": "low",
+        "attention_level": 75,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 4,
+        "trend_window_seconds": 3600,
+        "minimum_slope_per_hour": 7,
+        "minimum_delta": 4,
+        "min_observations": 3,
+        "min_duration": 560,
+        "recovery_seconds": 290,
+        "max_observation_gap": 680,
+        "ewma_shift": 6,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [],
+        "require_unplugged": false
+      },
+      "process": {
+        "metric": "selected_process_nonresponding_count",
+        "direction": "high",
+        "attention_level": 2,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 1,
+        "trend_window_seconds": 900,
+        "minimum_slope_per_hour": 3,
+        "minimum_delta": 1,
+        "min_observations": 3,
+        "min_duration": 120,
+        "recovery_seconds": 120,
+        "max_observation_gap": 100,
+        "ewma_shift": 1,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "ewma",
+          "cusum"
+        ],
+        "require_unplugged": false
+      },
+      "events": {
+        "metric": "relevant_event_count",
+        "direction": "high",
+        "attention_level": 4,
+        "mad_z": 4,
+        "mad_history_points": 5,
+        "noise_floor": 1,
+        "trend_window_seconds": 3600,
+        "minimum_slope_per_hour": 3,
+        "minimum_delta": 2,
+        "min_observations": 3,
+        "min_duration": 560,
+        "recovery_seconds": 290,
+        "max_observation_gap": 680,
+        "ewma_shift": 2,
+        "cusum_drift": 0.5,
+        "cusum_limit": 8,
+        "modes": [
+          "ewma"
+        ],
+        "require_unplugged": false
+      }
+    }
+  },
+  "detection_point": {
+    "method": "hybrid",
+    "level": 1.35,
+    "persistence": 2
+  },
+  "targets": {
+    "version": "phase5-targets-v1",
+    "clock": "UTC Unix seconds; prediction timestamp is acquisition T; state and features use observations at or before T.",
+    "future_window": "An onset qualifies only when T < onset <= T + horizon. An already-active target is detection, not forecasting.",
+    "exclusions": "At evaluation only: gaps beyond the target coverage bound, insufficient future coverage, right-censored windows, and unobservable latent onsets are uncertain, not healthy. Charge uncertain interruptions to the nuisance budget conservatively.",
+    "qualification": "At least 10 observable holdout events and 40% useful-lead recall and 50% episode precision; safety, parity, p95 <100 ms, <=0.5 false or uncertain interruptions/day, <=5% backup/build nuisance. Require development and validation qualification for a GO.",
+    "targets": {
+      "cpu": {
+        "event": "Sustained contextual workload pressure, not CPU hardware failure",
+        "metric": "cpu_usage_pct",
+        "boundary": 85,
+        "direction": "high",
+        "context": "RAM >=85% or selected nonresponding process count >=2",
+        "onset": "First independent usable sample confirming 300 seconds of contextual high CPU and six independent observations",
+        "hold_seconds": 300,
+        "min_observations": 6,
+        "recovery_boundary": 72,
+        "recovery_seconds": 120,
+        "max_gap_seconds": 105,
+        "min_lead_seconds": 180,
+        "horizon_seconds": [
+          300,
+          600,
+          900,
+          1800
+        ],
+        "observability": "An independent causal detector must confirm the target while the latent event remains active."
+      },
+      "disk_capacity": {
+        "event": "Selected volume crossing a 10% free capacity boundary; not drive failure",
+        "metric": "disk_free_pct",
+        "boundary": 10,
+        "direction": "low",
+        "context": "One fixed selected volume per offline run",
+        "onset": "First usable distinct reading at or below 10% free; latent truth is evaluated at 15 s resolution",
+        "hold_seconds": 0,
+        "min_observations": 1,
+        "recovery_boundary": 14,
+        "recovery_seconds": 300,
+        "max_gap_seconds": 780,
+        "min_lead_seconds": 900,
+        "horizon_seconds": [
+          1800,
+          3600,
+          10800,
+          21600
+        ],
+        "observability": "A fresh crossing must be observed between the latent onset and recovery; cached readings are not independent confirmations."
+      },
+      "process": {
+        "event": "Sustained selected-process responsiveness degradation; not crash or hardware failure",
+        "metric": "selected_process_nonresponding_count",
+        "boundary": 3,
+        "direction": "high",
+        "context": "CPU workload may qualify supporting evidence; process identity is subsystem-scoped because per-process IDs are unavailable",
+        "onset": "First independent usable sample confirming 360 seconds and at least six observations with selected nonresponse count >=3",
+        "hold_seconds": 360,
+        "min_observations": 6,
+        "recovery_boundary": 1,
+        "recovery_seconds": 120,
+        "max_gap_seconds": 105,
+        "min_lead_seconds": 240,
+        "horizon_seconds": [
+          300,
+          600,
+          900,
+          1800
+        ],
+        "observability": "A causal detector must confirm sustained degradation before latent recovery."
+      }
+    }
+  },
+  "forecast_point": {
+    "subsystem": "process",
+    "method": "persistence",
+    "horizon": 1800,
+    "threshold": 0.65
+  },
+  "noise": 0.15
+}
