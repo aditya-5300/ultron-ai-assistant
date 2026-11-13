@@ -1,0 +1,72 @@
+{
+  "version": "phase5-targets-v1",
+  "clock": "UTC Unix seconds; prediction timestamp is acquisition T; state and features use observations at or before T.",
+  "future_window": "An onset qualifies only when T < onset <= T + horizon. An already-active target is detection, not forecasting.",
+  "exclusions": "At evaluation only: gaps beyond the target coverage bound, insufficient future coverage, right-censored windows, and unobservable latent onsets are uncertain, not healthy. Charge uncertain interruptions to the nuisance budget conservatively.",
+  "qualification": "At least 10 observable holdout events and 40% useful-lead recall and 50% episode precision; safety, parity, p95 <100 ms, <=0.5 false or uncertain interruptions/day, <=5% backup/build nuisance. Require development and validation qualification for a GO.",
+  "targets": {
+    "cpu": {
+      "event": "Sustained contextual workload pressure, not CPU hardware failure",
+      "metric": "cpu_usage_pct",
+      "boundary": 85.0,
+      "direction": "high",
+      "context": "RAM >=85% or selected nonresponding process count >=2",
+      "onset": "First independent usable sample confirming 300 seconds of contextual high CPU and six independent observations",
+      "hold_seconds": 300,
+      "min_observations": 6,
+      "recovery_boundary": 72.0,
+      "recovery_seconds": 120,
+      "max_gap_seconds": 105,
+      "min_lead_seconds": 180,
+      "horizon_seconds": [
+        300,
+        600,
+        900,
+        1800
+      ],
+      "observability": "An independent causal detector must confirm the target while the latent event remains active."
+    },
+    "disk_capacity": {
+      "event": "Selected volume crossing a 10% free capacity boundary; not drive failure",
+      "metric": "disk_free_pct",
+      "boundary": 10.0,
+      "direction": "low",
+      "context": "One fixed selected volume per offline run",
+      "onset": "First usable distinct reading at or below 10% free; latent truth is evaluated at 15 s resolution",
+      "hold_seconds": 0,
+      "min_observations": 1,
+      "recovery_boundary": 14.0,
+      "recovery_seconds": 300,
+      "max_gap_seconds": 780,
+      "min_lead_seconds": 900,
+      "horizon_seconds": [
+        1800,
+        3600,
+        10800,
+        21600
+      ],
+      "observability": "A fresh crossing must be observed between the latent onset and recovery; cached readings are not independent confirmations."
+    },
+    "process": {
+      "event": "Sustained selected-process responsiveness degradation; not crash or hardware failure",
+      "metric": "selected_process_nonresponding_count",
+      "boundary": 3.0,
+      "direction": "high",
+      "context": "CPU workload may qualify supporting evidence; process identity is subsystem-scoped because per-process IDs are unavailable",
+      "onset": "First independent usable sample confirming 360 seconds and at least six observations with selected nonresponse count >=3",
+      "hold_seconds": 360,
+      "min_observations": 6,
+      "recovery_boundary": 1.0,
+      "recovery_seconds": 120,
+      "max_gap_seconds": 105,
+      "min_lead_seconds": 240,
+      "horizon_seconds": [
+        300,
+        600,
+        900,
+        1800
+      ],
+      "observability": "A causal detector must confirm sustained degradation before latent recovery."
+    }
+  }
+}

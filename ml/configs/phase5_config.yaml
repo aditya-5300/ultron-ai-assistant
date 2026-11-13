@@ -1,0 +1,9 @@
+development_seeds: [8101, 8102, 8103, 8104, 8105, 8106]
+validation_seeds: [8201, 8202, 8203, 8204, 8205, 8206]
+holdout_seeds: [8301, 8302, 8303, 8304, 8305, 8306, 8307, 8308, 8309, 8310]
+hours_per_run: 24
+false_budget_per_day: 0.5
+workload_budget: 0.05
+min_useful_recall: 0.4
+min_precision: 0.5
+min_observable_events: 10

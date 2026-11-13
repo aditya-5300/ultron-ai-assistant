@@ -136,6 +136,10 @@ The `nuisance.replay` CLI uses new locked inputs to compare stricter warning pol
 
 The `reduced.replay` CLI selects budget-qualified fixed, MAD, sustained-change and hybrid operating points before opening a new locked synthetic holdout. See the [Phase 4.5-C report](../docs/PHASE-4-5-C-REDUCED-SCOPE-VALIDATION.md) for the fair comparison, limits and reproduction steps. Prior references and production monitoring remain unchanged.
 
+## Phase 5 offline forecasting research
+
+The `forecast.replay` CLI freezes actionable targets and compares simple forecast baselines before opening a new locked synthetic holdout. See the [Phase 5 report](../docs/PHASE-5-EARLY-WARNING-FORECASTING.md) for the process-only recommendation, evidence limits, and reproduction steps. No forecast is connected to live monitoring.
+
 ## Tests and limitations
 
 Tests cover seed reproducibility, all intervals/counts, irregular timing, skips/overruns, nulls/coverage, deep cache/staleness, schema bounds, chronology/as-of validation, all scenarios/labels/incidents, tendency/correlation/recovery, YAML/CLI and output separation/checksums.

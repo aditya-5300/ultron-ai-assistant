@@ -1,0 +1,251 @@
+{
+  "definition": {
+    "protocol": "phase5-offline-v1",
+    "settings": {
+      "development_seeds": [
+        8101,
+        8102,
+        8103,
+        8104,
+        8105,
+        8106
+      ],
+      "validation_seeds": [
+        8201,
+        8202,
+        8203,
+        8204,
+        8205,
+        8206
+      ],
+      "holdout_seeds": [
+        8301,
+        8302,
+        8303,
+        8304,
+        8305,
+        8306,
+        8307,
+        8308,
+        8309,
+        8310
+      ],
+      "hours_per_run": 24.0,
+      "false_budget_per_day": 0.5,
+      "workload_budget": 0.05,
+      "min_useful_recall": 0.4,
+      "min_precision": 0.5,
+      "min_observable_events": 10
+    },
+    "targets": {
+      "version": "phase5-targets-v1",
+      "clock": "UTC Unix seconds; prediction timestamp is acquisition T; state and features use observations at or before T.",
+      "future_window": "An onset qualifies only when T < onset <= T + horizon. An already-active target is detection, not forecasting.",
+      "exclusions": "At evaluation only: gaps beyond the target coverage bound, insufficient future coverage, right-censored windows, and unobservable latent onsets are uncertain, not healthy. Charge uncertain interruptions to the nuisance budget conservatively.",
+      "qualification": "At least 10 observable holdout events and 40% useful-lead recall and 50% episode precision; safety, parity, p95 <100 ms, <=0.5 false or uncertain interruptions/day, <=5% backup/build nuisance. Require development and validation qualification for a GO.",
+      "targets": {
+        "cpu": {
+          "event": "Sustained contextual workload pressure, not CPU hardware failure",
+          "metric": "cpu_usage_pct",
+          "boundary": 85.0,
+          "direction": "high",
+          "context": "RAM >=85% or selected nonresponding process count >=2",
+          "onset": "First independent usable sample confirming 300 seconds of contextual high CPU and six independent observations",
+          "hold_seconds": 300,
+          "min_observations": 6,
+          "recovery_boundary": 72.0,
+          "recovery_seconds": 120,
+          "max_gap_seconds": 105,
+          "min_lead_seconds": 180,
+          "horizon_seconds": [
+            300,
+            600,
+            900,
+            1800
+          ],
+          "observability": "An independent causal detector must confirm the target while the latent event remains active."
+        },
+        "disk_capacity": {
+          "event": "Selected volume crossing a 10% free capacity boundary; not drive failure",
+          "metric": "disk_free_pct",
+          "boundary": 10.0,
+          "direction": "low",
+          "context": "One fixed selected volume per offline run",
+          "onset": "First usable distinct reading at or below 10% free; latent truth is evaluated at 15 s resolution",
+          "hold_seconds": 0,
+          "min_observations": 1,
+          "recovery_boundary": 14.0,
+          "recovery_seconds": 300,
+          "max_gap_seconds": 780,
+          "min_lead_seconds": 900,
+          "horizon_seconds": [
+            1800,
+            3600,
+            10800,
+            21600
+          ],
+          "observability": "A fresh crossing must be observed between the latent onset and recovery; cached readings are not independent confirmations."
+        },
+        "process": {
+          "event": "Sustained selected-process responsiveness degradation; not crash or hardware failure",
+          "metric": "selected_process_nonresponding_count",
+          "boundary": 3.0,
+          "direction": "high",
+          "context": "CPU workload may qualify supporting evidence; process identity is subsystem-scoped because per-process IDs are unavailable",
+          "onset": "First independent usable sample confirming 360 seconds and at least six observations with selected nonresponse count >=3",
+          "hold_seconds": 360,
+          "min_observations": 6,
+          "recovery_boundary": 1.0,
+          "recovery_seconds": 120,
+          "max_gap_seconds": 105,
+          "min_lead_seconds": 240,
+          "horizon_seconds": [
+            300,
+            600,
+            900,
+            1800
+          ],
+          "observability": "A causal detector must confirm sustained degradation before latent recovery."
+        }
+      }
+    },
+    "source_sha256": {
+      "forecast/__init__.py": "7b3d2e5067e4c231be3be6be16a5d9edf7af4403ca917e8525d85980083998d2",
+      "forecast/baselines.py": "88a478b133403e973534f01d6dae2a7eaa5c480c68bbbfa420a3289ac5026431",
+      "forecast/contract.py": "3071fda4e798949a6b9cde9979782c18d080a1d9e95100ed92343111df52d881",
+      "forecast/datasets.py": "5a31b6c2c7e21432abc5d46d04435b9688757ef91ae4aee410f919ce1ae67c24",
+      "forecast/evaluation.py": "a0c17beb4b70f1a14dc11a3831a50542bd4ff5a561edd9f422a4999914ac0b95",
+      "forecast/lifecycle.py": "6f637b60db1d654ced0aafb24f01db483fa65a538ee5c42fab9a8a1a0e0994ec",
+      "forecast/replay.py": "5fa6b6fc757591bd07742bca6175031dc188a25add7f9bf9400eb66404459d50",
+      "features/__init__.py": "f7eda1c7daac3e7cc69ab1623ac4684f4cefffc82c14344c860ba45bd0e8f328",
+      "features/config.py": "3d5685ebc40ec6273df663738de9f6f5ca6608156821123c0338b8b107a7d0e4",
+      "features/engineering.py": "ce3d86069ab4a47ff88eb66bd4b23873595f9fd5dd29900a69075172bb45832d",
+      "features/export.py": "f89afd9d37c59590a6520790ebd97f6a890bb39bf02d9b1a29c9dd38a50b1b3b",
+      "features/schema.py": "00272404249dc88aa6c25c93d85969d5349041359b26368c4ba2d765aa5f2d5c",
+      "features/statistics.py": "563b2dc31abbf7a610d7772502ed468dde3a5c60114d2f331eb04f410083c411",
+      "features/validation.py": "58305d9f2c8a5c79d92dc31f65cfeba7d41fb168452bbaffd97ed09704f4a311",
+      "features/windows.py": "bfbce677891ac185e7693dda98be4199a24f6f5a213297c64c4b18f81900689e",
+      "data_generation/__init__.py": "b58403e4bcebc4aee3a767f0673405ea86927747d6ad40eb09485085c6db8509",
+      "data_generation/config.py": "56b224aa3b5bcff4746934f50dafb4312b8a920119fddf8b038a9c5250915fc3",
+      "data_generation/generator.py": "ac1ab4525af12d9846cf981273909096967ac2b9e3285a1cfa0a67e86549c0bf",
+      "data_generation/scenarios.py": "d4e40c98076d01be0574ec67c1805cf5ddedaa07b133308fcddf31314fec0611",
+      "contracts/__init__.py": "832ab43c26cff818861339369eaabd90df24e4a9bb2e7cebf403e9bcee98bd88",
+      "contracts/telemetry.py": "fb17fd90a1749219b7eac3c647afd960c984d5cfbecab4f4eebe6b2ddd803b4c",
+      "hybrid/detector.py": "899408bbb75f8324ddd12a7f432348df727c736f47afa328a4415188bd91408a"
+    }
+  },
+  "runs": [
+    {
+      "run": "holdout-8301",
+      "seed": 8301,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "bfccbace958add51955b649f2037d2f0f95dec4e429f2aae82d08c439f3dccb0",
+        "telemetry.csv": "3a983f51ab59242e9cc32053e79c0459bc1999705852e831be433551897ebba8",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "9127ce5fef9518c9267900f74a66a94566b96cdeb3ccfd66d3bc752d0eeb8277"
+      }
+    },
+    {
+      "run": "holdout-8302",
+      "seed": 8302,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "a2529f5b5e691e7441fc873b94ad33cc0a3b861d31bcbd37f00bc7a72bb9383c",
+        "telemetry.csv": "2d48063cb6d1ddb08fec45927a6854000ef92a69ac63574f7223876c4f156629",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "2dc3dc6dfa4e01ec59cea112a5ac9be2ec2ff1deba868cd566fbe083ba065d1c"
+      }
+    },
+    {
+      "run": "holdout-8303",
+      "seed": 8303,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "e0a56a2d59288e758e33dc01fbd5041f6415abdde8c1b85afa639ef4c8dd34c0",
+        "telemetry.csv": "aa4e181383adde7e154563fc1f90802c83bc8be7e01384e57e80e85cd1770098",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "b95310647602b81b198a4ca833329dc1bd6d173270528b188d29d5f8ad1d1d73"
+      }
+    },
+    {
+      "run": "holdout-8304",
+      "seed": 8304,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "e296bbbdcf8ab244d8070ca093dac0435f5ba1f7d4973c1a63833bad6d30b810",
+        "telemetry.csv": "1fc605691b3b3afd7142063a919c379dcb8d2c620a49ea4f98681afd8802b3a0",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "535cf116591e8c0ca4d3e713b9836206bfed8e3c71731f8b7aa6d9c16f23d0e0"
+      }
+    },
+    {
+      "run": "holdout-8305",
+      "seed": 8305,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "f1786d82e6c763371a4692c549d643966499d75fe26374585503b782713ecc3c",
+        "telemetry.csv": "0b6451bc401c838be598353a8cb764c21cee489e1af0b8096fc35a786b8a317c",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "f4412c37ce69b3142f9ddcfa7f8bfeed0347ac71dea8a44fbacc5ea2831c59fd"
+      }
+    },
+    {
+      "run": "holdout-8306",
+      "seed": 8306,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "8f2e4eb54cd93d02ee846b9ec4eef50aed85681761d6ff3a15a510b1fdfd09cb",
+        "telemetry.csv": "30c6355b305f0b3da56901148efbd9c2192e602ba3641e589e71b1797415b14d",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "de60a862fbe44e2684435ddd2767566d90221dc254e399adc9d11ec4712eaa9e"
+      }
+    },
+    {
+      "run": "holdout-8307",
+      "seed": 8307,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "8ca26a6fcacca42fcf13a4f4ca8d2ab18cb6bff6ad651f978784c58f5119088c",
+        "telemetry.csv": "743ad0944db750535876b7a14331cbbef9abf3d5fd954fe794ab87a8f512f416",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "cf53c75ceb8c6bd6ccf08b017b402c68bc66e5c843e0a0d462434a47bbfd988f"
+      }
+    },
+    {
+      "run": "holdout-8308",
+      "seed": 8308,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "335b7d15540e751ea5dbaa9b8ec1ae67fe8c15c2ffd8f8234482e731427e0dc8",
+        "telemetry.csv": "7700e3a823baabadf57952ad91459d8d60097c5e96cfd7dc380c6d7a3aee3cf3",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "6b6848ef172220b3aa2d9c3c0ddda1a9315ed712bfd97c60bc6e5c6279ecbfa6"
+      }
+    },
+    {
+      "run": "holdout-8309",
+      "seed": 8309,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "d8118d8ab10c54edfc406a133c1067230a79bf99b9c1d5a8cb15972280475b69",
+        "telemetry.csv": "c9b3d150584e1fa9f92d9d5f4818ead4ca78b21ea8889b52c615a164d944dee4",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "f395c39f2630ebf145c5aeb390ce8de546cffb9c4d55ceebbd70f22b02047e12"
+      }
+    },
+    {
+      "run": "holdout-8310",
+      "seed": 8310,
+      "split": "holdout",
+      "sha256": {
+        "manifest.json": "41027c18a93d6d2e229ca8749862edfc20f0ec7f088fc5f396a0e758be02882a",
+        "telemetry.csv": "214307285e85ba241e6023e9b808fbfd23527ccb7373360fbb5e048d68ee1598",
+        "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+        "future_truth.json": "f30a53000c9f5f95aebc255e50f770f872c69091712707985ee0085a749a0054"
+      }
+    }
+  ],
+  "locked_inputs_sha256": "54f9f5c35e13413fdf504a587b400332e85e1f2e455ebe840cdb37d48d175c62",
+  "horizon_selection_sha256": "06624d125c50d8134308ef57195a0c596087faeac82913b50e166ac73363c542"
+}

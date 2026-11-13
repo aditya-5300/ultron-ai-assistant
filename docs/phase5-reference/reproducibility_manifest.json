@@ -1,0 +1,1081 @@
+{
+  "reference": {
+    "phase4": {
+      "files_verified": 90,
+      "manifest_sha256": "6d82989faf313b1adc22e2ba5958ee4787bc44a49c820aa54033be3b74f215ef",
+      "hashes": {
+        "ml/artifacts/isolation_forest/0.1.0/baseline_comparison.csv": "cffb90de578762cccb603f4a18b44320e58a1398fda027f581998d88608b10d0",
+        "ml/artifacts/isolation_forest/0.1.0/checksums.json": "e586437e3cbb72c17a21ed2d25f6e5a64771b86b59834e7d41e7ca184e1191c7",
+        "ml/artifacts/isolation_forest/0.1.0/config_snapshot.yaml": "aa5d63bfa2f3adab6c8394cbaa5ae6ba95c571d0be6224f9fa297744ee1409c9",
+        "ml/artifacts/isolation_forest/0.1.0/dropped_features.json": "c54e18fec05b296106db52fa00cb3dab03735caf743ab627a4722ed28dcc4557",
+        "ml/artifacts/isolation_forest/0.1.0/episode_evaluation.csv": "23e277d85966ea8416a6a73096c02fbd4ce41e781e2da37478af5bcf540d3622",
+        "ml/artifacts/isolation_forest/0.1.0/evaluation.json": "8c41a7603b3b95a89f88a511ff40506e0fc53d212f8bdd820cbf7bdd34a9306a",
+        "ml/artifacts/isolation_forest/0.1.0/experiment_results.csv": "712a7b35428b1aa520286b7542eeef7bc23c232bfe899535336d23053d7cbca9",
+        "ml/artifacts/isolation_forest/0.1.0/experiments.json": "636ab53e7c1434b5c2dd0cd431e33b7ae6981f27f682c3d63d7b38349ce1dc88",
+        "ml/artifacts/isolation_forest/0.1.0/metadata.json": "78f4e112ea5e650da62930b4ba8c1a17fe6b5299ba4d2cfdb99b697f0491d608",
+        "ml/artifacts/isolation_forest/0.1.0/model.joblib": "13480cfc5c4a199d4d1cf44768fd490e4978eb13e3ffba96cedb15ef9b8852d8",
+        "ml/artifacts/isolation_forest/0.1.0/report.md": "15a30a4286b117deb66cef17b2296f2797e781994a72cae2da3036f4ca5d84bf",
+        "ml/artifacts/isolation_forest/0.1.0/scenario_evaluation.csv": "49050d6b90f829b67adb8e9fbfda154a96898fdf01cdaa53b113c8c0c25b9efe",
+        "ml/artifacts/isolation_forest/0.1.0/selected_features.json": "8152f46389fca78fe0f024d52ad222a2476e27195cb2fab2a7b0b86e2998fa64",
+        "ml/artifacts/isolation_forest/0.1.0/split_membership.csv": "82e620789face04cd0627cc1499389a6eb156a47f20c7c3a2d8c44c29d4f259f",
+        "ml/artifacts/isolation_forest/0.1.0/splits.json": "50b49719b3ff8a161049afb867a568c1c88b1b603cbb82e3e2eb829a3ea14430",
+        "ml/artifacts/verified/isolation_forest/0.1.0/baseline_comparison.csv": "cffb90de578762cccb603f4a18b44320e58a1398fda027f581998d88608b10d0",
+        "ml/artifacts/verified/isolation_forest/0.1.0/checksums.json": "ad14ffab45c01aa98703260ac9b3788c9e85663d27d9c30bfea207726a8ce5fc",
+        "ml/artifacts/verified/isolation_forest/0.1.0/config_snapshot.yaml": "4f7dfd49206e474f0afb3b4888a50f0bbab8f3747bd180d10a256f74db8b7889",
+        "ml/artifacts/verified/isolation_forest/0.1.0/dropped_features.json": "c54e18fec05b296106db52fa00cb3dab03735caf743ab627a4722ed28dcc4557",
+        "ml/artifacts/verified/isolation_forest/0.1.0/episode_evaluation.csv": "23e277d85966ea8416a6a73096c02fbd4ce41e781e2da37478af5bcf540d3622",
+        "ml/artifacts/verified/isolation_forest/0.1.0/evaluation.json": "d810cc6aca5a2026a7ce89cc4417eeaf420185d1922bd4102d43f920934c5b0f",
+        "ml/artifacts/verified/isolation_forest/0.1.0/experiment_results.csv": "881c8af95b8d51dd1c561abe78fabe279f7a36921bb7bef33ae1dbaaf5136231",
+        "ml/artifacts/verified/isolation_forest/0.1.0/experiments.json": "aaf2bfee5ab7972fa7a5703e9bbe7ab4b55a165a164bdd2728982c280cd006ee",
+        "ml/artifacts/verified/isolation_forest/0.1.0/metadata.json": "880e5b10f551b161d239c647062bebd0ae23e4636456c92f613d7934afb43841",
+        "ml/artifacts/verified/isolation_forest/0.1.0/model.joblib": "13480cfc5c4a199d4d1cf44768fd490e4978eb13e3ffba96cedb15ef9b8852d8",
+        "ml/artifacts/verified/isolation_forest/0.1.0/report.md": "15a30a4286b117deb66cef17b2296f2797e781994a72cae2da3036f4ca5d84bf",
+        "ml/artifacts/verified/isolation_forest/0.1.0/scenario_evaluation.csv": "49050d6b90f829b67adb8e9fbfda154a96898fdf01cdaa53b113c8c0c25b9efe",
+        "ml/artifacts/verified/isolation_forest/0.1.0/selected_features.json": "8152f46389fca78fe0f024d52ad222a2476e27195cb2fab2a7b0b86e2998fa64",
+        "ml/artifacts/verified/isolation_forest/0.1.0/split_membership.csv": "82e620789face04cd0627cc1499389a6eb156a47f20c7c3a2d8c44c29d4f259f",
+        "ml/artifacts/verified/isolation_forest/0.1.0/splits.json": "50b49719b3ff8a161049afb867a568c1c88b1b603cbb82e3e2eb829a3ea14430",
+        "ml/generated/phase4-real-ultron/test-301/features/feature_manifest.json": "8e4963ec72325c3e40288546a9fe67deb060e7f7952b2534abc2ac090e3c450b",
+        "ml/generated/phase4-real-ultron/test-301/features/features.csv": "d4713df4d609e8e86e53ed76d3871a59fcec1552f3133854536fdc20a319ef05",
+        "ml/generated/phase4-real-ultron/test-301/manifest.json": "d8b3ea195c232ba9d5f2de35733818a924ee17d2f3e9b56df05c3ff2c31a1f6e",
+        "ml/generated/phase4-real-ultron/test-301/scenarios.json": "56ba06e506c77d955f8b966bdf3aee90c27644be20d5605dbcb65dd8e155cb61",
+        "ml/generated/phase4-real-ultron/test-301/telemetry.csv": "fd68ca8d91346bb825507fe85d64b900e99460810bbfea149675ac90e0fef0a9",
+        "ml/generated/phase4-real-ultron/test-302/features/feature_manifest.json": "32afc27159a0021b640e1404df4225c35c6e4fdc543776c1f2cb3ce32d4ef5fe",
+        "ml/generated/phase4-real-ultron/test-302/features/features.csv": "883038d98c9e1aa68a0ceb3eccd7fd18798cac6b67f181a3892fe09def9ffa4a",
+        "ml/generated/phase4-real-ultron/test-302/manifest.json": "4360f49f8998b8ab6588746cf0c6cb1e3f4262b596928d411f925dca8f57b89b",
+        "ml/generated/phase4-real-ultron/test-302/scenarios.json": "a2455ed84ee52d0063274913495b3b271e60ef969f6706b9ffb54def9ff0a3b7",
+        "ml/generated/phase4-real-ultron/test-302/telemetry.csv": "99eaf3307513b3de9f159c32fc81cadcbb1c954f21712403fb3a3f2280c5491c",
+        "ml/generated/phase4-real-ultron/train-101/features/feature_manifest.json": "188cbe7eacea1028b1198ddd67de8d6b55e8269e013091fbe2029449dfc98404",
+        "ml/generated/phase4-real-ultron/train-101/features/features.csv": "b1686167a834865833f8722a1e60f049a4a26e64c62283cb90f8179e1539b4fd",
+        "ml/generated/phase4-real-ultron/train-101/manifest.json": "ba9ba6cca16070b38d488bed792d8111119d08011c561669ee902b2f799b0837",
+        "ml/generated/phase4-real-ultron/train-101/scenarios.json": "7a796dc990431bbe26314debe23d99b13ddbfa2c752be27fbc01a469047d16c4",
+        "ml/generated/phase4-real-ultron/train-101/telemetry.csv": "d884b3e7ff9f6f9f68f90279e97728c806a2f0ea853102cff79a9a344d80dbaf",
+        "ml/generated/phase4-real-ultron/train-102/features/feature_manifest.json": "0db7150501326c2a3c398cb153d8b8ddc9f18f35b34d83b3471fc765e8a70db1",
+        "ml/generated/phase4-real-ultron/train-102/features/features.csv": "5d5f6fe989510f7469cdf0eec2b4875efc177b3f891edbd9ad079277e25a25a9",
+        "ml/generated/phase4-real-ultron/train-102/manifest.json": "9386af5c8ad146e5613bfc1e119db69f8db6aa2706d8488e27571ea90dc929be",
+        "ml/generated/phase4-real-ultron/train-102/scenarios.json": "8f71556e94bd86aec40f44b8c99d82e4397b9f11a194d256920d3f93ebfe9d57",
+        "ml/generated/phase4-real-ultron/train-102/telemetry.csv": "00282ba05a7ff7d22247ec7c730eec8b985c8ee3f88e59c375f61a96f9adf264",
+        "ml/generated/phase4-real-ultron/validation-201/features/feature_manifest.json": "cd3ce4e2b16be61f482b35fca877d3eb45eb408891a096a4636a8ccf6b9dae76",
+        "ml/generated/phase4-real-ultron/validation-201/features/features.csv": "ebf5914b9362668f10e9fdccdb284552573e3397e6e5533a751d021ffe341ebf",
+        "ml/generated/phase4-real-ultron/validation-201/manifest.json": "0dbb3bff01eefaa60f844a6a7bb2105aeb3dc75fb11a024e186d0800559354df",
+        "ml/generated/phase4-real-ultron/validation-201/scenarios.json": "2cb7588e6c518e101360e213168687ea895604fb7ab0434e19a611bd9c2419a0",
+        "ml/generated/phase4-real-ultron/validation-201/telemetry.csv": "a98d160de74679ec52703f73d4885461357a675c6c3ff64f8f3a82461704bf4a",
+        "ml/generated/phase4-real-ultron/validation-202/features/feature_manifest.json": "42d51b9b4d39f599cfa28d5068f0f08e6482476b171b17fdefd1d055c981a91d",
+        "ml/generated/phase4-real-ultron/validation-202/features/features.csv": "e585845002770cd45aea9d804ff6af1d92773c085cf4781c5ae8810b327170a6",
+        "ml/generated/phase4-real-ultron/validation-202/manifest.json": "4201191756a108c4a446dbce5b6deee93ec92fbe167580e24380b993efba3c5f",
+        "ml/generated/phase4-real-ultron/validation-202/scenarios.json": "145f73beba959fdd2a67d82b03ee85f8cbc4e012973b6e582471c788d5bf8d85",
+        "ml/generated/phase4-real-ultron/validation-202/telemetry.csv": "f2cf6b9189e04b84d814a07ce9459e672a88ccb87e4ed1c751ebc0bbc6c33ada",
+        "ml/generated/phase4-real-ultron-verified/test-301/features/feature_manifest.json": "ac30d5383460284f0eef5c0c70ec96ef4f53fb0734ed045a5ee0e6607e5f2761",
+        "ml/generated/phase4-real-ultron-verified/test-301/features/features.csv": "d4713df4d609e8e86e53ed76d3871a59fcec1552f3133854536fdc20a319ef05",
+        "ml/generated/phase4-real-ultron-verified/test-301/manifest.json": "d8b3ea195c232ba9d5f2de35733818a924ee17d2f3e9b56df05c3ff2c31a1f6e",
+        "ml/generated/phase4-real-ultron-verified/test-301/scenarios.json": "56ba06e506c77d955f8b966bdf3aee90c27644be20d5605dbcb65dd8e155cb61",
+        "ml/generated/phase4-real-ultron-verified/test-301/telemetry.csv": "fd68ca8d91346bb825507fe85d64b900e99460810bbfea149675ac90e0fef0a9",
+        "ml/generated/phase4-real-ultron-verified/test-302/features/feature_manifest.json": "05be56d6babf17c444a80360c455166b815a1c67b3f743c01573771d8d8edc50",
+        "ml/generated/phase4-real-ultron-verified/test-302/features/features.csv": "883038d98c9e1aa68a0ceb3eccd7fd18798cac6b67f181a3892fe09def9ffa4a",
+        "ml/generated/phase4-real-ultron-verified/test-302/manifest.json": "4360f49f8998b8ab6588746cf0c6cb1e3f4262b596928d411f925dca8f57b89b",
+        "ml/generated/phase4-real-ultron-verified/test-302/scenarios.json": "a2455ed84ee52d0063274913495b3b271e60ef969f6706b9ffb54def9ff0a3b7",
+        "ml/generated/phase4-real-ultron-verified/test-302/telemetry.csv": "99eaf3307513b3de9f159c32fc81cadcbb1c954f21712403fb3a3f2280c5491c",
+        "ml/generated/phase4-real-ultron-verified/train-101/features/feature_manifest.json": "b2d121f389913364c1f4abb70306d30db2ade4ab8b8c666c171caf25214d6aee",
+        "ml/generated/phase4-real-ultron-verified/train-101/features/features.csv": "b1686167a834865833f8722a1e60f049a4a26e64c62283cb90f8179e1539b4fd",
+        "ml/generated/phase4-real-ultron-verified/train-101/manifest.json": "ba9ba6cca16070b38d488bed792d8111119d08011c561669ee902b2f799b0837",
+        "ml/generated/phase4-real-ultron-verified/train-101/scenarios.json": "7a796dc990431bbe26314debe23d99b13ddbfa2c752be27fbc01a469047d16c4",
+        "ml/generated/phase4-real-ultron-verified/train-101/telemetry.csv": "d884b3e7ff9f6f9f68f90279e97728c806a2f0ea853102cff79a9a344d80dbaf",
+        "ml/generated/phase4-real-ultron-verified/train-102/features/feature_manifest.json": "3050120691fea12ec607280104a05af0f97a0d24d95fd817ee61441803fa8ecc",
+        "ml/generated/phase4-real-ultron-verified/train-102/features/features.csv": "5d5f6fe989510f7469cdf0eec2b4875efc177b3f891edbd9ad079277e25a25a9",
+        "ml/generated/phase4-real-ultron-verified/train-102/manifest.json": "9386af5c8ad146e5613bfc1e119db69f8db6aa2706d8488e27571ea90dc929be",
+        "ml/generated/phase4-real-ultron-verified/train-102/scenarios.json": "8f71556e94bd86aec40f44b8c99d82e4397b9f11a194d256920d3f93ebfe9d57",
+        "ml/generated/phase4-real-ultron-verified/train-102/telemetry.csv": "00282ba05a7ff7d22247ec7c730eec8b985c8ee3f88e59c375f61a96f9adf264",
+        "ml/generated/phase4-real-ultron-verified/validation-201/features/feature_manifest.json": "2a2535dbdb495bd7cb6abfbb41836ccb1ec5b6995975e945c6ea5ed9b75d9946",
+        "ml/generated/phase4-real-ultron-verified/validation-201/features/features.csv": "ebf5914b9362668f10e9fdccdb284552573e3397e6e5533a751d021ffe341ebf",
+        "ml/generated/phase4-real-ultron-verified/validation-201/manifest.json": "0dbb3bff01eefaa60f844a6a7bb2105aeb3dc75fb11a024e186d0800559354df",
+        "ml/generated/phase4-real-ultron-verified/validation-201/scenarios.json": "2cb7588e6c518e101360e213168687ea895604fb7ab0434e19a611bd9c2419a0",
+        "ml/generated/phase4-real-ultron-verified/validation-201/telemetry.csv": "a98d160de74679ec52703f73d4885461357a675c6c3ff64f8f3a82461704bf4a",
+        "ml/generated/phase4-real-ultron-verified/validation-202/features/feature_manifest.json": "f9280f5cde2132b7b97a7a9910076dbd2c05918baa9ea3341551f5fe5ec40d73",
+        "ml/generated/phase4-real-ultron-verified/validation-202/features/features.csv": "e585845002770cd45aea9d804ff6af1d92773c085cf4781c5ae8810b327170a6",
+        "ml/generated/phase4-real-ultron-verified/validation-202/manifest.json": "4201191756a108c4a446dbce5b6deee93ec92fbe167580e24380b993efba3c5f",
+        "ml/generated/phase4-real-ultron-verified/validation-202/scenarios.json": "145f73beba959fdd2a67d82b03ee85f8cbc4e012973b6e582471c788d5bf8d85",
+        "ml/generated/phase4-real-ultron-verified/validation-202/telemetry.csv": "f2cf6b9189e04b84d814a07ce9459e672a88ccb87e4ed1c751ebc0bbc6c33ada"
+      }
+    },
+    "phase45a": {
+      "files_verified": 102,
+      "manifest_sha256": "c96833798feafb07adf957e58571f416f9d274b3685bf60f43c1b90c32d7b7b6",
+      "hashes": {
+        "ml/generated/phase45/locked-v1/locked_inputs.json": "809b47da0167abf9be21bb4159d782335a701ebe9031a1eff64c3bed27014e9a",
+        "ml/generated/phase45/locked-v1/holdout-4521/events.json": "f8ea661277cc49747ff14ab12b3e2ca37585e29f170a87ca080e79f60e6514f7",
+        "ml/generated/phase45/locked-v1/holdout-4521/manifest.json": "38f03107bdc67f7c3afcefeaa007bae1bf35a538f06025a4f4d19ba4a725f561",
+        "ml/generated/phase45/locked-v1/holdout-4521/scenarios.json": "262e134beac9516509e3a18816ebe0cf4f240e541d68de5610947d28d5c591f8",
+        "ml/generated/phase45/locked-v1/holdout-4521/telemetry.csv": "f3e6c384a1ff4f49c12dfb1b8a77be9a957ef7e6c78ffd6a2d5ba3ed899ff92f",
+        "ml/generated/phase45/locked-v1/holdout-4522/events.json": "74fc6412e14c47aac7840d012f6630a91a2aa59322aa27b9a1dd8117b5d9a9e1",
+        "ml/generated/phase45/locked-v1/holdout-4522/manifest.json": "e96bed445aeee2248c47cc87bcd3c91fad9949cc634e34ff53b6a83c03b19c58",
+        "ml/generated/phase45/locked-v1/holdout-4522/scenarios.json": "c36ce3942ccf37cca4b48c324cd97c885c16fec3d42bf707e6b04980a44a7ac2",
+        "ml/generated/phase45/locked-v1/holdout-4522/telemetry.csv": "f98538d59cffa82436218942001188aab8f6eaa0026ed6340ea98d1373cfc4eb",
+        "ml/generated/phase45/locked-v1/holdout-4523/events.json": "45225226034ea45ba4e72b9d5c25bf602bb2cc50eeeb2114bddf6418ef6bb11a",
+        "ml/generated/phase45/locked-v1/holdout-4523/manifest.json": "968faf12d3af28f82f63ce8698609b46fbf2d6d2af1f9a913c65666551e5369b",
+        "ml/generated/phase45/locked-v1/holdout-4523/scenarios.json": "ac1336a2716a8dbf00a41fec0896df0b0d1352d2ad2a4e9b92939bc11085c070",
+        "ml/generated/phase45/locked-v1/holdout-4523/telemetry.csv": "663834ddf25605fca7772e0058f0207f1fc35f1ccd5b1a99239ed54eae1b1b4a",
+        "ml/generated/phase45/locked-v1/holdout-4524/events.json": "22cc02ad596f7e8089947719bd57c90662ec27ddbcfd82f01bdfd538458af136",
+        "ml/generated/phase45/locked-v1/holdout-4524/manifest.json": "47298710de961a7f21d17a4e1ade4afb8ae4c5f4455fe0d6bfd25fbd0015eab0",
+        "ml/generated/phase45/locked-v1/holdout-4524/scenarios.json": "8361e5109b2c70b878c52c3c06b9a56ddbf2aa86846f7c1836d9cb00fb754bf0",
+        "ml/generated/phase45/locked-v1/holdout-4524/telemetry.csv": "a1d1e1a1ce5bdc08e7d0c5f3850010170302b307e8cd994c2ab7069905801c6c",
+        "ml/generated/phase45/locked-v1/holdout-4525/events.json": "d79b23d3cd289d836ce82c10415059b1d61931b038f3759efede77b4cf1fb261",
+        "ml/generated/phase45/locked-v1/holdout-4525/manifest.json": "7105f489877207bcfc8c56d0cbbefa50bc94ff6f584564adce501a844c33cdf1",
+        "ml/generated/phase45/locked-v1/holdout-4525/scenarios.json": "38df7c9f98000d271d0232f1acae8072952ad4aadef04f92bebbe262ed16157b",
+        "ml/generated/phase45/locked-v1/holdout-4525/telemetry.csv": "2e5609688e8f48d6244d2673be14587ebe5d4a320c2552e6197363f69bb9decc",
+        "ml/generated/phase45/locked-v1/holdout-4526/events.json": "489b21b3ad59f0d853536bccdb7c3a371a78fab203fd76c9abb77fead9ae5506",
+        "ml/generated/phase45/locked-v1/holdout-4526/manifest.json": "1d3f913e38106f84e379b92069276b603d2d5a8b763370da30ad820378beb002",
+        "ml/generated/phase45/locked-v1/holdout-4526/scenarios.json": "a687ac983ef028c409b95fb30676d1d4c066495f81bd74b9ccd999e3923769f7",
+        "ml/generated/phase45/locked-v1/holdout-4526/telemetry.csv": "47871cccdc57f8ed12609254331f1e02eb02efdf2332e55e4ca5f3a905405c77",
+        "ml/generated/phase45/locked-v1/train-4501/events.json": "30fb2804a198ec27fa664034c095c2ce70cc4a3a390104f905713472235fbe1a",
+        "ml/generated/phase45/locked-v1/train-4501/manifest.json": "c433d804b5bea2d7a836f186085cdd2bc9590896155f8d802ff71d13dadfbe47",
+        "ml/generated/phase45/locked-v1/train-4501/scenarios.json": "4aadcb3b980d21597235b7c78f4337614f4c964050e71d3b5542677262f2f2af",
+        "ml/generated/phase45/locked-v1/train-4501/telemetry.csv": "3b09c95770627e08348406f05ffb892aba9db2a2e90684aacb38fdfffb2469d1",
+        "ml/generated/phase45/locked-v1/train-4502/events.json": "4bb45a25da921c78e0d96663c430668324737cfa26d268517df9d1a698a96e97",
+        "ml/generated/phase45/locked-v1/train-4502/manifest.json": "4854976fd229ae8d14e4a7bc4729730f1ae3a0f52adf2bc8dc90d3e5889761ef",
+        "ml/generated/phase45/locked-v1/train-4502/scenarios.json": "474902abc6a3382d4c659682235d5e74df43af7eb05aa320801ba0336c444554",
+        "ml/generated/phase45/locked-v1/train-4502/telemetry.csv": "4a395947a0bcaa082ccaddf0dfa206ba88759a12e52cc83975c5255bd879da3e",
+        "ml/generated/phase45/locked-v1/train-4503/events.json": "9ab291017e0e8792f257aa6ebda8900919b73d10e5372720bfd3efb1de8bd3a4",
+        "ml/generated/phase45/locked-v1/train-4503/manifest.json": "10f8327e0e5ebe4d0473eab3e4390d2055370da54a6f8400523e8ccd195a8884",
+        "ml/generated/phase45/locked-v1/train-4503/scenarios.json": "877226d99de4200c47cb0792e5bd1c379c71cee08f75cfa19bb76a3386326642",
+        "ml/generated/phase45/locked-v1/train-4503/telemetry.csv": "a332c34f95b7ecb8f466583a9faae56a6a5ce6c87205bf1cda59438614db45c6",
+        "ml/generated/phase45/locked-v1/train-4504/events.json": "7bd3048781b57b18a16dbc1da0d8a28cac298b901518425d234cdb9946dc1438",
+        "ml/generated/phase45/locked-v1/train-4504/manifest.json": "39fb84e32c5a101794fa36d74b10959e0a6f762e2327194632544902e833fbc2",
+        "ml/generated/phase45/locked-v1/train-4504/scenarios.json": "7f142207a87d2e10e157fcaf62a81449d9110a799181bd90ecf83a5f908dbda1",
+        "ml/generated/phase45/locked-v1/train-4504/telemetry.csv": "4f6ddbe883f42ea62f7eb7755b4a73ca55f7a5f9ab4d1a5b8296abf4c920a99b",
+        "ml/generated/phase45/locked-v1/validation-4511/events.json": "d2003832f469d02debdd5e00179f3d7d97f8d0a7ecca2a1b52b780770b4df11e",
+        "ml/generated/phase45/locked-v1/validation-4511/manifest.json": "2992ef19e24e040b0256cd549100c48bb8b7b3443253f1475ef12a9c7b2e4930",
+        "ml/generated/phase45/locked-v1/validation-4511/scenarios.json": "312a1c85e2d155af68326a3416f2ca5c463aa96774e7deb20b545df41856fb52",
+        "ml/generated/phase45/locked-v1/validation-4511/telemetry.csv": "7e825bbfc0ca2d68507a5856740c174d4461f53db1ffbca0b3a25eca3eae83fb",
+        "ml/generated/phase45/locked-v1/validation-4512/events.json": "3c34a85d1c948b02f7771fab02c547d2df1bea9d722d9b9f9a8373e9c330f6da",
+        "ml/generated/phase45/locked-v1/validation-4512/manifest.json": "2ba4ba6862e2fd0fbe86983d8347f9fd0248a3c6d3f3c80fff4337b13a4f4574",
+        "ml/generated/phase45/locked-v1/validation-4512/scenarios.json": "21b9f572b8cdb6e4a2b78e91c8e631050f424d432e75ea58023c708c67ceb809",
+        "ml/generated/phase45/locked-v1/validation-4512/telemetry.csv": "06178f3a5b8d6713cd43df17c3e8ffe47d3c9171e838a90fe6a7ba9d910e29e8",
+        "ml/generated/phase45/locked-v1/validation-4513/events.json": "c27ba644911e0e87b781652aeca5d59848fde20ef2652c9e6c7cd965668c3d85",
+        "ml/generated/phase45/locked-v1/validation-4513/manifest.json": "cd38692467231fcb33c00148689004456e83b68d13a9e4e8a9bcae9c5c8a3263",
+        "ml/generated/phase45/locked-v1/validation-4513/scenarios.json": "3834aadd09c4175efc73cdc70e652b5669eeb5f3866aa33d6103867a937feddf",
+        "ml/generated/phase45/locked-v1/validation-4513/telemetry.csv": "a5fa939d3e311770f19102bf8738c2cd95e5529ab55397245cf5c2f6414b875d",
+        "ml/generated/phase45/locked-v1/validation-4514/events.json": "a58858d63e722393c30ad4cd3b68bb0134b703b00a4747ba6c6b651530a80961",
+        "ml/generated/phase45/locked-v1/validation-4514/manifest.json": "6fbeed5b76a9a1c7181d7cd2aba0dac56eef02de13d394baa1a9a136e11f61d7",
+        "ml/generated/phase45/locked-v1/validation-4514/scenarios.json": "79330422d754bedd842a1afe078d8bf22c872406a7d132e6e9306ccb575707c7",
+        "ml/generated/phase45/locked-v1/validation-4514/telemetry.csv": "e53b6089659fabc408bdd72efd14b7a3180b6c42fe4567a08431f314617d6d6f",
+        "ml/generated/phase45/locked-v1/validation-4515/events.json": "bdb84519788c80022bf2f1eb84f0afff0b8dec3aea1d695814fe7b46ea9bf62a",
+        "ml/generated/phase45/locked-v1/validation-4515/manifest.json": "94d3047f9367bcf76e875f5700e11bd7c21b8337c35c9bf9bafc60e738f256bf",
+        "ml/generated/phase45/locked-v1/validation-4515/scenarios.json": "faf5aa372f2ae17be054d852d6653ec4cfbe579ec84bc5824968a25c6d3b191d",
+        "ml/generated/phase45/locked-v1/validation-4515/telemetry.csv": "510f9ed104c4f1df2309cc8a6d3a7e51249b97525b2c4494b9c837b1434bdfc8",
+        "ml/generated/phase45/locked-v1/validation-4516/events.json": "357896df3ab70b2a963a61eea10cef7134300c313caf86c8f96da05b1b3985d9",
+        "ml/generated/phase45/locked-v1/validation-4516/manifest.json": "2838f97e5064971d2671541df562eebf9e8b0051b1ceb96d9aab24bf70581423",
+        "ml/generated/phase45/locked-v1/validation-4516/scenarios.json": "68fd0470fdc91b4035b968808e1ea94ec5820077cfe195260fc0067009307cff",
+        "ml/generated/phase45/locked-v1/validation-4516/telemetry.csv": "ffea30a3128498697218ac2717e11939d3760874bdb2173b8fcf070bacd26aa8",
+        "ml/artifacts/phase45/hybrid-v1/alert_budget_comparison.csv": "660df3bad5c45fc41639198d6b5b54bb9dbe73a50c2019105f64a2dd70bdf542",
+        "ml/artifacts/phase45/hybrid-v1/detector_comparison.csv": "09efc364b2aed2f1b3f6752e913754a22f0b2694fc2d26e2971f3ad4f9e9cd91",
+        "ml/artifacts/phase45/hybrid-v1/development_candidates.csv": "44b5b5a6662fff748597201bb962d94a13eb451a40a986d994911b14fd4c04d7",
+        "ml/artifacts/phase45/hybrid-v1/episode_evaluation.csv": "26ae4218abc04a31c13c36a782bb6e65aff7b238eea3c7f73af0ac48fc0b9e81",
+        "ml/artifacts/phase45/hybrid-v1/evaluation.json": "beb3cbed8e5b6fea4b99126329430db9dc518b37473a290e21803e065737f727",
+        "ml/artifacts/phase45/hybrid-v1/event_definitions.json": "8513614f6260dd1289c017d67f7dd78533ddffd395b7f58514d0fa05e5ab82b7",
+        "ml/artifacts/phase45/hybrid-v1/event_evaluation.csv": "ee4bbbf14e3422be0b317a0ab592c90a40ecf8e4c88527e18fcfa2e0f18042e8",
+        "ml/artifacts/phase45/hybrid-v1/frozen_selection.json": "648131ba6ff6fd68ccbef94e07341846295c1eb6b0e820d28c81635371e4fa6e",
+        "ml/artifacts/phase45/hybrid-v1/hybrid_config.yaml": "877cbe583f463bb5259d536914ad054fd6c22decc48572dd784a9537789737f8",
+        "ml/artifacts/phase45/hybrid-v1/locked_holdout_manifest.json": "a7ab79a67404a564042f39a0bb93eaefbf264e24ce69ecf7c2130a951f9543db",
+        "ml/artifacts/phase45/hybrid-v1/per_run_evaluation.csv": "a6ab46cccfff646721478809423aa35949e06b78f280744d850e7bf83ab0b340",
+        "ml/artifacts/phase45/hybrid-v1/reproducibility_manifest.json": "2c0ba40f7c562111c20378730436ab98bec7d5d8fe95f621eadd1b4a3bb12458",
+        "ml/artifacts/phase45/hybrid-v1/subsystem_evaluation.csv": "0ce9ad3dfb21e801813cf560f218754a28791e310a81cdf8d24160535ac65aac",
+        "ml/artifacts/phase45/hybrid-v1/workload_sessions.csv": "60a76aba54b5019b576f4443a7a444cc622c9ffc483684e57f623aaabcf36515",
+        "ml/artifacts/phase45/hybrid-verified-v1/alert_budget_comparison.csv": "660df3bad5c45fc41639198d6b5b54bb9dbe73a50c2019105f64a2dd70bdf542",
+        "ml/artifacts/phase45/hybrid-verified-v1/detector_comparison.csv": "2d3be7315598c706c57d9aa247d3b79e5ee5df1380ac88ea028a5ed765049c60",
+        "ml/artifacts/phase45/hybrid-verified-v1/development_candidates.csv": "d7c8bdf30a811bc1acc2cf15488d87cc8afd7dbcd0e4e1b93d23a89a8890c24f",
+        "ml/artifacts/phase45/hybrid-verified-v1/episode_evaluation.csv": "2f1b2383139f77810a2ecbf0075c733b803af429881442e091c1e4492f5e6aca",
+        "ml/artifacts/phase45/hybrid-verified-v1/evaluation.json": "13024e51a73d4ae2831d98465ed3fbe6d2139bdc07d1f93374421b25fa62c30c",
+        "ml/artifacts/phase45/hybrid-verified-v1/event_definitions.json": "aaaa8541f97ac493d4f511a38c79bdd77f54da65447b03dd9f7e2191ab4a3502",
+        "ml/artifacts/phase45/hybrid-verified-v1/event_evaluation.csv": "293bbbbf4b967ec1d936f6e8b1032f6914327c5066d0ae93e6aa3747e26d5612",
+        "ml/artifacts/phase45/hybrid-verified-v1/frozen_selection.json": "648131ba6ff6fd68ccbef94e07341846295c1eb6b0e820d28c81635371e4fa6e",
+        "ml/artifacts/phase45/hybrid-verified-v1/hybrid_config.yaml": "877cbe583f463bb5259d536914ad054fd6c22decc48572dd784a9537789737f8",
+        "ml/artifacts/phase45/hybrid-verified-v1/locked_holdout_manifest.json": "a7ab79a67404a564042f39a0bb93eaefbf264e24ce69ecf7c2130a951f9543db",
+        "ml/artifacts/phase45/hybrid-verified-v1/per_run_evaluation.csv": "f3bdc82e980dcfc53826299bf2ca862c01fb10d3acf1eef761aa07faa6f9c497",
+        "ml/artifacts/phase45/hybrid-verified-v1/reproducibility_manifest.json": "74b746fe6fb63e4ef8d9ce9e896ea8f4071ecdc6ea99ba4507b1af30e8acf750",
+        "ml/artifacts/phase45/hybrid-verified-v1/subsystem_evaluation.csv": "92d09756b8b4708dba663b4fa8a9b03d1ac27fd4acd9c75d38d11d8211b6b486",
+        "ml/artifacts/phase45/hybrid-verified-v1/workload_sessions.csv": "60a76aba54b5019b576f4443a7a444cc622c9ffc483684e57f623aaabcf36515",
+        "ml/src/ultron_health_ml/hybrid/__init__.py": "ac62e0a2d91c481a85fb210bf52ee7db693014a3d3a8c7338cca080e785677b8",
+        "ml/src/ultron_health_ml/hybrid/config.py": "897e107d3be7953a2aacc57a832eca3da0aecba81c604af31053c1c9ed820215",
+        "ml/src/ultron_health_ml/hybrid/datasets.py": "c1b041b705a6ab6655c7655f7ee519301c084c161e74f276c8b20e5ea6fbb978",
+        "ml/src/ultron_health_ml/hybrid/detector.py": "899408bbb75f8324ddd12a7f432348df727c736f47afa328a4415188bd91408a",
+        "ml/src/ultron_health_ml/hybrid/evaluation.py": "5d6bf63a5adb5cde9238eb630f26523d1a963fb5017ec28ac6206f30e6d93015",
+        "ml/src/ultron_health_ml/hybrid/replay.py": "86b6abab783b34861c8d54edd06bb810f27670451d16f83039b50fbf1e0badc7",
+        "ml/src/ultron_health_ml/hybrid/signals.py": "a216337b2542c963686408c1519dd9dd2204fd58f84458653803e8a4898bf461",
+        "ml/configs/hybrid_detection.yaml": "bfb3236bccfbba5736f531bd435fcdb55779f5939b3ce76fe940a3cf95f08215",
+        "docs/PHASE-4-5-HYBRID-DETECTION.md": "dfd20729bdc9940dcdfe54a1fb7a1766042694865da19c1d95835cc8acfc5f1f"
+      }
+    },
+    "phase45b": {
+      "files_verified": 109,
+      "manifest_sha256": "95d1aaabdb1c13dcb92fe6e7608dc92f914a5138464dd14621f7e48e0915f618",
+      "hashes": {
+        "ml/generated/phase45b/locked-v1/holdout-6301/events.json": "42eca419ae0ac8828255bde45b9d8bc517a8fe10459a30193fb94a363fb4b499",
+        "ml/generated/phase45b/locked-v1/holdout-6301/manifest.json": "f2c6da584f1b3f0196f01be93f8ece755df5f0c09410f50c8962c7e0d21b807f",
+        "ml/generated/phase45b/locked-v1/holdout-6301/scenarios.json": "b8c214d3d12ca1c2aa36c1f6b1e20789070bd2119b6863ebf9120cf1ac7e2c64",
+        "ml/generated/phase45b/locked-v1/holdout-6301/telemetry.csv": "a726a0a8f6b49f5a011c975680ca7e4e1af7e6e3ce87eabcd2e174664f6351e7",
+        "ml/generated/phase45b/locked-v1/holdout-6302/events.json": "168ffb46b6d292a2fd39c477eb4a8685c8705a82166ee066b5caf83c843df16b",
+        "ml/generated/phase45b/locked-v1/holdout-6302/manifest.json": "0760f1304aa6fefb44abe14e49ba07616c546b743fba716e4d5c1459e661f5fe",
+        "ml/generated/phase45b/locked-v1/holdout-6302/scenarios.json": "bc6a06bdebe52e71db62b839d7838af10bac2655cb629c489142959d2d90f500",
+        "ml/generated/phase45b/locked-v1/holdout-6302/telemetry.csv": "5782405d1e86f5baee3d28a2c7a0d5e388ae159f89cd9b46a78d8c34c69b8b46",
+        "ml/generated/phase45b/locked-v1/holdout-6303/events.json": "5bfb341824d3e6378fbea6a90c8a0fe148f4d73a3400e5c8d2e4a387a9a1990a",
+        "ml/generated/phase45b/locked-v1/holdout-6303/manifest.json": "1c3686148e761abf688f873790e70f39b88824c50489ac45787a7ce278d57d05",
+        "ml/generated/phase45b/locked-v1/holdout-6303/scenarios.json": "c0e4a4473e751ac8fcc372e0f1379a8d1e105d51a174bcd74be0d9bf476e6a1a",
+        "ml/generated/phase45b/locked-v1/holdout-6303/telemetry.csv": "ff763bc7d145a88df9a32e29a244502f38bb6fd090ec4802140e130b17265413",
+        "ml/generated/phase45b/locked-v1/holdout-6304/events.json": "b2a9399a7ec2fa2d38e333e84b1579fe92f4b277c95799df87bb5f45c4d51082",
+        "ml/generated/phase45b/locked-v1/holdout-6304/manifest.json": "a008cefb2500d1e9a07c39fa8d6cc72f74e1c019baf6dde450b14398b8d292e5",
+        "ml/generated/phase45b/locked-v1/holdout-6304/scenarios.json": "3f5817029f3e31e8042ec00c5129eb5695511094d3de064481cec98c3bdf395c",
+        "ml/generated/phase45b/locked-v1/holdout-6304/telemetry.csv": "77acb0221c0e16a960a924af33368e789d032ee536006ebd32bc1de72783614a",
+        "ml/generated/phase45b/locked-v1/holdout-6305/events.json": "f3b4ca97b35f578c4a4cbd8e9aea337f19256485486dad5759147d2e08ee6b6f",
+        "ml/generated/phase45b/locked-v1/holdout-6305/manifest.json": "243902444b97dc7e426a6b0e017db5114564b3941e38bbd92bc5ac6ccb02bbbd",
+        "ml/generated/phase45b/locked-v1/holdout-6305/scenarios.json": "cc21c237ed79b49414387f3b9f953c12b16478c80d9860eef036a11d324cbf66",
+        "ml/generated/phase45b/locked-v1/holdout-6305/telemetry.csv": "4be4507fe503c86cde61c485df809d715868aedf28970d9e1a179a240a16ca99",
+        "ml/generated/phase45b/locked-v1/holdout-6306/events.json": "25e2d20c89465945fab7564cf8504d9a13338d8ce6f4182c874e0ee37cb0b6fe",
+        "ml/generated/phase45b/locked-v1/holdout-6306/manifest.json": "799b3b8677e99e43812d7d4b1564b6d414a9c2c1b411a9a543fac83fdcbeb3e5",
+        "ml/generated/phase45b/locked-v1/holdout-6306/scenarios.json": "740f1fd0f42d79f0088c570a3fee1aa6139522e065ecda0257a3cdf1958b18c5",
+        "ml/generated/phase45b/locked-v1/holdout-6306/telemetry.csv": "7ba7d9a3caa7dd8c6f769eaa9f3af8e2fb1fa33d728ea1919e0eff1d1b17f498",
+        "ml/generated/phase45b/locked-v1/holdout-6307/events.json": "5c7a80b889c182d11a4d1e753c78f77a77e21e6249e08e76903a7fcfaa46d110",
+        "ml/generated/phase45b/locked-v1/holdout-6307/manifest.json": "8d402aee5b50512800d9107e1b04a16cdacbb0fc05f6e84b3c7bf73d151e1873",
+        "ml/generated/phase45b/locked-v1/holdout-6307/scenarios.json": "fed5ac0f40de5f45a2fd41995c1284ca528f5a2f1449ac5900ae03343b5dc527",
+        "ml/generated/phase45b/locked-v1/holdout-6307/telemetry.csv": "6dda59c7ef201bf2eaabb2789d99ea1f62acc6bb55dd6952a2e0e2f14a7718af",
+        "ml/generated/phase45b/locked-v1/holdout-6308/events.json": "b95fa45b78eefc555095fc6847390962c2275305ab31cabcfe53b3117bc744ef",
+        "ml/generated/phase45b/locked-v1/holdout-6308/manifest.json": "ca846cf2ad21e21f36309e4ad3a25354587b8c4387b824613d56a221dc956815",
+        "ml/generated/phase45b/locked-v1/holdout-6308/scenarios.json": "98103068ec5580d648b203231b4b1dbbc9944c5d7587e88362749ca441064b93",
+        "ml/generated/phase45b/locked-v1/holdout-6308/telemetry.csv": "c8339f0811349fcda152f356a483fcb860ff920a9b9112d31fb4f8a1463b82e6",
+        "ml/generated/phase45b/locked-v1/holdout-6309/events.json": "36492f7fabd9ec94741b2483e15e21b5f9447ba2ff9f3150c1baf9db3ddb08d3",
+        "ml/generated/phase45b/locked-v1/holdout-6309/manifest.json": "845ed473d2ef030de7ef555feb786ee2bbd0b63c5fc26abf9b99518440c82513",
+        "ml/generated/phase45b/locked-v1/holdout-6309/scenarios.json": "a69a4f9a00c4c2a239c7e752614a047e2a2639b00e357c1560c6d49b34ea6d0e",
+        "ml/generated/phase45b/locked-v1/holdout-6309/telemetry.csv": "30c63924bdc273f16f678fb463a6015837032d7a8c112f6a718acdf63686f06c",
+        "ml/generated/phase45b/locked-v1/locked_inputs.json": "1620b13f2f5927e12b43ba2a3f314949aabee706d64c2e2ad221c11578d04d62",
+        "ml/generated/phase45b/locked-v1/train-6101/events.json": "4caa03bd9b3e2c2396ca73817affc79c1fee87b70b884c21249e8d8e3a08e08d",
+        "ml/generated/phase45b/locked-v1/train-6101/manifest.json": "20a2a3a629f28b54142a3fe1410fedb354f142b49ebca4ccf47e2bc038fd3d5f",
+        "ml/generated/phase45b/locked-v1/train-6101/scenarios.json": "e39b95d0ad15309044a7434754e3d0862208f15e919cee2331775c17a2f55bd4",
+        "ml/generated/phase45b/locked-v1/train-6101/telemetry.csv": "88b060babd06aceae69221363d22452b4b6b76adddb1d62dcaff5f6c93364d6f",
+        "ml/generated/phase45b/locked-v1/train-6102/events.json": "908cedc23a3f885a4f4de4298cea092a59ef759692cda353dad3031482721d6c",
+        "ml/generated/phase45b/locked-v1/train-6102/manifest.json": "aeeacc7636bfa148f70565f7188392735859a5420764eaa2dc872f486a1ab353",
+        "ml/generated/phase45b/locked-v1/train-6102/scenarios.json": "e2cbf9e28016d36302594048d746d764800eaae57c32e8b786fbfed8c2c23c80",
+        "ml/generated/phase45b/locked-v1/train-6102/telemetry.csv": "625e45c827dd1e9b43939152806f94777d774ead8c50097571fe63668fc6f2cd",
+        "ml/generated/phase45b/locked-v1/train-6103/events.json": "3fab599511cf208b15eb459103350b2c7ce3e6e918993f37430cfb9a482ca51c",
+        "ml/generated/phase45b/locked-v1/train-6103/manifest.json": "520ba8aa45a8df84a3a66954bef462597c8364de325903ac2aacee8f444c770a",
+        "ml/generated/phase45b/locked-v1/train-6103/scenarios.json": "3cfe33dcb797454f4e3361cafe90cc36923b8612a92c60322194e5a1b1ac05a1",
+        "ml/generated/phase45b/locked-v1/train-6103/telemetry.csv": "45247a21f1e4626d1f57ede2bb48546f9f226fc40b2eff54e84fdc4d6f29afe7",
+        "ml/generated/phase45b/locked-v1/train-6104/events.json": "ee1e83de238429821790586e17c3fa6f6c0410f9e96ed9d6e53e3207306ccc1f",
+        "ml/generated/phase45b/locked-v1/train-6104/manifest.json": "13057d416304c2267e054a125184a50a8e9e6bfee788714dfb19878ff85ad723",
+        "ml/generated/phase45b/locked-v1/train-6104/scenarios.json": "a076a2ea9fa19d068075ef50c1686ed4a5c0e80f29de23f941e1c869e4a04ea7",
+        "ml/generated/phase45b/locked-v1/train-6104/telemetry.csv": "5488cda3ccd690a80ef4ff9458d40c826118d74e330eef6a5f35481efd89c8cb",
+        "ml/generated/phase45b/locked-v1/train-6105/events.json": "fab398df1b0d08a8c8c6fb500df20a88fdb138da07f7c5062f3310085b0491fb",
+        "ml/generated/phase45b/locked-v1/train-6105/manifest.json": "546e7ab9921521b1b1619a002efb22ff3b9d312c83aaac7282e2a90361ac09b7",
+        "ml/generated/phase45b/locked-v1/train-6105/scenarios.json": "55451653d573b49e7d6afd2c099d6010e1c68a42e14269e394053a4252fcecbe",
+        "ml/generated/phase45b/locked-v1/train-6105/telemetry.csv": "73015cb8dd425fe78d45cb4280e96fae988c26474940cfc24eb108b9085a5c63",
+        "ml/generated/phase45b/locked-v1/train-6106/events.json": "4af74138f04c6ad20c6d9302eb2fffc8895b443d814eb5781eaa6803c8a8f2df",
+        "ml/generated/phase45b/locked-v1/train-6106/manifest.json": "db86f7b9e9b8bb9db99b3da4d26cd12649b1f4b6750216875b9f90b29f55bd0e",
+        "ml/generated/phase45b/locked-v1/train-6106/scenarios.json": "27de2ced9aca1b76960162cad0eea746add88e1f3acf4d4836dafd5069255c25",
+        "ml/generated/phase45b/locked-v1/train-6106/telemetry.csv": "9ed273cecba1fa54ebfb70301c26319513a2af93ab0a77ab8dd6931533ba12f3",
+        "ml/generated/phase45b/locked-v1/validation-6201/events.json": "abc434cd9ad0269584b1c59f99ce44f78eb96c4d3b20dd9f82145661a5169484",
+        "ml/generated/phase45b/locked-v1/validation-6201/manifest.json": "5f0e45da9c25ecc6c40fe5b6666eae0a175d1b67ce6aa4ef79081841240dd868",
+        "ml/generated/phase45b/locked-v1/validation-6201/scenarios.json": "74818d44cffdee886281c1b7b2f4f6bbac188a123c04e9cac88ce3dead4ba473",
+        "ml/generated/phase45b/locked-v1/validation-6201/telemetry.csv": "e5942f3eae51f1f167fbd8d31d589958127ad97ad16f5f365cbf1630423de228",
+        "ml/generated/phase45b/locked-v1/validation-6202/events.json": "e1e9ae885f2e8ad9b2d15ac7a7a661f0afbae6bdedc15bc89e84ec76ee0cc371",
+        "ml/generated/phase45b/locked-v1/validation-6202/manifest.json": "9ff01b40850a1a541eb98be4238ba07d973444e35f1b0a7691c5a56bfecb4aa6",
+        "ml/generated/phase45b/locked-v1/validation-6202/scenarios.json": "37c74894e6d64d680521a33336a7ade08737edd333066cd54f6d11a8e381652f",
+        "ml/generated/phase45b/locked-v1/validation-6202/telemetry.csv": "bce14cd01d9aadbfb96f18cdb713def90ee203fbf52db21cc13c9c8c13fa3da9",
+        "ml/generated/phase45b/locked-v1/validation-6203/events.json": "3f8e9571c270709eae93bdb7b366330951c2abb1f8c35d2a3c58a0e73dfe44b9",
+        "ml/generated/phase45b/locked-v1/validation-6203/manifest.json": "15e3271e11bf1a4d903df821947771359d6a5ffe8d85f306555e6c343c8de1ef",
+        "ml/generated/phase45b/locked-v1/validation-6203/scenarios.json": "630b88210f6f4820cbb6d8bd5b6f22469a7ac6aa810f7507fffe2b4ed30c1064",
+        "ml/generated/phase45b/locked-v1/validation-6203/telemetry.csv": "34c9f7bd17993b2b7b13b1e40ad5acc47ea326d2e47f0ea612d7051befce4f02",
+        "ml/generated/phase45b/locked-v1/validation-6204/events.json": "fdd778e450a33cb535af8b4df6aee0fbd318151e0ea2adca17e72b1de7ddc805",
+        "ml/generated/phase45b/locked-v1/validation-6204/manifest.json": "af68bf60cf45343fe3c99103240a6ebae555e31e7e3e084f10b8f8e3cc3e8031",
+        "ml/generated/phase45b/locked-v1/validation-6204/scenarios.json": "156655767745622d4f81692d6fa4c53fcabbe9f0e1dcbd3125025404c791fbe9",
+        "ml/generated/phase45b/locked-v1/validation-6204/telemetry.csv": "a29012e9eba29f13ea5c536520ae6d068f7df792312e03c11be6423e9c166411",
+        "ml/generated/phase45b/locked-v1/validation-6205/events.json": "fe673296f964b0d993e485140cd2ce3ef81f287ae1f6bfdd89060c718d8563a4",
+        "ml/generated/phase45b/locked-v1/validation-6205/manifest.json": "5da12a08fdc8cc93a0ae895122000968d4c877a89b783015c4aca0f36a33bacf",
+        "ml/generated/phase45b/locked-v1/validation-6205/scenarios.json": "af4cba1d4db8d578ddf959581143454679f4c76c4049e687cca927d24376e2c3",
+        "ml/generated/phase45b/locked-v1/validation-6205/telemetry.csv": "5d1d7b90b2c8ef64c5c853303fd221ed1d8648df739d99a6e53a857475d45b5b",
+        "ml/generated/phase45b/locked-v1/validation-6206/events.json": "dc1a8603f0a420ac6f341cb3feb16e67d8ebe0b8d0e7abea64ec19ef34958687",
+        "ml/generated/phase45b/locked-v1/validation-6206/manifest.json": "d68b33debf21612448247e1f891091af18d23189223e3e9d08d87febddf15b33",
+        "ml/generated/phase45b/locked-v1/validation-6206/scenarios.json": "cc6f590a4965c0306d5002793ac6d939f05096f6e746fcf86664cf73f6b2af74",
+        "ml/generated/phase45b/locked-v1/validation-6206/telemetry.csv": "505a909471a26872735cb4dd884b81ddb2fd1e8626846ecab6f584bb3aa8a5ed",
+        "ml/artifacts/phase45b/verified-v1/acceptance_gates.json": "db568861ae413c35ed07f8075289bb377e5932bd90be1f4014efbf2de6f051ef",
+        "ml/artifacts/phase45b/verified-v1/candidate_ablation.csv": "04689a65a81c2ba731e846c9162d9bfc05c54a9ba2dfd6e4619b4fa0abbe2435",
+        "ml/artifacts/phase45b/verified-v1/episode_evaluation.csv": "f538108c922994fdce7874cea034b469896bc69f4393da67a79526e94caecdc3",
+        "ml/artifacts/phase45b/verified-v1/event_evaluation.csv": "ed2d9a68acbb07918e56cc4beb877caa3a261c7399abab0fa120ab8c542de88b",
+        "ml/artifacts/phase45b/verified-v1/frozen_selection.json": "959af3ea2577b645fba9e0014b43646e003bf3167e27e099e1af75f731f769bc",
+        "ml/artifacts/phase45b/verified-v1/locked_holdout_manifest.json": "2c314952780253e98718594cef90efaf029994a9599175401eebe37f576dcfb2",
+        "ml/artifacts/phase45b/verified-v1/observe_episodes.csv": "133ca159f4caff2a9edf7df7be9145ffe842c2ad684dfc51aa617ea915885b25",
+        "ml/artifacts/phase45b/verified-v1/phase45b_config.yaml": "2f27f69d024359147611ea216497e166faf8338d0348a7a3b6cf961bb1a24835",
+        "ml/artifacts/phase45b/verified-v1/reproducibility_manifest.json": "1140ed4814ac83cc7f9fcf2655a87d5e1cd4762bf507c118d2ba297cd69c939b",
+        "ml/artifacts/phase45b/verified-v1/selection_objective.json": "315eae7e0e8ca7ffbc6c01c768b1bf6199c7dd04490e38d9d54daf3ab0ada231",
+        "ml/artifacts/phase45b/verified-v1/severity_evaluation.csv": "f35c6408f219afcac4758d6b2e412a2f5429be57794ea1cbf2087c95f3cc9fc8",
+        "ml/artifacts/phase45b/verified-v1/signal_ablation.csv": "9f43b544071fc8b36fce049aa042a3365d074f73f2ed046bea1ef398ffac2e02",
+        "ml/artifacts/phase45b/verified-v1/subsystem_ablation.csv": "a63ba27b90d0fe0de4a85a72c9d5c96aba36b832f942d316982abb86bc4f9db0",
+        "ml/artifacts/phase45b/verified-v1/subsystem_matrix.csv": "9d637b191d7b2daac83b0f31d94e291f39e3eb662173ac05c6ebecf1c10a0fb0",
+        "ml/artifacts/phase45b/verified-v1/workload_nuisance.csv": "4f0541ec09383a1f2eee198c4e0eaa6a67a61012a0f665695de97027c899c651",
+        "ml/src/ultron_health_ml/nuisance/__init__.py": "212182a6113e543abcb5ed8903f0c650432926da41e143fd813f7342dd6a3286",
+        "ml/src/ultron_health_ml/nuisance/datasets.py": "f10e8c460bd3668587590e8389c68f20877258f0009d0c3fad40732dcea8e0d8",
+        "ml/src/ultron_health_ml/nuisance/policy.py": "8091a5361f09c43ca5f903f95da16d3cd24a222a6555dfebf3826aae71e70653",
+        "ml/src/ultron_health_ml/nuisance/protocol.py": "e698cce0193c5c1bad92ee1ef4c71f76edf8155ebf3c44b1815f4213b3578e02",
+        "ml/src/ultron_health_ml/nuisance/replay.py": "58445e6716f796c7dd9af158e82453bbc0109aceedda981cbfd3ab596001dbc6",
+        "ml/configs/phase45b_config.yaml": "493d4a613fb1efa6e8d5cf2ce1c67e846fadd2f26230fb0ff54066f2b5499d77",
+        "ml/configs/phase45a_reference_sha256.json": "c96833798feafb07adf957e58571f416f9d274b3685bf60f43c1b90c32d7b7b6",
+        "docs/PHASE-4-5-B-NUISANCE-REDUCTION.md": "8694cf46104c2c09ba4632cca7cbcc8d42e7790cca958a61e89c3e66d823967a",
+        "ml/tests/test_phase45b_nuisance.py": "648d015c7c8441b596fb8e6d6828b4798cdb900d40dcedbc8a22e88c62c7c756"
+      }
+    },
+    "phase45c": {
+      "files_verified": 109,
+      "manifest_sha256": "10933aa0aa25e78c1374748724579394039122c5e9d32d16388074ef5d51fb40",
+      "hashes": {
+        "ml/generated/phase45c/locked-v1/holdout-7301/events.json": "ce4ffb52708f7e1e06c8346e5eaf124ab45a57dc521ba81667e96130683306a6",
+        "ml/generated/phase45c/locked-v1/holdout-7301/manifest.json": "a3eceb368ec82a6b6daf46afe83a3f4d4f91362e0ed7872e3ca2fd271e284535",
+        "ml/generated/phase45c/locked-v1/holdout-7301/scenarios.json": "ec622022c83e7d96c02e110cf4c57add1609b6e7f4cb6ccd8abe69c67569e31c",
+        "ml/generated/phase45c/locked-v1/holdout-7301/telemetry.csv": "506bcb33e0d2514df476263776151f45d5eb6c501d635d2c02adfa73c0ded5f6",
+        "ml/generated/phase45c/locked-v1/holdout-7302/events.json": "44b1821fa3071bcbd7520c682c78a7598a8977fb9c61bd64ac4b6561f188b056",
+        "ml/generated/phase45c/locked-v1/holdout-7302/manifest.json": "f224ba3b80d1c2df43d07f5db5b374a22644ccbf966c6be9bffee68395327b52",
+        "ml/generated/phase45c/locked-v1/holdout-7302/scenarios.json": "4b7be6764e8c6b9b7e738433ca3c9c275b03bcc948779dd8331d32996ca25295",
+        "ml/generated/phase45c/locked-v1/holdout-7302/telemetry.csv": "4f8f10f8f169b555b9e49bb409b28f64247906b4b5defd27a07dbad2825506cb",
+        "ml/generated/phase45c/locked-v1/holdout-7303/events.json": "9a5a9951358cd435c0d9ab1b682e34aa16397c4285b86297a2ed83673eeaee27",
+        "ml/generated/phase45c/locked-v1/holdout-7303/manifest.json": "006ca701b7bee32668ecadbff8a01004995d6dc56e7650819fa18be39910adb8",
+        "ml/generated/phase45c/locked-v1/holdout-7303/scenarios.json": "e078ce806eb9a4e1cb9b30087335e6d7a60978a9fb3d4328406048a8e5fc5b5d",
+        "ml/generated/phase45c/locked-v1/holdout-7303/telemetry.csv": "666b73aed47c9da82a9c9d131750f609793b60c1d6b871cce70ecc4994fd3699",
+        "ml/generated/phase45c/locked-v1/holdout-7304/events.json": "ee3e920bc078f122c60a81b6aae8404445670b46a5b602cf815e950c71a31587",
+        "ml/generated/phase45c/locked-v1/holdout-7304/manifest.json": "c894a1b138eedb59e6478f9d75a646fb9bc263f8f62d495aaaf8f49ab35810a1",
+        "ml/generated/phase45c/locked-v1/holdout-7304/scenarios.json": "eb6e6f3f8674bf0ff71d09180ab8f4e36351f27a5c5d388c57d92bdfead16fb4",
+        "ml/generated/phase45c/locked-v1/holdout-7304/telemetry.csv": "bbcfe34d66be1ad296fb2ba45cb598d003e8796d65a678d5963b10996bc20a84",
+        "ml/generated/phase45c/locked-v1/holdout-7305/events.json": "d7bd6fc1281011a96cf33ef0146fd8d93f2e6c1121880e37d7e944e1d4979304",
+        "ml/generated/phase45c/locked-v1/holdout-7305/manifest.json": "32b2b622cd27d757fba675b872aa0c64067d29c1c0f768b346dfbc5c6acc210c",
+        "ml/generated/phase45c/locked-v1/holdout-7305/scenarios.json": "f96802fc768e6c4393c6221edae19386f8f571b6cd47befa7aefb0be5102c349",
+        "ml/generated/phase45c/locked-v1/holdout-7305/telemetry.csv": "ea2ff1ae8ccdcc5dc5e2bdaf7214940c874b08cbfd7a35137d36b85d58f0e02c",
+        "ml/generated/phase45c/locked-v1/holdout-7306/events.json": "4fc6b24b9eb9e11317607ce3df477a6023b0311004c2041037959f28208bb604",
+        "ml/generated/phase45c/locked-v1/holdout-7306/manifest.json": "cb0e48e222f0351a04f110502ea2c3011be4087496927414588879d339dc2c65",
+        "ml/generated/phase45c/locked-v1/holdout-7306/scenarios.json": "e0cc893f86f6a2b4590132aad0dbce5a94fb2aa8390d6a5c0e1d3f20571b4985",
+        "ml/generated/phase45c/locked-v1/holdout-7306/telemetry.csv": "b647403b9336fb8b16752119b343c2b6c985b696e719a3608cc1de3c05bad64d",
+        "ml/generated/phase45c/locked-v1/holdout-7307/events.json": "dead93636c599a98f2bf8eec38c4bf48a98ac3d30bb9924b7c48fff032a620d1",
+        "ml/generated/phase45c/locked-v1/holdout-7307/manifest.json": "5978069773b0c5ca1ecc4df6719e204bac8664836712e6565ec2ab465ebe3e09",
+        "ml/generated/phase45c/locked-v1/holdout-7307/scenarios.json": "f1022f8707dc98da310214581bae0a9a0d15f85a33266d65d4405f49d07f165f",
+        "ml/generated/phase45c/locked-v1/holdout-7307/telemetry.csv": "b848ca62fbcfb64a6a922e04011f63163912e5521f14d8c14c16c39815eab920",
+        "ml/generated/phase45c/locked-v1/holdout-7308/events.json": "a27fbb54d924f7763f5bbf01ff460fae12c35bbe26290371e45ef791c68ce461",
+        "ml/generated/phase45c/locked-v1/holdout-7308/manifest.json": "fa1a48abf4c843a7afbe04e541fd8392f9e260d1c8be035672a027860dc04732",
+        "ml/generated/phase45c/locked-v1/holdout-7308/scenarios.json": "37f5155523fb7a12c5d923866d4559f45c1846b9cbed116e04addcefb522d4e3",
+        "ml/generated/phase45c/locked-v1/holdout-7308/telemetry.csv": "23f2099b2309a741cd81fb93ba8655b19f0e8c56fcc7786b28d1a5915d1c3c0a",
+        "ml/generated/phase45c/locked-v1/holdout-7309/events.json": "70b186c83ffa3acbf3eb296a9d16dd73d59d543df4f2d2e9fd767940390ab6e0",
+        "ml/generated/phase45c/locked-v1/holdout-7309/manifest.json": "21e158bbf6e45887b934b5f83d0d332134816b6f72c7c57e2adb2b466d021174",
+        "ml/generated/phase45c/locked-v1/holdout-7309/scenarios.json": "8a2ffe34d2fef5787d84de3159ed9044e6ba4654165ef7c7454cf9cd3ef82272",
+        "ml/generated/phase45c/locked-v1/holdout-7309/telemetry.csv": "fc91398796a91da519ad0729ae2cdb1a1f0a8a60d1a8ddc7a2e7b7980e69c783",
+        "ml/generated/phase45c/locked-v1/holdout-7310/events.json": "be56a597018fbce0d1c1d78475fde7737782fc61f631ada709d9b1525b04d671",
+        "ml/generated/phase45c/locked-v1/holdout-7310/manifest.json": "3eecc7f5d0ec897ed2a915478ce87eb714eb0d8e29dc42afa9b4642900d35a42",
+        "ml/generated/phase45c/locked-v1/holdout-7310/scenarios.json": "3b7b688cca9374077b284a55aa7303eb04d81a0836aa8a13160af9db8c5cb271",
+        "ml/generated/phase45c/locked-v1/holdout-7310/telemetry.csv": "81b7055302d4539c22223c15a2927bd253b5f4fb0b7c65be4db05779e34fd77b",
+        "ml/generated/phase45c/locked-v1/holdout-7311/events.json": "be2e8459cc2430736e742523505afc4ceea8d967e39687bcb0e7bf2dbf693d9f",
+        "ml/generated/phase45c/locked-v1/holdout-7311/manifest.json": "bf592e867470a240166c14ea9cb0c2ddddcdb43701c61941490609beb839e03e",
+        "ml/generated/phase45c/locked-v1/holdout-7311/scenarios.json": "2e2a7f17bc8f2435fcea98367ca8df8daf8ce349958cd46622fa61598c2e62e1",
+        "ml/generated/phase45c/locked-v1/holdout-7311/telemetry.csv": "3ddc4df67397af95d7e613bd4c78a67876d57e0127e282dd868314964b45ac94",
+        "ml/generated/phase45c/locked-v1/holdout-7312/events.json": "0a9327b1a3c8a600c9e7f46d13ed8caf1cb2ecbbbe384639b4822795dccfb830",
+        "ml/generated/phase45c/locked-v1/holdout-7312/manifest.json": "e40754232a1cd7c2b0e7801578fe714bd3ef3e443933b096d488af9fb33d3d45",
+        "ml/generated/phase45c/locked-v1/holdout-7312/scenarios.json": "ee7c55986c115df73acc3de1c9685a9fd0f5f6ecca2d6a1314e6e097490a43e9",
+        "ml/generated/phase45c/locked-v1/holdout-7312/telemetry.csv": "dcb5dedc571803bd65c88dfb1491c52c8717fdabb8375966c6405000412b253c",
+        "ml/generated/phase45c/locked-v1/locked_inputs.json": "3bf1ebd1d6d641da5854c4b07a8c784bd2ebe8b8ffdbc048f6e0886e8278efff",
+        "ml/generated/phase45c/locked-v1/train-7101/events.json": "f98ae57ba9e0520afb434e11c2db7fe6640b80230a502a39c8a5ba2e2664fdc8",
+        "ml/generated/phase45c/locked-v1/train-7101/manifest.json": "c6a21486a4165bb42d9b0bd87a730cab00516d03e69930003bedf10b20ff1b34",
+        "ml/generated/phase45c/locked-v1/train-7101/scenarios.json": "7519a9be9ea3457c412ba5449bbdebb47485fbdd9d9d0a40b4e5f4807a77a84e",
+        "ml/generated/phase45c/locked-v1/train-7101/telemetry.csv": "55b2bfd1574e5bdbab3d72b8623aeb666e745922e9d6463721736301bb2332ae",
+        "ml/generated/phase45c/locked-v1/train-7102/events.json": "659428bc67828834b73e45dd5f66ceff7e405f7e0077cdeaa969bb490f6c5018",
+        "ml/generated/phase45c/locked-v1/train-7102/manifest.json": "69bd6a9150e3b1bd4f378d3194bbdd34f2ca8637e6bb892a7e0efc4fa8130e55",
+        "ml/generated/phase45c/locked-v1/train-7102/scenarios.json": "cdfa5f1bb0b82c2d006ff94928d9ef49b744a7a703a0217dc310ecbc0086b467",
+        "ml/generated/phase45c/locked-v1/train-7102/telemetry.csv": "b98946576f291c755b45d781b91fd198b2123d7f793f820c5749f486d6c84ec8",
+        "ml/generated/phase45c/locked-v1/train-7103/events.json": "e77244fa917086f37fd589401a4729d79331a53f4788792d587f7f3a0f30179b",
+        "ml/generated/phase45c/locked-v1/train-7103/manifest.json": "9b1cfe2f6ac3608ce20effcdb142c473b376ce766c91e7da9816aa18d48a3463",
+        "ml/generated/phase45c/locked-v1/train-7103/scenarios.json": "ac7c9cd6f473a5d2113c8ec9a11cdbea0df2326b1086dbb409b437085a741019",
+        "ml/generated/phase45c/locked-v1/train-7103/telemetry.csv": "ba81701a69df629b0dc7f98e4fda32e81bf7e09cf49c22d801d645b5a0ac8ce9",
+        "ml/generated/phase45c/locked-v1/train-7104/events.json": "500fadae5c4e43256a505723d7a64df6379a55b57fe5087f60c48bbba80872ea",
+        "ml/generated/phase45c/locked-v1/train-7104/manifest.json": "9db6b35b8b60637d92196dcb5f097f154603f2ad9a7c389d2ad4306af4882061",
+        "ml/generated/phase45c/locked-v1/train-7104/scenarios.json": "1f308af8ac877b26c26d0596004c317d35240c06e69fadc629758a367de1ef78",
+        "ml/generated/phase45c/locked-v1/train-7104/telemetry.csv": "17ad9798b4337acde1fc6cbc79a4ffdb640ab66dacc44bbb302631e3a147e683",
+        "ml/generated/phase45c/locked-v1/train-7105/events.json": "ea1a0860869b37e61d83ef1ddfb88a02bc0d3effe7dd07bf51231476cdaea33c",
+        "ml/generated/phase45c/locked-v1/train-7105/manifest.json": "97741fb7226b4c936494522845dc388293e459df95968bc7670f58a4419c158f",
+        "ml/generated/phase45c/locked-v1/train-7105/scenarios.json": "f147513dd4ec3d54b5ad90680c12172089e0a0b99ad5ae6064a303491e96a5e7",
+        "ml/generated/phase45c/locked-v1/train-7105/telemetry.csv": "d29d9847baaab05bee3aa4f12979fdfde14baa1ee6d428968a1283a9d07b38fa",
+        "ml/generated/phase45c/locked-v1/validation-7201/events.json": "51d79bbacd8be88bed8b1c95a949877979bfa3f1882d085b640ff528eff49e46",
+        "ml/generated/phase45c/locked-v1/validation-7201/manifest.json": "ab6ac8d657e153f5a1759d9ed35ffea34bcb892f975a68fc0ddd6031f2bf35f4",
+        "ml/generated/phase45c/locked-v1/validation-7201/scenarios.json": "1d5a580e49696c93e0fcb72ee434345697a6e183e2be193468cf74c047bb8507",
+        "ml/generated/phase45c/locked-v1/validation-7201/telemetry.csv": "9a31f78fa0c5ca6f8f9cc4062dacdb1296bad0788fa9c2b4a33d87fe014c1a4c",
+        "ml/generated/phase45c/locked-v1/validation-7202/events.json": "929be36b811cb4159543e24581fce65a73a71a1317ddc90fffffe78e5735ad09",
+        "ml/generated/phase45c/locked-v1/validation-7202/manifest.json": "abe6d920e5b7c074a41b063fa35848bf4732a3de39a6b0a31a1a4f189ddaa9a3",
+        "ml/generated/phase45c/locked-v1/validation-7202/scenarios.json": "343e20c68607dff8f42aa9dce3170d5c32e31b3fcd99a1bdd68e9f95c2f1e6f2",
+        "ml/generated/phase45c/locked-v1/validation-7202/telemetry.csv": "07e83930991a691793de854f5c7826f1efb87cde82a20430ebc0291d3ef72f59",
+        "ml/generated/phase45c/locked-v1/validation-7203/events.json": "c29f0c23b0d542554e430f69a105a540b207eb3fc41574a80b15a922debed6b3",
+        "ml/generated/phase45c/locked-v1/validation-7203/manifest.json": "cb0ba966295f5e8db55cccd0daeef1ce1b10eaed32bf32df4e403c0fdb9bb907",
+        "ml/generated/phase45c/locked-v1/validation-7203/scenarios.json": "7c96cf42529c7a03a95d7b45a98036884c15efa03840b712fc2e196383046698",
+        "ml/generated/phase45c/locked-v1/validation-7203/telemetry.csv": "e9c5d85020e8300bf77587d694922388bae1c2de08abd3b3b165aef48d867a5b",
+        "ml/generated/phase45c/locked-v1/validation-7204/events.json": "ab6bd167ea95fb3930c7a7ce9511f9dce4a61aacffd6270935746eaaca02d4cd",
+        "ml/generated/phase45c/locked-v1/validation-7204/manifest.json": "e712ff0e03702314acb62db677672b1eb18209ab4f0a66c871121925966ec2f1",
+        "ml/generated/phase45c/locked-v1/validation-7204/scenarios.json": "9942bee9509358466b604c978d05ee4f50b664c98f6dcd62fa3d942176f34043",
+        "ml/generated/phase45c/locked-v1/validation-7204/telemetry.csv": "bff8c6b5367e1a9ce288e1e7326965239c5c63c12b49b364106ba86664b315fb",
+        "ml/generated/phase45c/locked-v1/validation-7205/events.json": "11d32e471b74b178898ce78255abe1ebff90b2598b2a2b33a6456cac18ecdbce",
+        "ml/generated/phase45c/locked-v1/validation-7205/manifest.json": "2f55247f519e2ac344c039fb58cd272ec935113ca7e7af7a138a4fe773e037c0",
+        "ml/generated/phase45c/locked-v1/validation-7205/scenarios.json": "0188b81df479e5284f57c93b6ff946abcc7f6c40021daa589349d590b6dd83c1",
+        "ml/generated/phase45c/locked-v1/validation-7205/telemetry.csv": "7fdb8768e531333096ebe9ad3c1c7962ed25452e8a3c929ad57c39724b05d07f",
+        "ml/generated/phase45c/locked-v1/validation-7206/events.json": "f910027723291fd3ad23dee4abe83d746026b7096eb8d12204da6214e0e93ad2",
+        "ml/generated/phase45c/locked-v1/validation-7206/manifest.json": "8d2b49a5096b8c9a86be11a710f843524b713ffcf6fd12fd2d9013386b2aa82a",
+        "ml/generated/phase45c/locked-v1/validation-7206/scenarios.json": "a6d91c1ed8f2e1cdb9f7287ac6d75f2c656538610c91f98f0eca1d424239150f",
+        "ml/generated/phase45c/locked-v1/validation-7206/telemetry.csv": "f576869ead51f12f4a954eddb16ad53600b7e04ad9b328edf115c646f878e993",
+        "ml/artifacts/phase45c/verified-v1/acceptance_gates.json": "d35fbe233e2de2f707de3776888d8e38d499d595fd29ffe7db9338dcbb617c30",
+        "ml/artifacts/phase45c/verified-v1/alert_budget_frontier.csv": "e16c1656dbb164af893ea41ca78441809ebff022f10e3468080da1fd680dcfa8",
+        "ml/artifacts/phase45c/verified-v1/candidate_operating_points.csv": "70c88836a3bc64b97c4c314e916a06c32c5b6ed67b51860eeae0f8ec87b5bb26",
+        "ml/artifacts/phase45c/verified-v1/comparator_operating_points.csv": "84c511290cc614db28deb2c49ab6913c715fa961bf030eb085f054727fafdeee",
+        "ml/artifacts/phase45c/verified-v1/critical_safety_evaluation.csv": "79eb0ddcef5f4a1676aca1082fae668e837440718a05e775b208e1888b34e68d",
+        "ml/artifacts/phase45c/verified-v1/episode_evaluation.csv": "2d63bcb88772c3522062d0798a13620328f00c299ff127df77a15c209cc85709",
+        "ml/artifacts/phase45c/verified-v1/event_evaluation.csv": "256daa51ac66ba29513777bdbb24182132402e5024e0c1158dae8607b2e6373b",
+        "ml/artifacts/phase45c/verified-v1/frozen_selection.json": "4f1625155c415e0f7ee419b39451905cacce64b5d8be5032cd87e372d1d3a851",
+        "ml/artifacts/phase45c/verified-v1/locked_holdout_manifest.json": "c89e677396f909de6bcbfc7230b89b6f6bfb6174283686c91b67c3e444eb2a99",
+        "ml/artifacts/phase45c/verified-v1/observe_episodes.csv": "8fee7cebc5792bc78c377c87fed6c5f95d01eade0dbc1606936ef4ada1f1e2a4",
+        "ml/artifacts/phase45c/verified-v1/phase45c_config.yaml": "bc8c9de225fa46c436e001beb39a9a4fb315013b2b311f42325fad9510bbead1",
+        "ml/artifacts/phase45c/verified-v1/reproducibility_manifest.json": "c3670bb8ff150ae5b3aab94be3feff32fa59e306308b88d7ab023e470f01d5ca",
+        "ml/artifacts/phase45c/verified-v1/scope_definition.json": "c48b5a52244629ebf8bdce30a52b3826bb109b0014744c6183531bd78bca0f94",
+        "ml/artifacts/phase45c/verified-v1/selection_protocol.json": "d260ceb7b25db7b98d24b810fa4ebb9e10ca957269f50af8787f38e77c5838cb",
+        "ml/artifacts/phase45c/verified-v1/subsystem_evaluation.csv": "6224960634a37b262e8c0edfab6a430d7f9f420730892c8ddc8ed7e8ba97dcb0",
+        "ml/artifacts/phase45c/verified-v1/workload_nuisance.csv": "c43b4fb64ae71c10884de72d5cb80569c8801f818f9fdf5a01b5f96773f83775"
+      }
+    }
+  },
+  "input_manifest": {
+    "definition": {
+      "protocol": "phase5-offline-v1",
+      "settings": {
+        "development_seeds": [
+          8101,
+          8102,
+          8103,
+          8104,
+          8105,
+          8106
+        ],
+        "validation_seeds": [
+          8201,
+          8202,
+          8203,
+          8204,
+          8205,
+          8206
+        ],
+        "holdout_seeds": [
+          8301,
+          8302,
+          8303,
+          8304,
+          8305,
+          8306,
+          8307,
+          8308,
+          8309,
+          8310
+        ],
+        "hours_per_run": 24.0,
+        "false_budget_per_day": 0.5,
+        "workload_budget": 0.05,
+        "min_useful_recall": 0.4,
+        "min_precision": 0.5,
+        "min_observable_events": 10
+      },
+      "targets": {
+        "version": "phase5-targets-v1",
+        "clock": "UTC Unix seconds; prediction timestamp is acquisition T; state and features use observations at or before T.",
+        "future_window": "An onset qualifies only when T < onset <= T + horizon. An already-active target is detection, not forecasting.",
+        "exclusions": "At evaluation only: gaps beyond the target coverage bound, insufficient future coverage, right-censored windows, and unobservable latent onsets are uncertain, not healthy. Charge uncertain interruptions to the nuisance budget conservatively.",
+        "qualification": "At least 10 observable holdout events and 40% useful-lead recall and 50% episode precision; safety, parity, p95 <100 ms, <=0.5 false or uncertain interruptions/day, <=5% backup/build nuisance. Require development and validation qualification for a GO.",
+        "targets": {
+          "cpu": {
+            "event": "Sustained contextual workload pressure, not CPU hardware failure",
+            "metric": "cpu_usage_pct",
+            "boundary": 85.0,
+            "direction": "high",
+            "context": "RAM >=85% or selected nonresponding process count >=2",
+            "onset": "First independent usable sample confirming 300 seconds of contextual high CPU and six independent observations",
+            "hold_seconds": 300,
+            "min_observations": 6,
+            "recovery_boundary": 72.0,
+            "recovery_seconds": 120,
+            "max_gap_seconds": 105,
+            "min_lead_seconds": 180,
+            "horizon_seconds": [
+              300,
+              600,
+              900,
+              1800
+            ],
+            "observability": "An independent causal detector must confirm the target while the latent event remains active."
+          },
+          "disk_capacity": {
+            "event": "Selected volume crossing a 10% free capacity boundary; not drive failure",
+            "metric": "disk_free_pct",
+            "boundary": 10.0,
+            "direction": "low",
+            "context": "One fixed selected volume per offline run",
+            "onset": "First usable distinct reading at or below 10% free; latent truth is evaluated at 15 s resolution",
+            "hold_seconds": 0,
+            "min_observations": 1,
+            "recovery_boundary": 14.0,
+            "recovery_seconds": 300,
+            "max_gap_seconds": 780,
+            "min_lead_seconds": 900,
+            "horizon_seconds": [
+              1800,
+              3600,
+              10800,
+              21600
+            ],
+            "observability": "A fresh crossing must be observed between the latent onset and recovery; cached readings are not independent confirmations."
+          },
+          "process": {
+            "event": "Sustained selected-process responsiveness degradation; not crash or hardware failure",
+            "metric": "selected_process_nonresponding_count",
+            "boundary": 3.0,
+            "direction": "high",
+            "context": "CPU workload may qualify supporting evidence; process identity is subsystem-scoped because per-process IDs are unavailable",
+            "onset": "First independent usable sample confirming 360 seconds and at least six observations with selected nonresponse count >=3",
+            "hold_seconds": 360,
+            "min_observations": 6,
+            "recovery_boundary": 1.0,
+            "recovery_seconds": 120,
+            "max_gap_seconds": 105,
+            "min_lead_seconds": 240,
+            "horizon_seconds": [
+              300,
+              600,
+              900,
+              1800
+            ],
+            "observability": "A causal detector must confirm sustained degradation before latent recovery."
+          }
+        }
+      },
+      "source_sha256": {
+        "forecast/__init__.py": "7b3d2e5067e4c231be3be6be16a5d9edf7af4403ca917e8525d85980083998d2",
+        "forecast/baselines.py": "88a478b133403e973534f01d6dae2a7eaa5c480c68bbbfa420a3289ac5026431",
+        "forecast/contract.py": "3071fda4e798949a6b9cde9979782c18d080a1d9e95100ed92343111df52d881",
+        "forecast/datasets.py": "5a31b6c2c7e21432abc5d46d04435b9688757ef91ae4aee410f919ce1ae67c24",
+        "forecast/evaluation.py": "a0c17beb4b70f1a14dc11a3831a50542bd4ff5a561edd9f422a4999914ac0b95",
+        "forecast/lifecycle.py": "6f637b60db1d654ced0aafb24f01db483fa65a538ee5c42fab9a8a1a0e0994ec",
+        "forecast/replay.py": "5fa6b6fc757591bd07742bca6175031dc188a25add7f9bf9400eb66404459d50",
+        "features/__init__.py": "f7eda1c7daac3e7cc69ab1623ac4684f4cefffc82c14344c860ba45bd0e8f328",
+        "features/config.py": "3d5685ebc40ec6273df663738de9f6f5ca6608156821123c0338b8b107a7d0e4",
+        "features/engineering.py": "ce3d86069ab4a47ff88eb66bd4b23873595f9fd5dd29900a69075172bb45832d",
+        "features/export.py": "f89afd9d37c59590a6520790ebd97f6a890bb39bf02d9b1a29c9dd38a50b1b3b",
+        "features/schema.py": "00272404249dc88aa6c25c93d85969d5349041359b26368c4ba2d765aa5f2d5c",
+        "features/statistics.py": "563b2dc31abbf7a610d7772502ed468dde3a5c60114d2f331eb04f410083c411",
+        "features/validation.py": "58305d9f2c8a5c79d92dc31f65cfeba7d41fb168452bbaffd97ed09704f4a311",
+        "features/windows.py": "bfbce677891ac185e7693dda98be4199a24f6f5a213297c64c4b18f81900689e",
+        "data_generation/__init__.py": "b58403e4bcebc4aee3a767f0673405ea86927747d6ad40eb09485085c6db8509",
+        "data_generation/config.py": "56b224aa3b5bcff4746934f50dafb4312b8a920119fddf8b038a9c5250915fc3",
+        "data_generation/generator.py": "ac1ab4525af12d9846cf981273909096967ac2b9e3285a1cfa0a67e86549c0bf",
+        "data_generation/scenarios.py": "d4e40c98076d01be0574ec67c1805cf5ddedaa07b133308fcddf31314fec0611",
+        "contracts/__init__.py": "832ab43c26cff818861339369eaabd90df24e4a9bb2e7cebf403e9bcee98bd88",
+        "contracts/telemetry.py": "fb17fd90a1749219b7eac3c647afd960c984d5cfbecab4f4eebe6b2ddd803b4c",
+        "hybrid/detector.py": "899408bbb75f8324ddd12a7f432348df727c736f47afa328a4415188bd91408a"
+      }
+    },
+    "runs": [
+      {
+        "run": "development-8101",
+        "seed": 8101,
+        "split": "development",
+        "sha256": {
+          "manifest.json": "770fbc7dd40cfb47dd5c7d9940af2a5a3dad6b07c230fd5112a6403b4f81a8de",
+          "telemetry.csv": "ac69bd8d80a0f100b433fa2c772081b11e06839ee35e58711dddf8d111116fab",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "4c03c3cabd2fa229360ef933d8d3acf86f46e6825db382425f7ce73165f7004d"
+        }
+      },
+      {
+        "run": "development-8102",
+        "seed": 8102,
+        "split": "development",
+        "sha256": {
+          "manifest.json": "a65772bc6d22fcd7d03493d96317cbafc3103cce0684bbd97e663e50ceae34dd",
+          "telemetry.csv": "757b5e9dafc0c98065c15579bf4b98b696d0174e66208588801cf0833f637a75",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "4160f619b914501d6d286ec9e20a58d0309330698bdc58255cd29ce498dfbb59"
+        }
+      },
+      {
+        "run": "development-8103",
+        "seed": 8103,
+        "split": "development",
+        "sha256": {
+          "manifest.json": "75143a3943e04babc95a7169602c4eeea54f1f840d7b482c2515a3e24b1a2ae3",
+          "telemetry.csv": "087d76a25657fd9513094ba434d8a257430a28eee191a0bd51a2b99e83bb1bab",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "0e71ca41b78713e156b203b978dad8dc57754951dc3017bed89406f39387c6ae"
+        }
+      },
+      {
+        "run": "development-8104",
+        "seed": 8104,
+        "split": "development",
+        "sha256": {
+          "manifest.json": "69c638fb9d7f8aa84a8aceeb81fb7b9319f1dfb121365e0ae953ebb0ee27010c",
+          "telemetry.csv": "af5d4772c900bd3a0f3ee2c83eb5bb12f4c39f191135c2dec834e81874fae39c",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "3639760befac9955669bd610473d41db1f3a1839a1f680d33ef040402befab4b"
+        }
+      },
+      {
+        "run": "development-8105",
+        "seed": 8105,
+        "split": "development",
+        "sha256": {
+          "manifest.json": "bf655a0c0bd38a814faf8cd18ee0af1cb1a26ba5257ae5dd9cc85928eba86598",
+          "telemetry.csv": "f723063ef88098533f202ea494c7cb53671d6e17ca44ba5202dd35345b214727",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "08b9d492098ad9d73c70e41434b5f97d52691bfada8a8c7ed043b997526aeef4"
+        }
+      },
+      {
+        "run": "development-8106",
+        "seed": 8106,
+        "split": "development",
+        "sha256": {
+          "manifest.json": "5b22f5cceb9a9354fa46b88e883ff2b8a0df5119076e8dc08ba0710b109cebe5",
+          "telemetry.csv": "b2699c8f7069d1a4f8f70499e4ad8d66af34981eb6825cd38effd950fb77dc17",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "d6832c33d2f3bb3effc17f57db633d96626a6b760c5fe351c81ea0e3c2ea8b85"
+        }
+      },
+      {
+        "run": "validation-8201",
+        "seed": 8201,
+        "split": "validation",
+        "sha256": {
+          "manifest.json": "04368f85e38d9a6a45d8566ffdda0dfb8a14dc3e4baefc48c5fdf959503e4956",
+          "telemetry.csv": "0b36ab360d6cc634ba7a0f174251e2ad1f14c0539cfef497adcb02292dee2e06",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "8e6dc64d2d8e8a517cd1d85ee36dd62ac0fa247abcc166b3ca5700b81f4b2f80"
+        }
+      },
+      {
+        "run": "validation-8202",
+        "seed": 8202,
+        "split": "validation",
+        "sha256": {
+          "manifest.json": "c54d533f30c37674cd812ffd1410b7995b1157e624ef3c0fb0b411a4623bba97",
+          "telemetry.csv": "da4ce67dc24bba16454057eeab6d455eafbd66d44b7529bd2687382c52119022",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "5b16d3b2772a551964cd9626b23425822815c70aa77f6430daa166e213a31dbd"
+        }
+      },
+      {
+        "run": "validation-8203",
+        "seed": 8203,
+        "split": "validation",
+        "sha256": {
+          "manifest.json": "07925056c2ae507a7b96611b21aca6914366cdb829103b0b9010a7bc7dfa993e",
+          "telemetry.csv": "4585463b6ec494ba1b46f4c07a615dc8becc2ecc3fa1dd0150458185abe05023",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "e0c09d3dc1ecee28a7a4af8fc41d2fee6691d3dd3b2ee0c6a67f756a15715e04"
+        }
+      },
+      {
+        "run": "validation-8204",
+        "seed": 8204,
+        "split": "validation",
+        "sha256": {
+          "manifest.json": "e35f3bdba83114cd825204262a819a2610f38d9c0119813c6610a2ef230bee73",
+          "telemetry.csv": "ebd67f2b236ac34f204bb75f7d36ce98ff5c56a700b39c3bcafbd78f6a6ab6c2",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "4e9ea2e9c77a6160f0d8fb4bc3cc1310507c6b846cb16e2f06dd7176f0fec662"
+        }
+      },
+      {
+        "run": "validation-8205",
+        "seed": 8205,
+        "split": "validation",
+        "sha256": {
+          "manifest.json": "4e91ae5658d1d3e00ff7464922041e62bdee4993285c3fb313433c963e1029fc",
+          "telemetry.csv": "c4dc91d939537ee9813553dcb39627e74ae36291ebb1e709fcdb6bf41089924c",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "a286f80e92a7c6bf2f0ef592dabeccb3d670379ac84cc3c5a1dded98de19eff1"
+        }
+      },
+      {
+        "run": "validation-8206",
+        "seed": 8206,
+        "split": "validation",
+        "sha256": {
+          "manifest.json": "d47ef4f55a0e6fcc67cab91ad2d91639a672f134d6bc446eb0b6de0ee05aaa56",
+          "telemetry.csv": "4843c5cb551ee7a3cdf97ae715e4947d14c68e6637cbd2d2850f79a9688ca83e",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "b0ae65b30fe44fb9547c8ac2af0eccc44bb89139c16842c9d35946da6444402f"
+        }
+      },
+      {
+        "run": "holdout-8301",
+        "seed": 8301,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "bfccbace958add51955b649f2037d2f0f95dec4e429f2aae82d08c439f3dccb0",
+          "telemetry.csv": "3a983f51ab59242e9cc32053e79c0459bc1999705852e831be433551897ebba8",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "9127ce5fef9518c9267900f74a66a94566b96cdeb3ccfd66d3bc752d0eeb8277"
+        }
+      },
+      {
+        "run": "holdout-8302",
+        "seed": 8302,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "a2529f5b5e691e7441fc873b94ad33cc0a3b861d31bcbd37f00bc7a72bb9383c",
+          "telemetry.csv": "2d48063cb6d1ddb08fec45927a6854000ef92a69ac63574f7223876c4f156629",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "2dc3dc6dfa4e01ec59cea112a5ac9be2ec2ff1deba868cd566fbe083ba065d1c"
+        }
+      },
+      {
+        "run": "holdout-8303",
+        "seed": 8303,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "e0a56a2d59288e758e33dc01fbd5041f6415abdde8c1b85afa639ef4c8dd34c0",
+          "telemetry.csv": "aa4e181383adde7e154563fc1f90802c83bc8be7e01384e57e80e85cd1770098",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "b95310647602b81b198a4ca833329dc1bd6d173270528b188d29d5f8ad1d1d73"
+        }
+      },
+      {
+        "run": "holdout-8304",
+        "seed": 8304,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "e296bbbdcf8ab244d8070ca093dac0435f5ba1f7d4973c1a63833bad6d30b810",
+          "telemetry.csv": "1fc605691b3b3afd7142063a919c379dcb8d2c620a49ea4f98681afd8802b3a0",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "535cf116591e8c0ca4d3e713b9836206bfed8e3c71731f8b7aa6d9c16f23d0e0"
+        }
+      },
+      {
+        "run": "holdout-8305",
+        "seed": 8305,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "f1786d82e6c763371a4692c549d643966499d75fe26374585503b782713ecc3c",
+          "telemetry.csv": "0b6451bc401c838be598353a8cb764c21cee489e1af0b8096fc35a786b8a317c",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "f4412c37ce69b3142f9ddcfa7f8bfeed0347ac71dea8a44fbacc5ea2831c59fd"
+        }
+      },
+      {
+        "run": "holdout-8306",
+        "seed": 8306,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "8f2e4eb54cd93d02ee846b9ec4eef50aed85681761d6ff3a15a510b1fdfd09cb",
+          "telemetry.csv": "30c6355b305f0b3da56901148efbd9c2192e602ba3641e589e71b1797415b14d",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "de60a862fbe44e2684435ddd2767566d90221dc254e399adc9d11ec4712eaa9e"
+        }
+      },
+      {
+        "run": "holdout-8307",
+        "seed": 8307,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "8ca26a6fcacca42fcf13a4f4ca8d2ab18cb6bff6ad651f978784c58f5119088c",
+          "telemetry.csv": "743ad0944db750535876b7a14331cbbef9abf3d5fd954fe794ab87a8f512f416",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "cf53c75ceb8c6bd6ccf08b017b402c68bc66e5c843e0a0d462434a47bbfd988f"
+        }
+      },
+      {
+        "run": "holdout-8308",
+        "seed": 8308,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "335b7d15540e751ea5dbaa9b8ec1ae67fe8c15c2ffd8f8234482e731427e0dc8",
+          "telemetry.csv": "7700e3a823baabadf57952ad91459d8d60097c5e96cfd7dc380c6d7a3aee3cf3",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "6b6848ef172220b3aa2d9c3c0ddda1a9315ed712bfd97c60bc6e5c6279ecbfa6"
+        }
+      },
+      {
+        "run": "holdout-8309",
+        "seed": 8309,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "d8118d8ab10c54edfc406a133c1067230a79bf99b9c1d5a8cb15972280475b69",
+          "telemetry.csv": "c9b3d150584e1fa9f92d9d5f4818ead4ca78b21ea8889b52c615a164d944dee4",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "f395c39f2630ebf145c5aeb390ce8de546cffb9c4d55ceebbd70f22b02047e12"
+        }
+      },
+      {
+        "run": "holdout-8310",
+        "seed": 8310,
+        "split": "holdout",
+        "sha256": {
+          "manifest.json": "41027c18a93d6d2e229ca8749862edfc20f0ec7f088fc5f396a0e758be02882a",
+          "telemetry.csv": "214307285e85ba241e6023e9b808fbfd23527ccb7373360fbb5e048d68ee1598",
+          "scenarios.json": "3931d2c67bc9c55d01a64c922982734e7ff70b9067a588c77c07a73f08e05aea",
+          "future_truth.json": "f30a53000c9f5f95aebc255e50f770f872c69091712707985ee0085a749a0054"
+        }
+      }
+    ]
+  },
+  "horizon_selection_sha256": "06624d125c50d8134308ef57195a0c596087faeac82913b50e166ac73363c542",
+  "feature_schema": "1.0.0",
+  "feature_fingerprint": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.4.4",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3",
+    "pydantic": "2.13.4",
+    "PyYAML": "6.0.3"
+  },
+  "raw_replay_digests": [
+    [
+      "7e4cb1cf67e6702b69eb58201b6154554ab3c02ff6ac5206099c8bc5dc793665",
+      "fff066b9072dc93d040ef5cc47a8cd0791ad1b6acb365a86617b2418ba22912e",
+      "d59329483e7750cfdeaa3e45c31934d37b906a2ad9fc9184bba4663b001bcb3a",
+      "d897d65f6848ea9503763d8ef99ba9f60c2bcfa550134c2d9f9e718c002244e4",
+      "a7391ab146d3c24ff17140a9821342664c800148f596a7d4f5cb871bbf7fde43",
+      "4d5646b93a6ece11a39c2fa7e83bdcc67cae2ffb44285720db0d20631efb8505",
+      "72fe4cc388afb15a50bca410e9e4140b6c9840e8823c89d1f504065b4097415e",
+      "cf25381f7766a0a98ca3ef63567c05844679a64c6f9d8c5aa138719b2d441bcf",
+      "98c7699a4511fb6d7830d2f702d2a8ba4b136a2c2b956cceecf5109117aa21c2",
+      "0aec37594f8fa9404ef5ecf0addc4532c3ce10c45244628ca19402d067677905"
+    ],
+    [
+      "7e4cb1cf67e6702b69eb58201b6154554ab3c02ff6ac5206099c8bc5dc793665",
+      "fff066b9072dc93d040ef5cc47a8cd0791ad1b6acb365a86617b2418ba22912e",
+      "d59329483e7750cfdeaa3e45c31934d37b906a2ad9fc9184bba4663b001bcb3a",
+      "d897d65f6848ea9503763d8ef99ba9f60c2bcfa550134c2d9f9e718c002244e4",
+      "a7391ab146d3c24ff17140a9821342664c800148f596a7d4f5cb871bbf7fde43",
+      "4d5646b93a6ece11a39c2fa7e83bdcc67cae2ffb44285720db0d20631efb8505",
+      "72fe4cc388afb15a50bca410e9e4140b6c9840e8823c89d1f504065b4097415e",
+      "cf25381f7766a0a98ca3ef63567c05844679a64c6f9d8c5aa138719b2d441bcf",
+      "98c7699a4511fb6d7830d2f702d2a8ba4b136a2c2b956cceecf5109117aa21c2",
+      "0aec37594f8fa9404ef5ecf0addc4532c3ce10c45244628ca19402d067677905"
+    ]
+  ],
+  "decisions_sha256": "10a3f88d7528f19c83c70145a5063bf7dfc9a243dc9bf49cac7cfcf3de0822e4",
+  "replicate_sha256": "10a3f88d7528f19c83c70145a5063bf7dfc9a243dc9bf49cac7cfcf3de0822e4",
+  "independent_safety_replays": [
+    [
+      {
+        "checks": 0,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": []
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 10,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779429865.584203
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 10,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779516176.648024
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 14,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779602237.494065
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 11,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779687646.262832
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 15,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779775413.413221
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 14,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779861217.055565
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 7,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779946533.821545
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 21,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1780032937.415254
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 15,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1780119584.793527
+          ]
+        },
+        "scorer_failures": 0
+      }
+    ],
+    [
+      {
+        "checks": 0,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": []
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 10,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779429865.584203
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 10,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779516176.648024
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 14,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779602237.494065
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 11,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779687646.262832
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 15,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779775413.413221
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 14,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779861217.055565
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 7,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1779946533.821545
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 21,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1780032937.415254
+          ]
+        },
+        "scorer_failures": 0
+      },
+      {
+        "checks": 15,
+        "mismatches": 0,
+        "openings": {
+          "memory": [],
+          "disk_capacity": [
+            1780119584.793527
+          ]
+        },
+        "scorer_failures": 0
+      }
+    ]
+  ]
+}

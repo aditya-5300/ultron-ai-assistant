@@ -1,0 +1,128 @@
+{
+  "selection": "Choose a simple point using only development and validation. Prefer meeting both budget and usefulness gates, then budget, lower validation burden, useful recall, precision and lead; ties prefer shorter horizons.",
+  "prequalified": {
+    "cpu": false,
+    "disk_capacity": false,
+    "process": true
+  },
+  "selected": {
+    "cpu": {
+      "subsystem": "cpu",
+      "method": "linear",
+      "horizon": 300,
+      "threshold": 0.65
+    },
+    "disk_capacity": {
+      "subsystem": "disk_capacity",
+      "method": "linear",
+      "horizon": 21600,
+      "threshold": 0.85
+    },
+    "process": {
+      "subsystem": "process",
+      "method": "persistence",
+      "horizon": 1800,
+      "threshold": 0.65
+    }
+  },
+  "finalists": {
+    "cpu": [
+      {
+        "subsystem": "cpu",
+        "method": "detection_only",
+        "horizon": 0,
+        "threshold": 1.0
+      },
+      {
+        "subsystem": "cpu",
+        "method": "persistence",
+        "horizon": 300,
+        "threshold": 0.85
+      },
+      {
+        "subsystem": "cpu",
+        "method": "linear",
+        "horizon": 300,
+        "threshold": 0.65
+      },
+      {
+        "subsystem": "cpu",
+        "method": "robust",
+        "horizon": 300,
+        "threshold": 0.65
+      }
+    ],
+    "disk_capacity": [
+      {
+        "subsystem": "disk_capacity",
+        "method": "detection_only",
+        "horizon": 0,
+        "threshold": 1.0
+      },
+      {
+        "subsystem": "disk_capacity",
+        "method": "persistence",
+        "horizon": 1800,
+        "threshold": 0.65
+      },
+      {
+        "subsystem": "disk_capacity",
+        "method": "linear",
+        "horizon": 21600,
+        "threshold": 0.85
+      },
+      {
+        "subsystem": "disk_capacity",
+        "method": "robust",
+        "horizon": 1800,
+        "threshold": 0.65
+      },
+      {
+        "subsystem": "disk_capacity",
+        "method": "eta",
+        "horizon": 21600,
+        "threshold": 0.85
+      }
+    ],
+    "process": [
+      {
+        "subsystem": "process",
+        "method": "detection_only",
+        "horizon": 0,
+        "threshold": 1.0
+      },
+      {
+        "subsystem": "process",
+        "method": "persistence",
+        "horizon": 1800,
+        "threshold": 0.65
+      },
+      {
+        "subsystem": "process",
+        "method": "linear",
+        "horizon": 1800,
+        "threshold": 0.65
+      },
+      {
+        "subsystem": "process",
+        "method": "robust",
+        "horizon": 300,
+        "threshold": 0.65
+      }
+    ]
+  },
+  "training_noise_floors": {
+    "cpu": 0.6659680699999981,
+    "disk_capacity": 0.13201190499999793,
+    "process": 0.15
+  },
+  "preprocessing_runs": [
+    "development-8101",
+    "development-8102",
+    "development-8103",
+    "development-8104",
+    "development-8105",
+    "development-8106"
+  ],
+  "locked_inputs_sha256": "54f9f5c35e13413fdf504a587b400332e85e1f2e455ebe840cdb37d48d175c62"
+}

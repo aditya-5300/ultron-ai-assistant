@@ -1,0 +1,66 @@
+settings:
+  development_seeds:
+  - 8101
+  - 8102
+  - 8103
+  - 8104
+  - 8105
+  - 8106
+  validation_seeds:
+  - 8201
+  - 8202
+  - 8203
+  - 8204
+  - 8205
+  - 8206
+  holdout_seeds:
+  - 8301
+  - 8302
+  - 8303
+  - 8304
+  - 8305
+  - 8306
+  - 8307
+  - 8308
+  - 8309
+  - 8310
+  hours_per_run: 24.0
+  false_budget_per_day: 0.5
+  workload_budget: 0.05
+  min_useful_recall: 0.4
+  min_precision: 0.5
+  min_observable_events: 10
+features:
+  profile: real_ultron
+  metrics:
+  - cpu_usage_pct
+  - memory_usage_pct
+  - disk_free_pct
+  - selected_process_nonresponding_count
+  windows_seconds:
+  - 120
+  - 300
+  - 900
+  - 3600
+  minimum_observations: 3
+  minimum_coverage: 0.5
+  gap_factor: 2.5
+  deep_interval_seconds: 300
+  max_cached_age_seconds: 660
+  baseline_seconds: 3600
+  baseline_min_observations: 5
+  baseline_min_coverage: 0.5
+  minimum_trend_seconds: 60
+  cross_window_seconds: 900
+  epsilon: 1.0e-08
+  constant_tolerance: 1.0e-08
+  thresholds:
+    memory_usage_pct:
+      value: 90.0
+      direction: high
+    disk_free_pct:
+      value: 10.0
+      direction: low
+selection: Choose a simple point using only development and validation. Prefer meeting
+  both budget and usefulness gates, then budget, lower validation burden, useful recall,
+  precision and lead; ties prefer shorter horizons.

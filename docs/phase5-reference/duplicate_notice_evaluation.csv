@@ -1,0 +1,14 @@
+point,subsystem,raw_candidate_rows,raw_candidate_starts,deduplicated_warning_episodes,repeated_confirmations,duplicate_forecast_episodes,detection_notifications_saved
+cpu:detection_only:0:1,cpu,0,0,0,0,0,0
+cpu:persistence:300:0.85,cpu,689,148,45,515,0,20
+cpu:linear:300:0.65,cpu,0,0,0,0,0,0
+cpu:robust:300:0.65,cpu,0,0,0,0,0,0
+disk_capacity:detection_only:0:1,disk_capacity,0,0,0,0,0,0
+disk_capacity:persistence:1800:0.65,disk_capacity,4204,30,30,300,0,20
+disk_capacity:linear:21600:0.85,disk_capacity,5986,27,25,460,0,20
+disk_capacity:robust:1800:0.65,disk_capacity,1822,37,34,86,0,20
+disk_capacity:eta:21600:0.85,disk_capacity,5986,27,25,460,0,20
+process:detection_only:0:1,process,0,0,0,0,0,0
+process:persistence:1800:0.65,process,487,20,20,420,0,20
+process:linear:1800:0.65,process,266,24,14,215,0,14
+process:robust:300:0.65,process,0,0,0,0,0,0

@@ -1,0 +1,168 @@
+{
+  "decision": "GO TO PHASE 6 WITH FORECASTING SCOPE: process",
+  "subsystem": {
+    "cpu": {
+      "decision": "DETECTION ONLY",
+      "point": "cpu:linear:300:0.65",
+      "gates": {
+        "safety": true,
+        "preholdout": false,
+        "nuisance": true,
+        "usefulness": false,
+        "reproducibility": true,
+        "performance": true
+      }
+    },
+    "disk_capacity": {
+      "decision": "DETECTION ONLY",
+      "point": "disk_capacity:linear:21600:0.85",
+      "gates": {
+        "safety": true,
+        "preholdout": false,
+        "nuisance": false,
+        "usefulness": true,
+        "reproducibility": true,
+        "performance": true
+      }
+    },
+    "process": {
+      "decision": "FORECASTING CANDIDATE",
+      "point": "process:persistence:1800:0.65",
+      "gates": {
+        "safety": true,
+        "preholdout": true,
+        "nuisance": true,
+        "usefulness": true,
+        "reproducibility": true,
+        "performance": true
+      }
+    }
+  },
+  "selected_results": {
+    "cpu": {
+      "total_events": 20,
+      "observable_events": 20,
+      "any_ahead": 0,
+      "useful_lead": 0,
+      "event_recall": 0.0,
+      "useful_recall": 0.0,
+      "useful_recall_interval_95": [
+        0.0,
+        0.1611301254949332
+      ],
+      "episode_precision": null,
+      "missed_observable": 20,
+      "interruptions": 0,
+      "false_or_uncertain": 0,
+      "false_per_day": 0.0,
+      "monitored_device_days": 9.898094844680141,
+      "workload_sessions": 50,
+      "nuisance_sessions": 0,
+      "workload_nuisance": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.07135003417431873
+      ],
+      "p25_lead_seconds": null,
+      "median_lead_seconds": null,
+      "p75_lead_seconds": null,
+      "p95_lead_seconds": null,
+      "late": 0,
+      "duplicate_forecasts": 0,
+      "cancelled": 0,
+      "unobservable_forecasts": 0,
+      "raw_candidate_rows": 0,
+      "raw_candidate_starts": 0,
+      "repeated_raw_confirmations": 0,
+      "silent_observe_rows": 276,
+      "insufficient_rate": 0.005590743427338027,
+      "detection_notifications_saved": 0
+    },
+    "disk_capacity": {
+      "total_events": 20,
+      "observable_events": 20,
+      "any_ahead": 20,
+      "useful_lead": 20,
+      "event_recall": 1.0,
+      "useful_recall": 1.0,
+      "useful_recall_interval_95": [
+        0.8388698745050667,
+        0.9999999999999998
+      ],
+      "episode_precision": 0.8,
+      "missed_observable": 0,
+      "interruptions": 25,
+      "false_or_uncertain": 5,
+      "false_per_day": 0.505147715642199,
+      "monitored_device_days": 9.898094844680141,
+      "workload_sessions": 50,
+      "nuisance_sessions": 0,
+      "workload_nuisance": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.07135003417431873
+      ],
+      "p25_lead_seconds": 6614.230000436306,
+      "median_lead_seconds": 9402.032781004906,
+      "p75_lead_seconds": 10242.017785668373,
+      "p95_lead_seconds": 10879.88032538891,
+      "late": 0,
+      "duplicate_forecasts": 0,
+      "cancelled": 5,
+      "unobservable_forecasts": 5,
+      "raw_candidate_rows": 5986,
+      "raw_candidate_starts": 27,
+      "repeated_raw_confirmations": 460,
+      "silent_observe_rows": 2481,
+      "insufficient_rate": 0.06761968790913273,
+      "detection_notifications_saved": 20
+    },
+    "process": {
+      "total_events": 20,
+      "observable_events": 20,
+      "any_ahead": 20,
+      "useful_lead": 14,
+      "event_recall": 1.0,
+      "useful_recall": 0.7,
+      "useful_recall_interval_95": [
+        0.4810232237710205,
+        0.8545247260310062
+      ],
+      "episode_precision": 1.0,
+      "missed_observable": 0,
+      "interruptions": 20,
+      "false_or_uncertain": 0,
+      "false_per_day": 0.0,
+      "monitored_device_days": 9.898094844680141,
+      "workload_sessions": 50,
+      "nuisance_sessions": 0,
+      "workload_nuisance": 0.0,
+      "workload_interval_95": [
+        0.0,
+        0.07135003417431873
+      ],
+      "p25_lead_seconds": 118.69598120450974,
+      "median_lead_seconds": 835.3063634634018,
+      "p75_lead_seconds": 865.7549239397049,
+      "p95_lead_seconds": 904.789616036415,
+      "late": 0,
+      "duplicate_forecasts": 0,
+      "cancelled": 0,
+      "unobservable_forecasts": 0,
+      "raw_candidate_rows": 487,
+      "raw_candidate_starts": 20,
+      "repeated_raw_confirmations": 420,
+      "silent_observe_rows": 149,
+      "insufficient_rate": 0.004493825413113478,
+      "detection_notifications_saved": 20
+    }
+  },
+  "performance": {
+    "samples": 28261,
+    "median_ms": 0.7676000000174099,
+    "p95_ms": 0.9344999998575076
+  },
+  "learned_models": "not evaluated; simple baselines first",
+  "critical_checks": 117,
+  "critical_mismatches": 0
+}
