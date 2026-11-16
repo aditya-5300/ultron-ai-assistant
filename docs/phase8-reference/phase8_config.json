@@ -1,0 +1,10 @@
+{
+  "version": "phase8-controlled-v1",
+  "simulated_days": 3,
+  "nominal_seconds": 30,
+  "replay_stride_rows": 120,
+  "deterministic_p95_max_added_ms": 25,
+  "deterministic_max_dropped_samples": 0,
+  "deterministic_max_dropped_critical": 0,
+  "minimum_latency_samples_for_p95": 20
+}

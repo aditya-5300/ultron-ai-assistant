@@ -1,0 +1,18 @@
+{
+  "decision_digest_sha256": "d0e9f2c68ce00f016dc569a31c3cf215b04298240786906dcef9e73796770cca",
+  "digest_excludes": [
+    "elapsed timings",
+    "absolute timestamps",
+    "ephemeral identities"
+  ],
+  "output_sha256": {
+    "duplicate_notice_evaluation.csv": "63dbbf6eb8f4e81a3f20e971bac02826fa95279900f4f8427dc2ddd8dccf089e",
+    "monitoring_isolation_evaluation.csv": "c3ffea0000e56389018b3ed5e910b3e0e7b9df1bd63121771f4baa4f9f876c8d",
+    "notification_eligibility_evaluation.csv": "625e1c3f98eb5c950ee3008e65dfde46103f887b17d3011e3562c6feb1418a04",
+    "replay_rotation_evaluation.csv": "a62d1d0e5efef67db2cb8f01af6db33e5cc2695891aadd07266cd8ec969afa9b",
+    "restart_recovery_evaluation.csv": "8248497d3ebf06ededa59c9606dd1067e75878cff8da481f87b4191914181fbc",
+    "shadow_latency_evaluation.csv": "8346468398fddc3bd72afe2413f5a145abf7d7e1842c553c68a3d7c609753ebf",
+    "shadow_reliability_results.json": "25048ca9d3e1f86211ade5ffc444b23fa914f7eca0c1667987a6c30cd6af7d5c",
+    "sqlite_contention_evaluation.csv": "c3ffea0000e56389018b3ed5e910b3e0e7b9df1bd63121771f4baa4f9f876c8d"
+  }
+}

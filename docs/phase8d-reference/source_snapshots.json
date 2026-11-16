@@ -1,0 +1,26 @@
+{
+  "lib/health/shadow/scheduler.cjs": {
+    "snapshot": "docs/phase8d-reference/snapshots/scheduler.cjs.txt",
+    "sha256": "34dc8ab234fc791aa777f23698b638e57bc5afd637c9eff46e44949c8ae047bf"
+  },
+  "lib/health/shadow/job.cjs": {
+    "snapshot": "docs/phase8d-reference/snapshots/job.cjs.txt",
+    "sha256": "cef3832ff64b9a23c1e18c8fbb4ba45ba5aa2b02aaa6eca3962e58d1103f115d"
+  },
+  "lib/health/shadow/thread.cjs": {
+    "snapshot": "docs/phase8d-reference/snapshots/thread.cjs.txt",
+    "sha256": "087431e9060aa46db3588a391ae07450f918b31c9e1d5bde312b3a31c80df1ec"
+  },
+  "lib/health/shadow/observe.cjs": {
+    "snapshot": "docs/phase8d-reference/snapshots/observe.cjs.txt",
+    "sha256": "d823541450520e4eb362ad5fce85dfccb3536cc30a4be69b1320c8a7427505f8"
+  },
+  "scripts/health-worker.cjs": {
+    "snapshot": "docs/phase8d-reference/snapshots/health-worker.cjs.txt",
+    "sha256": "6d2fbde2b55d5d3bddf9cd937e275a1570a6af5de61d05c0f0132d1626f10c2b"
+  },
+  "lib/health/shadow/store.cjs": {
+    "snapshot": "docs/phase8d-reference/snapshots/store.cjs.txt",
+    "sha256": "3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2"
+  }
+}

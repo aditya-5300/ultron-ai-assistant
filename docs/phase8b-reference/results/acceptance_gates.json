@@ -1,0 +1,8 @@
+{
+  "decision": "REPEAT PHASE 8",
+  "concurrent_p95_pass": false,
+  "collector": "partial",
+  "outage": "real scheduler with virtual clock; no combined extended collector outage",
+  "body": "exact cap verified with legal JSON whitespace, not natural payload growth",
+  "ownership": "exact identities, transitions and eligibility match for two fixture databases with the same test installation and history"
+}

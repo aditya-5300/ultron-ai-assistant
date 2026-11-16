@@ -1,0 +1,868 @@
+{
+  "store_replay": {
+    "days": 2.9166666666666665,
+    "fixtureDays": 3,
+    "raw": 452,
+    "validated": null,
+    "persisted": 42,
+    "repeated": 410,
+    "rotated": 6,
+    "eligible": 21,
+    "episodes": 21,
+    "genuineRecurrences": 20,
+    "duplicateLogicalOpenings": 0,
+    "duplicateHypotheticalOpenings": 0,
+    "note": "Direct store lifecycle stress; validated count applies only to real HTTP replay."
+  },
+  "real_replay": {
+    "raw": 1116,
+    "validated": 1116,
+    "repeated": 756,
+    "persisted": 360,
+    "rebases": 5,
+    "duplicateRejected": 0,
+    "eligibility": {
+      "policy": "phase8-offline-v1",
+      "eligible": 6,
+      "historical": 0,
+      "ambiguous": 0
+    }
+  },
+  "isolation": [
+    {
+      "mode": "disabled",
+      "samples": 40,
+      "dropped": 0,
+      "critical": 40,
+      "busy": 0
+    },
+    {
+      "mode": "shadow",
+      "samples": 40,
+      "dropped": 0,
+      "critical": 40,
+      "busy": 8
+    }
+  ],
+  "windows": [
+    {
+      "trigger": 180,
+      "rows": 181,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 300,
+      "rows": 301,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 420,
+      "rows": 421,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 540,
+      "rows": 541,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 660,
+      "rows": 661,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 780,
+      "rows": 781,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 900,
+      "rows": 901,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 1020,
+      "rows": 1021,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 1140,
+      "rows": 1141,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 1260,
+      "rows": 1261,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 1380,
+      "rows": 1381,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 1500,
+      "rows": 181,
+      "rebased": true,
+      "openings": 0
+    },
+    {
+      "trigger": 1620,
+      "rows": 301,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 1740,
+      "rows": 421,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 1860,
+      "rows": 541,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 1980,
+      "rows": 661,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 2100,
+      "rows": 781,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 2220,
+      "rows": 901,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 2340,
+      "rows": 1021,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 2460,
+      "rows": 1141,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 2580,
+      "rows": 1261,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 2700,
+      "rows": 1381,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 2820,
+      "rows": 181,
+      "rebased": true,
+      "openings": 0
+    },
+    {
+      "trigger": 2940,
+      "rows": 301,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 3060,
+      "rows": 421,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 3180,
+      "rows": 541,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 3300,
+      "rows": 661,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 3420,
+      "rows": 781,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 3540,
+      "rows": 901,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 3660,
+      "rows": 1021,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 3780,
+      "rows": 1141,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 3900,
+      "rows": 1261,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 4020,
+      "rows": 1381,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 4140,
+      "rows": 181,
+      "rebased": true,
+      "openings": 0
+    },
+    {
+      "trigger": 4260,
+      "rows": 301,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 4380,
+      "rows": 421,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 4500,
+      "rows": 541,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 4620,
+      "rows": 661,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 4740,
+      "rows": 781,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 4860,
+      "rows": 901,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 4980,
+      "rows": 1021,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 5100,
+      "rows": 1141,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 5220,
+      "rows": 1261,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 5340,
+      "rows": 1381,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 5460,
+      "rows": 181,
+      "rebased": true,
+      "openings": 0
+    },
+    {
+      "trigger": 5580,
+      "rows": 301,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 5700,
+      "rows": 421,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 5820,
+      "rows": 541,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 5940,
+      "rows": 661,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 6060,
+      "rows": 781,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 6180,
+      "rows": 901,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 6300,
+      "rows": 1021,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 6420,
+      "rows": 1141,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 6540,
+      "rows": 1261,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 6660,
+      "rows": 1381,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 6780,
+      "rows": 181,
+      "rebased": true,
+      "openings": 0
+    },
+    {
+      "trigger": 6900,
+      "rows": 301,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 7020,
+      "rows": 421,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 7140,
+      "rows": 541,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 7260,
+      "rows": 661,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 7380,
+      "rows": 781,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 7500,
+      "rows": 901,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 7620,
+      "rows": 1021,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 7740,
+      "rows": 1141,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 7860,
+      "rows": 1261,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 7980,
+      "rows": 1381,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 8100,
+      "rows": 181,
+      "rebased": true,
+      "openings": 0
+    },
+    {
+      "trigger": 8220,
+      "rows": 301,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 8340,
+      "rows": 421,
+      "rebased": false,
+      "openings": 1
+    },
+    {
+      "trigger": 8460,
+      "rows": 541,
+      "rebased": false,
+      "openings": 0
+    },
+    {
+      "trigger": 8580,
+      "rows": 661,
+      "rebased": false,
+      "openings": 0
+    }
+  ],
+  "restart_checkpoints": [
+    {
+      "trigger": 1140,
+      "checkpointRow": 1020
+    },
+    {
+      "trigger": 2100,
+      "checkpointRow": 1980
+    },
+    {
+      "trigger": 3060,
+      "checkpointRow": 2940
+    },
+    {
+      "trigger": 4020,
+      "checkpointRow": 3900
+    },
+    {
+      "trigger": 4980,
+      "checkpointRow": 4860
+    },
+    {
+      "trigger": 5940,
+      "checkpointRow": 5820
+    },
+    {
+      "trigger": 6900,
+      "checkpointRow": 6780
+    },
+    {
+      "trigger": 7860,
+      "checkpointRow": 7740
+    }
+  ],
+  "notification_simulation": [
+    {
+      "trigger": 180,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 300,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 420,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 540,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 660,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 780,
+      "eligible": 1,
+      "repeated": 4
+    },
+    {
+      "trigger": 900,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 1020,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 1140,
+      "eligible": 1,
+      "repeated": 6
+    },
+    {
+      "trigger": 1260,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 1380,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 1500,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 1620,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 1740,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 1860,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 1980,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 2100,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 2220,
+      "eligible": 1,
+      "repeated": 4
+    },
+    {
+      "trigger": 2340,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 2460,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 2580,
+      "eligible": 1,
+      "repeated": 6
+    },
+    {
+      "trigger": 2700,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 2820,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 2940,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 3060,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 3180,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 3300,
+      "eligible": 1,
+      "repeated": 4
+    },
+    {
+      "trigger": 3420,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 3540,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 3660,
+      "eligible": 1,
+      "repeated": 6
+    },
+    {
+      "trigger": 3780,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 3900,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 4020,
+      "eligible": 1,
+      "repeated": 8
+    },
+    {
+      "trigger": 4140,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 4260,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 4380,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 4500,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 4620,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 4740,
+      "eligible": 1,
+      "repeated": 4
+    },
+    {
+      "trigger": 4860,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 4980,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 5100,
+      "eligible": 1,
+      "repeated": 6
+    },
+    {
+      "trigger": 5220,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 5340,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 5460,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 5580,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 5700,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 5820,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 5940,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 6060,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 6180,
+      "eligible": 1,
+      "repeated": 4
+    },
+    {
+      "trigger": 6300,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 6420,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 6540,
+      "eligible": 1,
+      "repeated": 6
+    },
+    {
+      "trigger": 6660,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 6780,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 6900,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 7020,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 7140,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 7260,
+      "eligible": 1,
+      "repeated": 4
+    },
+    {
+      "trigger": 7380,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 7500,
+      "eligible": 0,
+      "repeated": 4
+    },
+    {
+      "trigger": 7620,
+      "eligible": 1,
+      "repeated": 6
+    },
+    {
+      "trigger": 7740,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 7860,
+      "eligible": 0,
+      "repeated": 6
+    },
+    {
+      "trigger": 7980,
+      "eligible": 1,
+      "repeated": 8
+    },
+    {
+      "trigger": 8100,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 8220,
+      "eligible": 0,
+      "repeated": 0
+    },
+    {
+      "trigger": 8340,
+      "eligible": 1,
+      "repeated": 2
+    },
+    {
+      "trigger": 8460,
+      "eligible": 0,
+      "repeated": 2
+    },
+    {
+      "trigger": 8580,
+      "eligible": 0,
+      "repeated": 2
+    }
+  ],
+  "environment": "Windows AMD64",
+  "added_deterministic_p95_ms": 0.49830000000019936
+}

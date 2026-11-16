@@ -1,0 +1,7 @@
+{
+  "collector": "Collection starts when enabled, then analysis reads model history and saveSample acquires BEGIN IMMEDIATE until commit. Heartbeat and last-sample tracking are separate writes. Shadow submit is after commit, without awaiting inference. Nominal cadence is measured from poll start; overruns or resample wake up the loop without a guaranteed idle interval.",
+  "shadow": "A separate Node thread exports and waits for Python. The return may land in any poll. Successful consume acquires a single immediate transaction for identity, findings, eligibility, checkpoint and run state. SQLite WAL still permits only one writer.",
+  "preexisting_coordination": "No shared activity or next-transaction deadline. The scheduler limits jobs but does not establish a write window.",
+  "measurement": "Use monotonic elapsed timing for BEGIN wait, acquired-to-COMMIT hold and injected sleep; requested-versus-measured delay includes timer and thread wake-up. Due-to-start is separately sampled. Neither clock directly measures OS CPU scheduling.",
+  "tradeoffs": "Chosen activity hint is simpler and more reliable than predicting the next PowerShell completion. A fixed runway longer than the 20 ms fixture hold cannot fit between 12 ms deterministic arrivals. SQLite locks already acquired cannot be preempted safely."
+}

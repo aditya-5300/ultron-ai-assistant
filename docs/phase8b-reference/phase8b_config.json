@@ -1,0 +1,13 @@
+{
+  "version": "phase8b-operational-v1",
+  "deterministic_p95_max_added_ms": 25,
+  "writer_samples_per_mode": 100,
+  "writer_interval_ms": 12,
+  "shadow_interval_ms": 9,
+  "shadow_busy_timeout_ms": 50,
+  "http_body_limit_bytes": 2097152,
+  "replay_rows": 1800,
+  "replay_duration_seconds": 43200,
+  "restart_cadence_seconds": 15,
+  "policy": "phase8-offline-v1"
+}

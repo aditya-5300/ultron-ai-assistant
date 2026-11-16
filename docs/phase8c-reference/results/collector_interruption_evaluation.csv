@@ -1,0 +1,7 @@
+point,deterministicCommitted,shadowCommitted,deterministicMs,shadowMs,owners,eligible
+after_sample,True,False,13974.5324,16638.525299999998,1,0
+before_dispatch,True,False,8556.000099999997,10352.367999999995,1,0
+pending_http,True,False,7917.849700000006,9838.1112,1,0
+after_response,True,False,6776.514900000009,8106.483999999997,1,0
+during_transaction,True,False,6971.030100000004,8388.228699999992,1,0
+after_commit,True,True,6789.925599999988,8580.132499999978,1,0

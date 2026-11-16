@@ -1,0 +1,6 @@
+scenario,bytes,rows,duration_ms,result
+natural_max_rows,1435945,1800,9370.802899999995,accepted
+near_cap_json_whitespace,2088960,1800,7265.630699999994,accepted
+exact_cap_json_whitespace,2097152,1800,9352.742200000008,accepted
+over_cap_json_whitespace,2097153,1800,23.38390000000072,rejected
+twelve_hour_history,1149135,1440,5940.138699999996,accepted

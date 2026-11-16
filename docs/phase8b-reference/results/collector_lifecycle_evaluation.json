@@ -1,0 +1,31 @@
+{
+  "elapsedMs": 21578.709099999996,
+  "rows": [
+    {
+      "scenario": "startup_without_python",
+      "collection_ms": 5435.4234,
+      "shadow_ms": 5654.6322,
+      "outcome": "UNAVAILABLE"
+    },
+    {
+      "scenario": "clean_restart",
+      "collection_ms": 5397.5491999999995,
+      "shadow_ms": 6181.189399999999,
+      "outcome": "SHADOW"
+    },
+    {
+      "scenario": "abrupt_restart_after_shadow_commit",
+      "collection_ms": 4638.420899999997,
+      "shadow_ms": 5262.527399999999,
+      "outcome": "SHADOW"
+    },
+    {
+      "scenario": "second_abrupt_restart",
+      "collection_ms": 3851.112799999999,
+      "shadow_ms": 4480.360099999998,
+      "outcome": "SHADOW"
+    }
+  ],
+  "durableHistoricalOwners": 1,
+  "eligible": 0
+}

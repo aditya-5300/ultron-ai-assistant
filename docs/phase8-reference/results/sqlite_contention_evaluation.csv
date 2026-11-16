@@ -1,0 +1,3 @@
+mode,samples,dropped,critical,busy
+disabled,40,0,40,0
+shadow,40,0,40,8

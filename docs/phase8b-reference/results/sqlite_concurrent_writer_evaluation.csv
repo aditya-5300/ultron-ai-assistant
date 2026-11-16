@@ -1,0 +1,5 @@
+run,mode,samples,lost,critical,shadow_busy,shadow_success,p95_delta_ms,p95_gate,analysis_n,analysis_median_ms,analysis_p95_ms,analysis_max_ms,persist_n,persist_median_ms,persist_p95_ms,persist_max_ms,overrun_n,overrun_median_ms,overrun_p95_ms,overrun_max_ms,shadow_n,shadow_median_ms,shadow_p95_ms,shadow_max_ms
+initial,disabled,100,0,100,0,0,30.820999999999913,False,100,0.0555,0.1597,1.564,100,1.4909,1.9239,2.9201,100,0,2,3,0,,,
+initial,shadow,100,0,100,0,100,30.820999999999913,False,100,0.0356,0.0787,0.2299,100,1.261,32.7449,63.4405,100,0,38,59,100,0.8699,19.2104,46.9652
+final,disabled,100,0,100,0,0,20.331599999997707,True,100,0.064,0.1868,1.9849,100,1.5762,2.0039,8.6703,100,0,3,8,0,,,
+final,shadow,100,0,100,0,100,20.331599999997707,True,100,0.0443,0.0971,0.1627,100,1.4249,22.3355,43.7159,100,0,14,36,100,0.9048,23.1066,35.8168

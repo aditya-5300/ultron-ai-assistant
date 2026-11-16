@@ -1,0 +1,32 @@
+{
+  "decision": "GO TO PHASE 9 MLOPS LIFECYCLE",
+  "latency_gate": true,
+  "deterministic_retention": true,
+  "operational_regression_passed": true,
+  "collector_restart_points": 6,
+  "collector_outage_recovered_without_restart": true,
+  "outage_eligible": 0,
+  "logical_replay": {
+    "raw": 1116,
+    "validated": 1116,
+    "repeated": 756,
+    "persisted": 360,
+    "rebases": 5,
+    "duplicateRejected": 0,
+    "eligibility": {
+      "policy": "phase8-offline-v1",
+      "eligible": 6,
+      "historical": 0,
+      "ambiguous": 0
+    }
+  },
+  "exact_replay": "d086e5d9e640e1ed64d86bf5043c4a3ac2f16f46e7584801161bad062a5a297d",
+  "refusal_checkpoint_unchanged": true,
+  "repeat_eligible": 0,
+  "actual_notifications": 0,
+  "operational_failed_tests": [
+    "not ok 1 - actual Windows collector: refusal, clean shutdown, abrupt restart and persisted recovery"
+  ],
+  "legacy_collector_recheck_passed": true,
+  "release_blocker_open": true
+}

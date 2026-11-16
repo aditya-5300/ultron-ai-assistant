@@ -4,6 +4,7 @@ const { randomUUID } = require('node:crypto');
 const { createStore, analyze } = require('../lib/health/core.cjs');
 const { createCollector } = require('../lib/health/collector.cjs');
 const { createShadowScheduler } = require('../lib/health/shadow/scheduler.cjs');
+const { markDeterministic } = require('../lib/health/shadow/admission.cjs');
 const root = path.resolve(__dirname, '..');
 const store = createStore(root);
 const lockPath = path.join(root, '.ultron', 'health-worker.lock');
@@ -29,7 +30,8 @@ async function main() {
   if (!acquire()) { console.log('ULTRON monitoring collector already running.'); return; }
   if (!process.argv.includes('--background')) store.set('config', { ...store.config(), enabled: true });
   const collect = createCollector(root);
-  const shadow = createShadowScheduler(root);
+  const activity = process.env.ULTRON_INFERENCE_MODE === 'shadow' ? new SharedArrayBuffer(4) : null;
+  const shadow = createShadowScheduler(root, process.env, activity);
   store.event('lifecycle', 'Monitoring collector started. Local counters only; no desktop capture or automatic system changes.');
   const pulse = setInterval(() => heartbeat(stopping ? 'stopping' : 'running'), 10000);
   pulse.unref();
@@ -37,6 +39,7 @@ async function main() {
   try {
     while (!stopping && store.config().enabled) {
       const started = Date.now();
+      markDeterministic(activity, true);
       try {
         const config = store.config();
         const sample = await collect(config.intervalSeconds);
@@ -45,8 +48,10 @@ async function main() {
         store.saveSample(sample);
         store.set('lastSample', sample.time);
         heartbeat('running');
+        markDeterministic(activity, false);
         shadow?.submit(sample.id);
       } catch (error) { heartbeat('error', 'Telemetry collection failed; old samples are not current.'); store.event('collector-error', String(error.message || error)); }
+      finally { markDeterministic(activity, false); }
       while (!stopping && store.config().enabled && store.setting('resample', 0) <= started && Date.now() - started < store.config().intervalSeconds * 1000) await new Promise(resolve => setTimeout(resolve, 1000));
     }
   } finally {

@@ -1,0 +1,23 @@
+{
+  "docs/PHASE-8-C-WRITE-PATH-RELIABILITY.md": "1dfd6f1a35dc3326eab7789048146eed1a90f352eb5355961bdbaca8dcfd160a",
+  "docs/phase8c-reference/phase8a-store.cjs.txt": "b101e7b1cb1a5f007309ae002804e23e89487b9dc925aeefdd5b464f5d892b95",
+  "docs/phase8c-reference/phase8b_sha256.json": "f501f1c5250a2a5bfe8aa1b571500d896af70338771b6d01882d547f42a43ceb",
+  "docs/phase8c-reference/phase8c_config.json": "cc639cecabf658af49b7f3a35a2f5ea9f402ab0cffaaec84c1618e7fb746ca2d",
+  "docs/phase8c-reference/results/acceptance_gates.json": "00706a0b5905739782b389062b65c30ef7ddbad325d856c059ff7ac5163aeb3d",
+  "docs/phase8c-reference/results/collector_interruption_evaluation.csv": "796b1d24aea9ab6a61832c53c3bca6afdd682f09982ca8686b015ea3e83c7df0",
+  "docs/phase8c-reference/results/collector_restart_evaluation.csv": "796b1d24aea9ab6a61832c53c3bca6afdd682f09982ca8686b015ea3e83c7df0",
+  "docs/phase8c-reference/results/duplicate_notice_evaluation.csv": "6af6a89c6cccf5f020829ec5c7f06fa698348a2eae8659c873137e0bcbde8522",
+  "docs/phase8c-reference/results/extended_outage_recovery.csv": "9fe17c53eb010238e30febdf5389f4768c64ca8b0186fc531908f54ad886f7e3",
+  "docs/phase8c-reference/results/http_boundary_regression.csv": "67eb70ca34596c207315e1bfe06abcfefcffa05c3fbf252b163b67ca371992db",
+  "docs/phase8c-reference/results/monitoring_isolation_evaluation.csv": "51899d521f1d2cb62ce1e8e50ac0fe57356b7c893627d77f380cdb6257e28262",
+  "docs/phase8c-reference/results/notification_ownership_evaluation.csv": "65334981d9e8e3ca8e9fbca84ce786807ddef03cda82e3b54013bc01b68339f1",
+  "docs/phase8c-reference/results/replay_rebase_recovery.csv": "e5e56daef8c62ce8582015c994e96a3f253295a75e62da4cc588f428568d0793",
+  "docs/phase8c-reference/results/reproducibility_manifest.json": "646c7ea99732cc4e606672d9552f1111bdacd015bcb20eddfedd30baf91fcfb8",
+  "docs/phase8c-reference/results/sqlite_concurrency_repetitions.csv": "41ef44eebbf4daef4a969291f59c9522b305401d8ff7653d71060757e6c80cd0",
+  "docs/phase8c-reference/results/sqlite_write_path_comparison.csv": "69f93b62f19d4deb9212066aaeae6dbca9a0b56af5ff59bb3b42f0b90cd9bef8",
+  "docs/phase8c-reference/sqlite_transaction_audit.json": "b3ac1f81a4234e7724091b0a6dd24cda52bd9cee712539fac006134fc24ceab3",
+  "scripts/phase8c-collector.test.cjs": "af51f809518bc52eb43f3399e18facf43b480b6dd201a265970c799f3874eb83",
+  "scripts/phase8c-replay.cjs": "6e8862b09f3d1e873921a0336ec6f8b84c8f9423e35d478b05dfef8a325d4b41",
+  "scripts/phase8c-report.py": "af8e6731269eb998b65563101dccb555e8c3f7cc31c6aa5ce9dbb330106cc415",
+  "scripts/phase8c-write-path.test.cjs": "144382d336e7a105a1ca80ce9de5bce942f9e76250bf6b009ec8979f0904206e"
+}

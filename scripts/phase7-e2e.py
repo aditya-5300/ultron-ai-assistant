@@ -45,7 +45,12 @@ def main():
     # The child asks the parent to restart the exact listener between requests.
     try:
         start()
-        with subprocess.Popen(["node", "--test", "--test-reporter=tap", "scripts/phase7-shadow.test.cjs"], cwd=repo,
+        suites = ["scripts/phase7-shadow.test.cjs"]
+        if sys.argv[1:] == ["--phase8"]:
+            suites.append("scripts/phase8-shadow.test.cjs")
+        elif sys.argv[1:]:
+            raise SystemExit("Supported option: --phase8")
+        with subprocess.Popen(["node", "--test", "--test-concurrency=1", "--test-reporter=tap", *suites], cwd=repo,
                               env=environment, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                               text=True, encoding="utf-8", errors="replace") as test:
             for line in test.stdout:

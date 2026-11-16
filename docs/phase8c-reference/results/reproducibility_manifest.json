@@ -1,0 +1,19 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.12",
+  "exact_decision_digest_sha256": "d086e5d9e640e1ed64d86bf5043c4a3ac2f16f46e7584801161bad062a5a297d",
+  "config_sha256": "cc639cecabf658af49b7f3a35a2f5ea9f402ab0cffaaec84c1618e7fb746ca2d",
+  "output_sha256": {
+    "acceptance_gates.json": "00706a0b5905739782b389062b65c30ef7ddbad325d856c059ff7ac5163aeb3d",
+    "collector_interruption_evaluation.csv": "796b1d24aea9ab6a61832c53c3bca6afdd682f09982ca8686b015ea3e83c7df0",
+    "collector_restart_evaluation.csv": "796b1d24aea9ab6a61832c53c3bca6afdd682f09982ca8686b015ea3e83c7df0",
+    "duplicate_notice_evaluation.csv": "6af6a89c6cccf5f020829ec5c7f06fa698348a2eae8659c873137e0bcbde8522",
+    "extended_outage_recovery.csv": "9fe17c53eb010238e30febdf5389f4768c64ca8b0186fc531908f54ad886f7e3",
+    "http_boundary_regression.csv": "67eb70ca34596c207315e1bfe06abcfefcffa05c3fbf252b163b67ca371992db",
+    "monitoring_isolation_evaluation.csv": "51899d521f1d2cb62ce1e8e50ac0fe57356b7c893627d77f380cdb6257e28262",
+    "notification_ownership_evaluation.csv": "65334981d9e8e3ca8e9fbca84ce786807ddef03cda82e3b54013bc01b68339f1",
+    "replay_rebase_recovery.csv": "e5e56daef8c62ce8582015c994e96a3f253295a75e62da4cc588f428568d0793",
+    "sqlite_concurrency_repetitions.csv": "41ef44eebbf4daef4a969291f59c9522b305401d8ff7653d71060757e6c80cd0",
+    "sqlite_write_path_comparison.csv": "69f93b62f19d4deb9212066aaeae6dbca9a0b56af5ff59bb3b42f0b90cd9bef8"
+  }
+}

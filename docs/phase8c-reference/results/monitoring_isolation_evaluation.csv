@@ -1,0 +1,11 @@
+run,mode,samples,lost,critical,overrun_p95_ms,overrun_max_ms
+1,disabled,100,0,100,2,10
+1,shadow,100,0,100,62,78
+2,disabled,100,0,100,302,350
+2,shadow,100,0,100,42,60
+3,disabled,100,0,100,9,16
+3,shadow,100,0,100,506,553
+4,disabled,100,0,100,3,6
+4,shadow,100,0,100,55,73
+5,disabled,100,0,100,214,261
+5,shadow,100,0,100,47,59

@@ -1,0 +1,10 @@
+{
+  "mode": "cooperative, not strict SQLite priority",
+  "owner": "one process-private shared activity word per opt-in collector",
+  "deterministic_path": "Publish activity; never wait for an acknowledgment or for inference.",
+  "shadow_wait_ms": 250,
+  "retry_interval_ms": 4,
+  "on_expiry": "Fail as WRITER_DEFERRED; do not advance the checkpoint; attempt degraded-state persistence only when idle. A later scheduler probe submits fresh bounded replay.",
+  "retry_queue": "None; one active job, existing spacing and transient backoff.",
+  "residual_race": "A collector may begin after the check or after shadow acquired the lock; other processes and heartbeat writes are not coordinated."
+}

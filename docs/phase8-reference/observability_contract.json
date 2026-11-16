@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "endpoint": "/api/monitor/shadow",
+  "method": "GET",
+  "views": ["status", "metrics", "findings", "transitions"],
+  "access": "loopback Host, same-origin browser Fetch Metadata and explicit application header; trusted local processes are not isolated",
+  "header": { "X-ULTRON-Shadow-Read": "1" },
+  "pagination": { "default_limit": 20, "max_limit": 50, "max_offset": 1000 },
+  "status": ["DISABLED", "SHADOW", "UNAVAILABLE", "INCOMPATIBLE", "DEGRADED", "INSUFFICIENT_HISTORY"],
+  "cache": "no-store",
+  "advisory_only": true,
+  "notification_policy": "phase8-offline-v1",
+  "database_version": 2
+}

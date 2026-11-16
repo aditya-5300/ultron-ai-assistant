@@ -1,0 +1,10 @@
+{
+  "version": "phase8d-priority-v1",
+  "runs": 5,
+  "threshold_ms": 25,
+  "comparators": ["disabled", "phase8c", "phase8d"],
+  "fixture": "unchanged Phase 8-B writer settings with timing probes",
+  "workload": "100 deterministic samples at 12 ms and 100 shadow attempts at 9 ms, 5 and 20 ms lock holds",
+  "admission_wait_ms": 250,
+  "admission_poll_ms": 4
+}

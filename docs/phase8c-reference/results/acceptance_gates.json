@@ -1,0 +1,70 @@
+{
+  "decision": "REPEAT PHASE 8",
+  "sqlite_latency": false,
+  "failed_repetitions": [
+    1,
+    2,
+    4,
+    5
+  ],
+  "collector_fault_points": 6,
+  "collector_outage": {
+    "rows": [
+      {
+        "attempt": 1,
+        "virtualMinutes": 5,
+        "state": "UNAVAILABLE",
+        "code": "UNAVAILABLE"
+      },
+      {
+        "attempt": 2,
+        "virtualMinutes": 10,
+        "state": "UNAVAILABLE",
+        "code": "UNAVAILABLE"
+      },
+      {
+        "attempt": 3,
+        "virtualMinutes": 15,
+        "state": "UNAVAILABLE",
+        "code": "UNAVAILABLE"
+      },
+      {
+        "attempt": 4,
+        "virtualMinutes": 25,
+        "state": "UNAVAILABLE",
+        "code": "UNAVAILABLE"
+      },
+      {
+        "attempt": 5,
+        "virtualMinutes": 45,
+        "state": "UNAVAILABLE",
+        "code": "UNAVAILABLE"
+      },
+      {
+        "attempt": 6,
+        "virtualMinutes": 75,
+        "state": "SHADOW",
+        "code": "REPLAY_REBASED"
+      }
+    ],
+    "elapsedMs": 28315.864700000006,
+    "sameCollector": true,
+    "anchorPruned": true,
+    "skipped": 1,
+    "eligible": 0
+  },
+  "independent_writer_busy_stress": {
+    "busy": 3,
+    "waitsMs": [
+      107.60570000000007,
+      109.29089999999997,
+      111.27619999999979
+    ],
+    "recovered": true
+  },
+  "limitations": [
+    "Full 12-hour and 1800-row acquisition progression were not driven inside the Windows collector.",
+    "Combined restart or Python outage under concurrent faulted writers was not validated."
+  ],
+  "actual_notifications": 0
+}

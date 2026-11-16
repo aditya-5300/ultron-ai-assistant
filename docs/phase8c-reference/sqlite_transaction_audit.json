@@ -1,0 +1,8 @@
+{
+  "baseline": "Phase 8-A store used by Phase 8-B",
+  "success": "BEGIN IMMEDIATE; checkpoint and anchor reads; rebase guard, supersede and old cursor deletion if needed; prepare statements; parse timestamps, canonicalize, serialize and hash each finding; per-event durable ownership, transitions and eligibility; checkpoint; pruning; status and attempts; run summary; COMMIT or ROLLBACK",
+  "other_writes": "Version 0 to 1 and 1 to 2 migrations use explicit immediate transactions. Failure status and run recording use sequential autocommit statements. History clear is an explicit deterministic-store transaction covering both namespaces.",
+  "busy_timeout_ms": {"production_shadow": 50, "deterministic": 5000},
+  "observed": "Phase 8-B artificial lock holds produced 30.82 ms and 20.33 ms added deterministic p95. Its empty-transition workload cannot measure per-finding hashing overhead.",
+  "candidate": "Precompute timestamps, serialized transitions and digests before BEGIN IMMEDIATE. Prepare and cache fixed statements per connection. Avoid unchanged checkpoint UPDATE. Preserve transactional revalidation, uniqueness, pruning, status and run recording."
+}

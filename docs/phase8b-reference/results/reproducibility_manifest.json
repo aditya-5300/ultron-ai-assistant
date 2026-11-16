@@ -1,0 +1,17 @@
+{
+  "phase8b_exact_decision_digest_sha256": "d086e5d9e640e1ed64d86bf5043c4a3ac2f16f46e7584801161bad062a5a297d",
+  "phase8a_decision_digest_sha256": "d0e9f2c68ce00f016dc569a31c3cf215b04298240786906dcef9e73796770cca",
+  "output_sha256": {
+    "acceptance_gates.json": "f1a80b74fdb6a81f44431044c4ae52919e7a4ff1b0c6e1b2de74b312ea0c348d",
+    "collector_lifecycle_evaluation.json": "fecb509eb8451519dba84c4e9f8233f7d4b0ccdfe56a63ea9f3d0fd3103244e6",
+    "collector_restart_evaluation.csv": "877fdfae294f67b31b9c9a849fb2afb2e5af5e74be70e1ed4113af2024bb36c9",
+    "duplicate_notice_evaluation.csv": "4341ba84cfaa6a93141d8fd1b5a7e5175068c4afa4342072254351e8201c31d7",
+    "http_body_boundary_evaluation.csv": "75f6f7dc02a68273ef31ca981ccab0b658902ab38d3bab546329c9b5fcb743c6",
+    "monitoring_isolation_evaluation.csv": "7b726bbb2f9c5be635e4817c8817b80bce66db2c89a497ac3443145ad529612d",
+    "notification_eligibility_evaluation.csv": "b7b6aec221ce6ea950d88a5a6740e43436e881b62fdb53cd4691c7bc20157ccf",
+    "outage_recovery_evaluation.csv": "36f45ba6391312769792cc8982b0266018880ebbd1ec085ccfe55b934aeda242",
+    "replay_rebase_evaluation.csv": "73be8b754d752c7799030e680fc7e85f70e3a99b75fad027b7e2030ea09bf5ad",
+    "shadow_reliability_results.json": "22139c88957b0a8baa7b195db4ad979036fe085ebe768e02dff061fe4e99adb4",
+    "sqlite_concurrent_writer_evaluation.csv": "7b726bbb2f9c5be635e4817c8817b80bce66db2c89a497ac3443145ad529612d"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "version": "phase8c-operational-v1",
+  "independent_acceptance_runs": 5,
+  "deterministic_p95_max_added_ms": 25,
+  "historical_benchmark_config": "docs/phase8b-reference/phase8b_config.json",
+  "store_snapshot": "docs/phase8c-reference/phase8a-store.cjs.txt",
+  "collector_fault_points": ["after_sample", "before_dispatch", "pending_http", "after_response", "during_transaction", "after_commit"]
+}

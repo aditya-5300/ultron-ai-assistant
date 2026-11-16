@@ -1,0 +1,4 @@
+fixture,elapsedMs,recoveryMs,checkpointUnchanged,deterministicSamplePersisted,code,recorded_while_active,refusedMs,criticalFindingPersisted,retry_ok,repeated,repeat_openings,repeat_eligible,alreadyAdmitted,deterministicWaitMs
+stalled_hint,267.06890000000203,37.941500000000815,True,True,,,,,,,,,,
+verified_real_replay,,,True,True,WRITER_DEFERRED,False,1584.2370999999998,True,True,63,0,0,,
+already_admitted_writer,,,,True,,,,True,,,,,True,50.21170000000001

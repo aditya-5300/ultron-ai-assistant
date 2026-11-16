@@ -1,0 +1,13 @@
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; margin-bottom: 16px; }
+.grid section { padding: 19px; min-width: 0; border: 1px solid #25414e; border-radius: 12px; background: #101b25; }
+.grid h2 { font-size: 17px; margin-bottom: 10px; color: #e4f3f8; }
+.grid p, .grid small { color: #a2bbcb; }
+.grid dl { margin: 10px 0; }
+.grid dt { margin-top: 6px; color: #8abac8; }
+.grid dd { margin-left: 0; }
+.grid li { margin: 9px 0; }
+.grid ul, .grid ol { padding-left: 21px; }
+.badge { display: inline-block; color: #9be6e9; border: 1px solid #2b6875; border-radius: 5px; padding: 2px 8px; font-size: 12px; }
+.actions { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
+.code { overflow-wrap: anywhere; font-family: monospace; }
+.notice { padding: 10px; margin-bottom: 14px; color: #ffce9c; background: #2d211b; border-radius: 5px; }

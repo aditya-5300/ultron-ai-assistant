@@ -1,0 +1,5 @@
+scenario,collection_ms,shadow_ms,outcome
+startup_without_python,5435.4234,5654.6322,UNAVAILABLE
+clean_restart,5397.5491999999995,6181.189399999999,SHADOW
+abrupt_restart_after_shadow_commit,4638.420899999997,5262.527399999999,SHADOW
+second_abrupt_restart,3851.112799999999,4480.360099999998,SHADOW

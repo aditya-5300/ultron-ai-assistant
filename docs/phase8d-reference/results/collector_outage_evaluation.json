@@ -1,0 +1,45 @@
+{
+  "rows": [
+    {
+      "attempt": 1,
+      "virtualMinutes": 5,
+      "state": "UNAVAILABLE",
+      "code": "UNAVAILABLE"
+    },
+    {
+      "attempt": 2,
+      "virtualMinutes": 10,
+      "state": "UNAVAILABLE",
+      "code": "UNAVAILABLE"
+    },
+    {
+      "attempt": 3,
+      "virtualMinutes": 15,
+      "state": "UNAVAILABLE",
+      "code": "UNAVAILABLE"
+    },
+    {
+      "attempt": 4,
+      "virtualMinutes": 25,
+      "state": "UNAVAILABLE",
+      "code": "UNAVAILABLE"
+    },
+    {
+      "attempt": 5,
+      "virtualMinutes": 45,
+      "state": "UNAVAILABLE",
+      "code": "UNAVAILABLE"
+    },
+    {
+      "attempt": 6,
+      "virtualMinutes": 75,
+      "state": "SHADOW",
+      "code": "REPLAY_REBASED"
+    }
+  ],
+  "elapsedMs": 18885.773100000006,
+  "sameCollector": true,
+  "anchorPruned": true,
+  "skipped": 1,
+  "eligible": 0
+}
