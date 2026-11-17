@@ -1,0 +1,23 @@
+{
+  "version": "phase9h-v1",
+  "config_sha256": "b339b0307a0e37b8fb12814ec2d6c23aa72aed68737df44255b3b827a54c8758",
+  "matrix_tap_sha256": "e2ee7efd58ff9e2151e564f2a0c37417c655906f07a64351bb3c42854ad400fa",
+  "logical_decision_sha256": "1bee64317e702be5d9557eac6d39322143e20a6c985bcd41277708bc282b69ba",
+  "environment": {
+    "python": "3.13.12",
+    "node": "v24.18.0",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.52.1",
+    "h11": "0.16.0",
+    "os": "Windows"
+  },
+  "output_sha256": {
+    "acceptance_gates.json": "52e74512abf75178442e5922c1fd9eea70ad9eb9a208358a8d8f1f756d6a691e",
+    "connection_lifecycle_evaluation.csv": "0053472c27f409963d5131f1f2e7edb03c28dea1d35164ccb35153040a7eb220",
+    "http_request_matrix.csv": "9d6eee511fcb51749d17a7bde48c4ec51c102fafa37239626a6030a45f8e51c7",
+    "original_failure_reference.json": "d72127960bf0877fd3af72dc4c28074bc6b78b0a00f4a99c7516c3332d317867",
+    "repetition_results.csv": "629854177d623867f85dede69c6ecf7ace2d6949ef988936a0d470e9f64c2caa",
+    "service_recovery_evaluation.csv": "5c693327f33149879a2bac4a164181f7c215ef50b8dbdd5b9f9242af26746172",
+    "timeout_evaluation.csv": "e8745cdeba2aafde65a213e3438d2d5d5df5ef259d240228316dbfe69421b0d6"
+  }
+}

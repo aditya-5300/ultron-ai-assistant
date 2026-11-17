@@ -1,0 +1,22 @@
+{
+  "version": "phase9h-v1",
+  "baseline": "3c851d6f28278acc2c7520180130736a70b9f902",
+  "repetitions": 5,
+  "body_bytes": 2097152,
+  "response_bytes": 5242880,
+  "max_records": 1800,
+  "max_history_seconds": 43200,
+  "node_connect_ms": 1200,
+  "node_total_ms": 15000,
+  "python_body_ms": 3000,
+  "python_inference_ms": 12000,
+  "python_keep_alive_ms": 2000,
+  "fixture_network_idle_ms": 15000,
+  "near_cap_delta_bytes": 8192,
+  "cases": [
+    "below_cap", "max_records", "near_cap", "exact_cap", "above_cap_client",
+    "near_12_hours", "exact_12_hours", "above_12_hours", "repeat_valid",
+    "above_cap_raw_full_upload", "above_cap_raw_header_probe"
+  ],
+  "note": "One new authenticated loopback listener per repetition. No retries within a repetition. The raw full-upload request replicates the original diagnostic probe and is recorded independently of the normal client and header-only wire check."
+}

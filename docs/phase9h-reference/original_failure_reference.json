@@ -1,0 +1,39 @@
+{
+  "id": "HTTP_BOUNDARY_ECONNRESET",
+  "status": "FAIL",
+  "baseline": "3c851d6f28278acc2c7520180130736a70b9f902",
+  "original_tap_sha256": "884e01613f99ff8c4375d424c2de85f9a02aad21f6f2ecf51115a126f2dce7b9",
+  "archive": "Byte-identical original-regressions.tap retained locally outside Git. This record omits private paths and unrelated fixture output.",
+  "excerpt": [
+    "not ok 2 - authenticated HTTP accepts bounded and exact-size requests, and rejects oversized requests",
+    "duration_ms: 10162.7474",
+    "error: 'read ECONNRESET'",
+    "code: 'ECONNRESET'",
+    "# pass 5",
+    "# fail 1"
+  ],
+  "request_id": null,
+  "runtime_api": "1.0.0",
+  "policy": "phase6-approved-v1",
+  "original_limits": {
+    "body_bytes": 2097152,
+    "response_bytes": 5242880,
+    "max_records": 1800,
+    "max_history_seconds": 43200,
+    "node_connect_ms": 1200,
+    "node_total_ms": 15000,
+    "python_body_ms": 3000,
+    "python_inference_ms": 12000,
+    "python_keep_alive_ms": 2000,
+    "fixture_network_idle_ms": 15000
+  },
+  "baseline_file_sha256": {
+    "scripts/phase8b-operational.test.cjs": "b52c2803a52d36a0a4de3ad482b7bf4c5ff572c5fdaf21f20e183eded1c9c151",
+    "scripts/phase8b-fixture.cjs": "592faf7416e5aff6ecb48c78e020f4485e4db91353b45507492fa23890d5b25f",
+    "docs/phase8b-reference/phase8b_config.json": "662345b37f7e7565295ba1b343a401be01467fc07f44c8f929e865d6990560f3",
+    "lib/health/shadow/client.cjs": "45cf9944bcab6c1fc742ea89507567786129c82394f340e79fa21c7be158728e",
+    "ml/src/ultron_health_ml/service/app.py": "39f7c1344a0594a556d5a6a0e1cfb786b3a649602b9218644613e920c7e75109",
+    "ml/src/ultron_health_ml/service/__main__.py": "35c7093fed104d7ede795d8b2c2a152531601a7a67bf3cff417dba9515bfc051",
+    "ml/src/ultron_health_ml/service/schema.py": "07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7"
+  }
+}

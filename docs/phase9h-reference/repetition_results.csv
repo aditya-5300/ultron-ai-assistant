@@ -1,0 +1,6 @@
+repetition,observed_cases,passed,required_cases,legacy_full_upload,legacy_error,ready_ms,alive_before_planned_stop,stop_ms,post_stop_exit_code,post_stop_exit_signal,harness_error
+1,11,10,10,PASS,,2237.65,True,185.794,1,,
+2,11,10,10,PASS,,891.923,True,140.658,1,,
+3,11,10,10,PASS,,809.623,True,299.447,1,,
+4,11,10,10,TRANSPORT,ECONNRESET,984.395,True,200.052,1,,
+5,11,10,10,TRANSPORT,ECONNRESET,973.096,True,141.47,1,,

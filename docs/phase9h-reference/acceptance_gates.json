@@ -1,0 +1,34 @@
+{
+  "instrumented_matrix_pass": true,
+  "all_recoveries_pass": true,
+  "valid_payloads_complete": true,
+  "unexpected_legacy_transfer": false,
+  "legacy_probe_reproduced_resets": [
+    {
+      "repetition": 4,
+      "request_sequence": 25
+    },
+    {
+      "repetition": 5,
+      "request_sequence": 25
+    }
+  ],
+  "original_failure_preserved": true,
+  "frozen_reference_counts": {
+    "historical": 583,
+    "phase8_outputs": 39,
+    "phase9_results": 13
+  },
+  "regression": {
+    "python_269": true,
+    "phase7_8_replay_13": true,
+    "operational_admission_5": true,
+    "phase9_ownership_and_digest": true,
+    "edge_dashboard": true,
+    "ultron_selfchecks_4": true,
+    "nextjs_build": true,
+    "typescript": true,
+    "git_whitespace": true
+  },
+  "decision": "HTTP RELIABILITY VERIFIED"
+}
