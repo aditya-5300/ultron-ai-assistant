@@ -1,0 +1,98 @@
+{
+  "isolated-1": {
+    "label": "isolated-1",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 794.8403
+  },
+  "isolated-2": {
+    "label": "isolated-2",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 955.5702999999999
+  },
+  "isolated-3": {
+    "label": "isolated-3",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 709.5472999999997
+  },
+  "isolated-4": {
+    "label": "isolated-4",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 874.7964000000002
+  },
+  "isolated-5": {
+    "label": "isolated-5",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 869.6336999999999
+  },
+  "phase8d-paired": {
+    "label": "phase8d-paired",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 25416.934
+  },
+  "stress-1": {
+    "label": "stress-1",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 831.2012000000032,
+    "background": [
+      {
+        "role": "cpu",
+        "iterations": 13
+      },
+      {
+        "role": "cpu",
+        "iterations": 13
+      },
+      {
+        "role": "io",
+        "iterations": 33
+      }
+    ]
+  },
+  "stress-2": {
+    "label": "stress-2",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 1362.872800000001,
+    "background": [
+      {
+        "role": "cpu",
+        "iterations": 18
+      },
+      {
+        "role": "cpu",
+        "iterations": 18
+      },
+      {
+        "role": "io",
+        "iterations": 37
+      }
+    ]
+  },
+  "stress-3": {
+    "label": "stress-3",
+    "exitCode": 0,
+    "signal": null,
+    "durationMs": 884.1643999999978,
+    "background": [
+      {
+        "role": "cpu",
+        "iterations": 12
+      },
+      {
+        "role": "cpu",
+        "iterations": 12
+      },
+      {
+        "role": "io",
+        "iterations": 29
+      }
+    ]
+  }
+}

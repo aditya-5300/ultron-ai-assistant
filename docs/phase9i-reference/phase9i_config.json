@@ -1,0 +1,19 @@
+{
+  "baseline": "6dac1f1a8d976482dec85b315c95d97c2f1e922c",
+  "version": "phase9i-isolated-v1",
+  "gate_ms": 25,
+  "isolated_repetitions": 5,
+  "legacy_test": "equivalent deterministic workloads survive overlapping shadow writes and bounded lock rejection",
+  "legacy_mode_count": 40,
+  "paired_test": "five paired repetitions keep both original cadences and every lock-hold attempt",
+  "paired_repetitions": 5,
+  "stress_repetitions": 3,
+  "stress_cpu_workers": 2,
+  "stress_cpu_busy_ms": 40,
+  "stress_cpu_pause_ms": 25,
+  "stress_io_bytes": 262144,
+  "stress_io_pause_ms": 20,
+  "stress_io_fsync": true,
+  "order": ["isolated", "phase8d-paired", "legacy-under-stress"],
+  "note": "Independent Node runs; project validation starts only after this sequence. Workload and threshold of both frozen tests are unchanged. Stress comparisons do not decide the original isolated gate."
+}

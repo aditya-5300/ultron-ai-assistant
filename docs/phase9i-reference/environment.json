@@ -1,0 +1,13 @@
+{
+  "sqlite": "3.53.1",
+  "ram_gib": 7.36,
+  "competing_validation_processes_at_start": 0,
+  "os": "Microsoft Windows 11 Home Single Language",
+  "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+  "physical_cores": 6,
+  "configuration_sha256": "547bff48bca6fe405d2de89838a7a2233a0097ccca82d13a174a8f807ec436ad",
+  "logical_processors": 12,
+  "os_build": "26300",
+  "node": "v24.18.0",
+  "fixture_storage_bus": "NVMe"
+}

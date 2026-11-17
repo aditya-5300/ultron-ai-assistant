@@ -1,0 +1,38 @@
+{
+  "decision": "SQLITE ISOLATED GATE VERIFIED",
+  "original": {
+    "run": "original-concurrent",
+    "result": "FAIL",
+    "added_p95_ms": 30.94970000000012,
+    "threshold_ms": 25
+  },
+  "isolated_passes": 5,
+  "phase8d_comparison_passes": 5,
+  "frozen_counts": {
+    "historical": 583,
+    "phase8_outputs": 39,
+    "phase9_results": 13
+  },
+  "phase9h_output_hashes": 7,
+  "validation": {
+    "replay_12": true,
+    "operational_and_admission_5": true,
+    "coordinator": true,
+    "phase9_ownership": true,
+    "phase9h_http_matrix": true,
+    "python_269": true,
+    "edge_dashboard": true,
+    "ultron_selfchecks_4": true,
+    "nextjs_build": true,
+    "typescript": true,
+    "git_whitespace": true
+  },
+  "ownership_digest": "9c33a1a2aa16b68f3d85bd64888c441244a68760a06b1e5486e29643bfa1ec50",
+  "http": {
+    "repetitions": 5,
+    "legacy_resets": 2,
+    "corrected_complete_413": 5,
+    "recovery_pass": 20,
+    "actual_notifications": 0
+  }
+}

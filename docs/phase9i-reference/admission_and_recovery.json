@@ -1,0 +1,12 @@
+{
+  "bounded_deferral_ms": 259.41790000000003,
+  "coordinator_recovery_ms": 28.6909,
+  "checkpoint_unchanged_on_deferral": true,
+  "false_success_recorded": false,
+  "retry_succeeded": true,
+  "replayed_duplicate_openings": 0,
+  "replayed_duplicate_hypothetical_openings": 0,
+  "already_admitted_writer_wait_ms": 32.62750000000051,
+  "residual_sample_preserved": true,
+  "residual_critical_preserved": true
+}

@@ -1,0 +1,6 @@
+repetition,disabled_persist_p95_ms,phase8c_persist_p95_ms,phase8d_persist_p95_ms,phase8d_added_p95_ms,threshold_ms,phase8d_result
+1,2.1816,22.2274,27.1122,24.9306,25,PASS
+2,22.284,24.6936,34.0996,11.8156,25,PASS
+3,2.0971,34.0646,18.7005,16.6034,25,PASS
+4,2.0064,34.0347,20.7945,18.7881,25,PASS
+5,2.1268,47.9374,21.286,19.1592,25,PASS

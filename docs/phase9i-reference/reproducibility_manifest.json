@@ -1,0 +1,30 @@
+{
+  "configuration_sha256": "547bff48bca6fe405d2de89838a7a2233a0097ccca82d13a174a8f807ec436ad",
+  "archived_tap_sha256": {
+    "original-concurrent.tap": "5ef6934b628315f38bbc8cf6a22381dafa6efbc2e92596c76c85ed1dc7a14007",
+    "isolated-1.tap": "d72f447b1875527984995ef810fb02cff86dad71011397a278532f474b41f57e",
+    "isolated-2.tap": "c2b5360b136f13faa213dbf174a36c9db6ddd7b046bb5faf7741936685e2bbba",
+    "isolated-3.tap": "0f6a833efee61bba87b64fa944047c38a6a1d08952f593bdd027e07226957f30",
+    "isolated-4.tap": "a649ca792d99048fa232f6c95624c25070d1b6c4e0877d0833cfadff8c3a1a2c",
+    "isolated-5.tap": "e9f6623851e93430f1534c42f1e2b77132b7a39778a5b3562132334bc299112c",
+    "phase8d-paired.tap": "a8ee63890917873b667222e0099b68b7e13a2d5fb04c76e8d0763e523f5a39cd",
+    "stress-1.tap": "4181bbc143952758ca734bcf10fde172c6b68d1b2943720750f4f5c3f68307d1",
+    "stress-2.tap": "c8af8b2023a542f9c5ec7b05ad9124449952637c860f6231f8456ef93ef34dc0",
+    "stress-3.tap": "44df513736108fc15f337762c2f2dda5a114c36a75fcb87a4caa60adba6296d9",
+    "admission.tap": "d0bedcb7a37073e8f3cefa3f323038472d5e29e59dba14fb62c726d8c779f274",
+    "coordinator.tap": "3f7a604b1b66c642f67a662f2e0e694cefece2e62c04ed5fa2794daee75e276c",
+    "http.tap": "70123d459c9ff8e97267b112d4e611f3c27995c4c6d82ee9590fe0a38a60ad05",
+    "ownership.tap": "b6ae6a023182aae143b71833758699eb9ed58c7571de7f1ab27f423deb221fbc",
+    "replay.tap": "c722e1787d6bd35013b9e11470e60f6927151fe1a1b388b04eaab0d7906de64e"
+  },
+  "output_sha256": {
+    "acceptance_gates.json": "7fdbee461bf75e67f0c2c0ff32cc4f9eeba34b06166284769b9b27b35de94139",
+    "admission_and_recovery.json": "1ebe8d5baf75abc6a1c922cc943975d7174ce4bec63ff846fc1bf396d5d974ab",
+    "environment.json": "1f579a37fd2dba1f9d2020c68e2ae36a206e3b24cf035cac8fe0fa11912daee7",
+    "execution.json": "30fcdb13996a0186b89b305176a53d45f23b688684d0b451075a7de54927e017",
+    "legacy_mode_metrics.csv": "5edc12cb57e80587b23e303489c3a281de85e320758a3cb52e9b95c6a01ba42e",
+    "legacy_run_results.csv": "f10a786e09cae18125e4fd2e135316aac0cce87e734fb9003437803c4064e5aa",
+    "paired_comparisons.csv": "0927f7a6159f76a0861cad2b041edb40a81c9ac27c7489a7f848c8dc55336e3a",
+    "paired_mode_metrics.csv": "a34a338598ead68bd6cc157da36c1527af6d6cdddbc2b18a29e01980cf06d693"
+  }
+}
