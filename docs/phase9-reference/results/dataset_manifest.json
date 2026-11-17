@@ -1,0 +1,28 @@
+{
+  "splits": {
+    "reference": 91701,
+    "development": 91702,
+    "locked": 91703
+  },
+  "canonical_inputs": {
+    "reference/stable": "bdfd0ea83efc5497d9c90abafd4781c9724f9dc1e6281d0e3129e19fd81e8870",
+    "development/stable": "2bddf9b629be4eab2f764375fca69d02365d5d9b9cbe0db2fc50a1f0cf49517b",
+    "development/shift": "366e640a031968e5ebb3c52684e972b319bd61b926ab61b5e5a7b00467dfe595",
+    "development/missing": "52deb7d7b4ce756423f5eea0fb86219a9329a16dcda5ca8f29b40bb30917c33b",
+    "development/cached": "33a175e2e0f0b1a10b8356c06a14aec8b6219b7fd171020623423f8d192f67ff",
+    "development/constant": "d5efcf2bda7d89eed12f9693a6b111be485fc92cce50e855f3216b1028fc2b7b",
+    "development/sparse": "023af2ffb1ce1d55f17ee22a6cc421e8a1608442b9d2bb064f8c91273404801e",
+    "development/irregular": "5b6c73f44d177cba97ad582bfdf2d0ca16d31ae6d97fe30825e4e480c6651a9c",
+    "development/context": "1efe94bec5272c444d7de016da75671d84885e4146ce506c84e2de93f967e20d",
+    "development/short": "2b97c8a5cf3439b56d8427347be29b37ce288f37d910bebc87be17c995db87f1",
+    "locked/stable": "574826a316f1e843699a6c968cd046563252582f344a1cb21aa2d17a9dd9c4f5",
+    "locked/shift": "c8fbaf7ca7f5a80595c6241501a53d01c8c4d6461cad51dc0e32fb406b25c15d",
+    "locked/missing": "62ec125c7c14db96a1c68f633ef8ec9ce038a95552623bfc1045ae2f4dfeeb5f",
+    "locked/cached": "c987cd909a14cbb2e6e090d962d90470e6ac7466ffa27f51d97555a2da6e2401",
+    "locked/constant": "e266a5b02596c99b85a3dae3ad22f0ab8bf3c8352831cc33f6a54ca83af5e051",
+    "locked/sparse": "4e548d7cdcd3c3caf683028edd553e87046d63311af1d305ad35a02b34206f82",
+    "locked/irregular": "1f42f74d2883aeeca5d07b2a3b3e582646576d982aada5700963a77b8582af1f",
+    "locked/context": "e5ae01275a3c59d3b03a803522cec74ed2ec76190b573129a89af0883fda3703",
+    "locked/short": "79d96a1393b52b53be863810a910b88d08bf234d22ddcce14a36b42bb3a9947e"
+  }
+}

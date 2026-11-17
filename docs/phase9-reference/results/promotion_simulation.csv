@@ -1,0 +1,6 @@
+case,action,state,selected,reason
+PASS,validate,VALIDATED_OFFLINE,1.0.0,PASS
+approval_missing,simulate_promotion,VALIDATED_OFFLINE,1.0.0,PROMOTION_NOT_APPROVED
+PASS,simulate_promotion,APPROVED_FOR_SHADOW,1.0.1,EXPLICIT_OFFLINE_APPROVAL
+FAIL,validate,REJECTED,1.0.0,FAIL
+INCONCLUSIVE,validate,REJECTED,1.0.0,INCONCLUSIVE

@@ -1,0 +1,5 @@
+action,state,selected,reason
+simulate_rollback,ROLLBACK_CANDIDATE,1.0.0,INVALID_FINDINGS
+simulate_rollback,ROLLBACK_CANDIDATE,1.0.0,RESOURCE_LIMIT
+simulate_rollback,ROLLBACK_CANDIDATE,1.0.0,UNAVAILABLE
+simulate_rollback,ROLLBACK_CANDIDATE,1.0.0,INCOMPATIBLE

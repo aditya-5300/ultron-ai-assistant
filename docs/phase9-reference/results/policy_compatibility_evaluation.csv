@@ -1,0 +1,7 @@
+case,result,analytical_identity
+1.0.0,PASS,e0f1a56ae6aa2733963add8251e0d1b5358dd7e859cf7e65c58b860b091608ea
+1.0.1,PASS,e0f1a56ae6aa2733963add8251e0d1b5358dd7e859cf7e65c58b860b091608ea
+telemetry_schema,REJECTED,
+detection_fingerprint,REJECTED,
+forecast_policy,REJECTED,
+forecasting,REJECTED,

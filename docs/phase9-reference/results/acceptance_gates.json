@@ -1,0 +1,13 @@
+{
+  "governance_fixture": {
+    "offline_evidence": "PASS",
+    "safety_isolation": "PASS",
+    "reproducibility": "PASS",
+    "ownership": "PASS",
+    "hypothetical_eligibility": "PASS",
+    "resource_limits": "PASS"
+  },
+  "phase10_requires_separate_approval": true,
+  "notifications_sent": 0,
+  "historical_release_blockers_open": true
+}

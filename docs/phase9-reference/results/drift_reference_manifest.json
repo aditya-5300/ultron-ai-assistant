@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "telemetry_schema": "1.0.0",
+  "feature_fingerprint": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+  "provenance": "Phase 9 seeded synthetic reference; no historical holdout used",
+  "seed": 91701,
+  "dataset_hash": "bdfd0ea83efc5497d9c90abafd4781c9724f9dc1e6281d0e3129e19fd81e8870",
+  "rules": {
+    "minimum_fresh": 30,
+    "minimum_coverage": 0.5,
+    "missingness_delta": 0.15,
+    "context_delta": 0.2,
+    "count_prevalence_delta": 0.15,
+    "shift_iqr": 1.5,
+    "iqr_ratio": 2.5,
+    "absolute_floor": {
+      "cpu_usage_pct": 8,
+      "memory_usage_pct": 6,
+      "disk_free_pct": 3
+    },
+    "cadence_delta_seconds": 15,
+    "warmup_seconds": 3600
+  },
+  "summary": {
+    "records": 180,
+    "span_seconds": 5370.0,
+    "latest_segment_seconds": 5370.0,
+    "polling_gaps": 0,
+    "largest_gap_seconds": 30.0,
+    "median_cadence_seconds": 30.0,
+    "irregular_intervals": 0,
+    "insufficient_feature_history": false,
+    "unsupported_measurements": {},
+    "metrics": {
+      "cpu_usage_pct": {
+        "fresh": 180,
+        "cached": 0,
+        "stale": 0,
+        "missing": 0,
+        "fresh_fraction": 1.0,
+        "latest_segment_fresh_fraction": 1.0,
+        "unavailable_fraction": 0.0,
+        "status": "SUFFICIENT_DATA",
+        "median": 35.0,
+        "iqr": 4.25
+      },
+      "memory_usage_pct": {
+        "fresh": 180,
+        "cached": 0,
+        "stale": 0,
+        "missing": 0,
+        "fresh_fraction": 1.0,
+        "latest_segment_fresh_fraction": 1.0,
+        "unavailable_fraction": 0.0,
+        "status": "SUFFICIENT_DATA",
+        "median": 48.0,
+        "iqr": 2.0
+      },
+      "disk_free_pct": {
+        "fresh": 180,
+        "cached": 0,
+        "stale": 0,
+        "missing": 0,
+        "fresh_fraction": 1.0,
+        "latest_segment_fresh_fraction": 1.0,
+        "unavailable_fraction": 0.0,
+        "status": "SUFFICIENT_DATA",
+        "median": 50.0,
+        "iqr": 0.0
+      },
+      "selected_process_nonresponding_count": {
+        "fresh": 180,
+        "cached": 0,
+        "stale": 0,
+        "missing": 0,
+        "fresh_fraction": 1.0,
+        "latest_segment_fresh_fraction": 1.0,
+        "unavailable_fraction": 0.0,
+        "status": "SUFFICIENT_DATA",
+        "nonzero_fraction": 0.03333333333333333
+      }
+    },
+    "context": {
+      "balanced:True": 1.0
+    }
+  },
+  "reference_sha256": "f62f883ac5d943b34184c4d3ffe90045645a4808c15983111701f828e4ddf205"
+}

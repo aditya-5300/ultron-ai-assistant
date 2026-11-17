@@ -1,0 +1,200 @@
+{
+  "$defs": {
+    "Manifest": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "policy_id": {
+          "const": "ultron-analytical-suite",
+          "title": "Policy Id",
+          "type": "string"
+        },
+        "version": {
+          "enum": [
+            "1.0.0",
+            "1.0.1"
+          ],
+          "title": "Version",
+          "type": "string"
+        },
+        "family": {
+          "const": "system-health",
+          "title": "Family",
+          "type": "string"
+        },
+        "kind": {
+          "const": "hybrid-rules-and-statistics",
+          "title": "Kind",
+          "type": "string"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "initial_state": {
+          "enum": [
+            "EXPERIMENTAL",
+            "APPROVED_FOR_SHADOW"
+          ],
+          "title": "Initial State",
+          "type": "string"
+        },
+        "evaluation_reference": {
+          "pattern": "^[a-z0-9][a-z0-9-]{0,63}$",
+          "title": "Evaluation Reference",
+          "type": "string"
+        },
+        "components": {
+          "additionalProperties": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array"
+          },
+          "maxProperties": 7,
+          "title": "Components",
+          "type": "object"
+        },
+        "artifacts": {
+          "additionalProperties": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "maxProperties": 21,
+          "title": "Artifacts",
+          "type": "object"
+        },
+        "dependencies": {
+          "additionalProperties": {
+            "pattern": "^[0-9][a-zA-Z0-9.+-]{0,31}$",
+            "type": "string"
+          },
+          "maxProperties": 6,
+          "title": "Dependencies",
+          "type": "object"
+        },
+        "telemetry_schema": {
+          "const": "1.0.0",
+          "title": "Telemetry Schema",
+          "type": "string"
+        },
+        "feature_schema": {
+          "const": "1.0.0",
+          "title": "Feature Schema",
+          "type": "string"
+        },
+        "inference_api": {
+          "const": "1.0.0",
+          "title": "Inference Api",
+          "type": "string"
+        },
+        "detection_fingerprint": {
+          "const": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+          "title": "Detection Fingerprint",
+          "type": "string"
+        },
+        "forecast_fingerprint": {
+          "const": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+          "title": "Forecast Fingerprint",
+          "type": "string"
+        },
+        "detection": {
+          "items": {
+            "enum": [
+              "cpu",
+              "disk_capacity",
+              "process"
+            ],
+            "type": "string"
+          },
+          "maxItems": 3,
+          "title": "Detection",
+          "type": "array"
+        },
+        "forecasting": {
+          "items": {
+            "const": "process",
+            "type": "string"
+          },
+          "maxItems": 1,
+          "title": "Forecasting",
+          "type": "array"
+        },
+        "forecast_policy": {
+          "const": "persistence:1800:0.65",
+          "title": "Forecast Policy",
+          "type": "string"
+        },
+        "lead_seconds": {
+          "const": 240,
+          "title": "Lead Seconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "schema_version",
+        "policy_id",
+        "version",
+        "family",
+        "kind",
+        "created_at",
+        "initial_state",
+        "evaluation_reference",
+        "components",
+        "artifacts",
+        "dependencies",
+        "telemetry_schema",
+        "feature_schema",
+        "inference_api",
+        "detection_fingerprint",
+        "forecast_fingerprint",
+        "detection",
+        "forecasting",
+        "forecast_policy",
+        "lead_seconds"
+      ],
+      "title": "Manifest",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "entries": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/Manifest"
+        },
+        {
+          "$ref": "#/$defs/Manifest"
+        }
+      ],
+      "title": "Entries",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "entries"
+  ],
+  "title": "Registry",
+  "type": "object"
+}

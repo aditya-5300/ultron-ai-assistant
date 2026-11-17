@@ -1,0 +1,29 @@
+{
+  "decision_sha256": "41cecf1eebba01c738743a83deac625efd72f871a353a1b0bd3466ba41144303",
+  "ownership_decision_sha256": "9c33a1a2aa16b68f3d85bd64888c441244a68760a06b1e5486e29643bfa1ec50",
+  "matching_offline_runs": 2,
+  "python": "3.13.12",
+  "dependencies": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.5",
+    "pydantic": "2.13.4",
+    "PyYAML": "6.0.3",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.52.1"
+  },
+  "output_sha256": {
+    "acceptance_gates.json": "b0989a737fa26486c5703e07ca0022ef74b7ae131775ce6efb1c049f8958d90d",
+    "artifact_integrity_evaluation.csv": "3628b2402af907e43a980bbedabea4536c6b5002b26a375a1867521af89ba4ef",
+    "dataset_manifest.json": "991149cbe05ee7e0c576ba5af99d5ac5784774f83444928e7f093ddc3ac7729c",
+    "drift_evaluation.csv": "7e2a75f617d00bfea2e00758f3bd8a05425af3b60503161b9907099e5b30acf0",
+    "drift_reference_manifest.json": "79004d16bcc609242fe86bb1566932b938082c73603f90f9569ad4a80604dab7",
+    "evaluation_registry.json": "95bddca164720b7f69a10a8926a74be2ad12d0b8a84fd72722d13884e130f966",
+    "offline_performance.csv": "75b36bb9c5c507fdee0449544d55209219f77a5a6ade0f922b7dc1063309128b",
+    "policy_compatibility_evaluation.csv": "5d87aabe81f6b8c3da0e3fcba8bf2e85c674f7a18b4f8aa71fa4f54286bba5f5",
+    "policy_manifest_schema.json": "22ed76bd64865096b1298ab39b21d727d0b1d55ae9b0f5aef059046b9a9e1a0e",
+    "policy_transition_ownership.csv": "ba14c203f039672ce504187f9831cefe0a01e4b2a328744dc0112b094d7e731a",
+    "promotion_simulation.csv": "1efcd9f5443b4a8e253938ee2d858b232fc3190003640086669becc8dd41d109",
+    "rollback_simulation.csv": "94d1565975aaed029b31f17d0032ad9e18acec8ed250012d5cdb09fb689a7922",
+    "telemetry_quality_evaluation.csv": "e0abfd4ab1572d175e32c1756a312bd8c448a04abd41e66cd78d6372c5bbfe55"
+  }
+}

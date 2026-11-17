@@ -1,0 +1,164 @@
+[
+  {
+    "policy_id": "ultron-analytical-suite",
+    "policy_version": "1.0.1",
+    "evaluation": {
+      "schema_version": "1.0.0",
+      "evaluation_id": "phase9-alias-eval",
+      "manifest_hash": "5c66b1504a75d657da1413b3c2b2667f5e84ab0bdf7425765a5162abf5b4f073",
+      "dataset_hash": "9fb3ef64c92eaeae07a3a1bfadc02b8a533e55e9b819dc658e0cdc93b1f065c9",
+      "configuration_hash": "7b578e350bcdc0d39b9d7b6d80f10f444272e78f0f86ddcc330ae20973750222",
+      "evidence_hash": "285d04171b62f3da4061b7e2b8299f6ff0cb6cb5798cb880bfb024d6f173e126",
+      "telemetry_schema": "1.0.0",
+      "feature_fingerprint": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+      "forecast_fingerprint": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+      "seed": 91703,
+      "python_version": "3.13.12",
+      "dependencies": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.5",
+        "pydantic": "2.13.4",
+        "PyYAML": "6.0.3",
+        "fastapi": "0.141.1",
+        "uvicorn": "0.52.1"
+      },
+      "gates": {
+        "offline_evidence": "PASS",
+        "safety_isolation": "PASS",
+        "reproducibility": "PASS",
+        "ownership": "PASS",
+        "hypothetical_eligibility": "PASS",
+        "resource_limits": "PASS"
+      },
+      "result": "PASS",
+      "metrics": {
+        "locked-scenarios": 9,
+        "duplicate-openings": 0,
+        "actual-notifications": 0,
+        "ownership-runs": 2
+      }
+    },
+    "record_sha256": "312e2e47bb888eafd8ed9e3cd859fc25e9de6613dd81b5ace1eaef813dd8c7d5",
+    "evidence": {
+      "gates": {
+        "offline_evidence": "PASS",
+        "safety_isolation": "PASS",
+        "reproducibility": "PASS",
+        "ownership": "PASS",
+        "hypothetical_eligibility": "PASS",
+        "resource_limits": "PASS"
+      },
+      "input_hash": "9fb3ef64c92eaeae07a3a1bfadc02b8a533e55e9b819dc658e0cdc93b1f065c9",
+      "ownership_digest": "9c33a1a2aa16b68f3d85bd64888c441244a68760a06b1e5486e29643bfa1ec50",
+      "prerequisites": "Fixture simulation; not approval to change production"
+    }
+  },
+  {
+    "policy_id": "ultron-analytical-suite",
+    "policy_version": "1.0.1",
+    "evaluation": {
+      "schema_version": "1.0.0",
+      "evaluation_id": "phase9-negative-eval",
+      "manifest_hash": "af348ad77699fd81d30098727c856bda0aca83878e802359f879bc0ff75f2e07",
+      "dataset_hash": "9fb3ef64c92eaeae07a3a1bfadc02b8a533e55e9b819dc658e0cdc93b1f065c9",
+      "configuration_hash": "7b578e350bcdc0d39b9d7b6d80f10f444272e78f0f86ddcc330ae20973750222",
+      "evidence_hash": "4b386accc46f7d792864b22a2156dfe996e72e2bc7940cc6dc03bcf84e62412a",
+      "telemetry_schema": "1.0.0",
+      "feature_fingerprint": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+      "forecast_fingerprint": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+      "seed": 91703,
+      "python_version": "3.13.12",
+      "dependencies": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.5",
+        "pydantic": "2.13.4",
+        "PyYAML": "6.0.3",
+        "fastapi": "0.141.1",
+        "uvicorn": "0.52.1"
+      },
+      "gates": {
+        "offline_evidence": "PASS",
+        "safety_isolation": "PASS",
+        "reproducibility": "PASS",
+        "ownership": "FAIL",
+        "hypothetical_eligibility": "PASS",
+        "resource_limits": "PASS"
+      },
+      "result": "FAIL",
+      "metrics": {
+        "locked-scenarios": 9,
+        "duplicate-openings": 0,
+        "actual-notifications": 0,
+        "ownership-runs": 2
+      }
+    },
+    "record_sha256": "95e95587a7fdb79f0b1dbebcde3bff485d7ecdc820edb56e8299b5eea9723a7b",
+    "evidence": {
+      "gates": {
+        "offline_evidence": "PASS",
+        "safety_isolation": "PASS",
+        "reproducibility": "PASS",
+        "ownership": "FAIL",
+        "hypothetical_eligibility": "PASS",
+        "resource_limits": "PASS"
+      },
+      "input_hash": "9fb3ef64c92eaeae07a3a1bfadc02b8a533e55e9b819dc658e0cdc93b1f065c9",
+      "ownership_digest": "9c33a1a2aa16b68f3d85bd64888c441244a68760a06b1e5486e29643bfa1ec50",
+      "prerequisites": "Fixture simulation; not approval to change production"
+    }
+  },
+  {
+    "policy_id": "ultron-analytical-suite",
+    "policy_version": "1.0.1",
+    "evaluation": {
+      "schema_version": "1.0.0",
+      "evaluation_id": "phase9-inconclusive-eval",
+      "manifest_hash": "70845a57001cc2f37e0addb505906b9a8b2660303091244c236eec7a53df7d8c",
+      "dataset_hash": "9fb3ef64c92eaeae07a3a1bfadc02b8a533e55e9b819dc658e0cdc93b1f065c9",
+      "configuration_hash": "7b578e350bcdc0d39b9d7b6d80f10f444272e78f0f86ddcc330ae20973750222",
+      "evidence_hash": "e618e16d1e82f9ef40cad4918ed62780723152dc0f0690b8141693ed487ed855",
+      "telemetry_schema": "1.0.0",
+      "feature_fingerprint": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+      "forecast_fingerprint": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+      "seed": 91703,
+      "python_version": "3.13.12",
+      "dependencies": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.5",
+        "pydantic": "2.13.4",
+        "PyYAML": "6.0.3",
+        "fastapi": "0.141.1",
+        "uvicorn": "0.52.1"
+      },
+      "gates": {
+        "offline_evidence": "PASS",
+        "safety_isolation": "PASS",
+        "reproducibility": "PASS",
+        "ownership": "INCONCLUSIVE",
+        "hypothetical_eligibility": "PASS",
+        "resource_limits": "PASS"
+      },
+      "result": "INCONCLUSIVE",
+      "metrics": {
+        "locked-scenarios": 9,
+        "duplicate-openings": 0,
+        "actual-notifications": 0,
+        "ownership-runs": 2
+      }
+    },
+    "record_sha256": "66792401304fd5a4d74cf64fc1f2a116b79a9469191933dc1a431483da4e314e",
+    "evidence": {
+      "gates": {
+        "offline_evidence": "PASS",
+        "safety_isolation": "PASS",
+        "reproducibility": "PASS",
+        "ownership": "INCONCLUSIVE",
+        "hypothetical_eligibility": "PASS",
+        "resource_limits": "PASS"
+      },
+      "input_hash": "9fb3ef64c92eaeae07a3a1bfadc02b8a533e55e9b819dc658e0cdc93b1f065c9",
+      "ownership_digest": "9c33a1a2aa16b68f3d85bd64888c441244a68760a06b1e5486e29643bfa1ec50",
+      "prerequisites": "Fixture simulation; not approval to change production"
+    }
+  }
+]

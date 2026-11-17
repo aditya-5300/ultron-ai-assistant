@@ -1,0 +1,5 @@
+case,result,checked_artifacts
+1.0.0,PASS,21
+1.0.1,PASS,21
+missing,ARTIFACT_UNAVAILABLE,0
+modified,ARTIFACT_HASH_MISMATCH,0

@@ -1,0 +1,20 @@
+{
+  "version": "phase9-offline-v1",
+  "input": "Synthetic telemetry, immutable fixture recipes; no real system data",
+  "splits": {"reference": 91701, "development": 91702, "locked": 91703},
+  "expected": {
+    "stable": "NO_DRIFT_DETECTED",
+    "shift": "DRIFT_OBSERVED",
+    "missing": "INSUFFICIENT_DATA",
+    "cached": "INSUFFICIENT_DATA",
+    "constant": "NO_DRIFT_DETECTED",
+    "sparse": "NO_DRIFT_DETECTED",
+    "irregular": "DRIFT_OBSERVED",
+    "context": "DRIFT_OBSERVED",
+    "short": "INSUFFICIENT_DATA"
+  },
+  "max_window_rows": 1800,
+  "max_history_seconds": 43200,
+  "maximum_document_bytes": 2097152,
+  "policy_transition": "Verified metadata-only alias; incompatible analytical identities do not transition"
+}

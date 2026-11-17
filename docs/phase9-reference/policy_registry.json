@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0.0",
+  "entries": [
+    {
+      "schema_version": "1.0.0",
+      "policy_id": "ultron-analytical-suite",
+      "family": "system-health",
+      "kind": "hybrid-rules-and-statistics",
+      "created_at": "2026-11-17T00:00:00Z",
+      "components": {
+        "detection": [
+          "phase45c-reduced-hybrid",
+          "phase45c-v1"
+        ],
+        "forecast": [
+          "process-persistence",
+          "phase5-targets-v1"
+        ],
+        "features": [
+          "ultron-feature-config",
+          "1.0.0"
+        ],
+        "telemetry": [
+          "ultron-telemetry",
+          "1.0.0"
+        ],
+        "service": [
+          "ultron-inference-api",
+          "1.0.0"
+        ],
+        "eligibility": [
+          "ultron-offline-notification",
+          "phase8-offline-v1"
+        ],
+        "ownership": [
+          "ultron-replay-ownership",
+          "phase6-approved-v1"
+        ]
+      },
+      "artifacts": {
+        "bundle": "eb63ffc2898bb046edf61db6d6ff210ecb18f62945a401299865fb1453b8fa81",
+        "loader": "bc1ebd65c95977d984b875520116a93d99a78cebfe58cc72edd5aebd22b5b277",
+        "engine": "2e233287bbf026ee036466868226b6ce519001d18d3a066aa760d9129c566f3c",
+        "transport": "39f7c1344a0594a556d5a6a0e1cfb786b3a649602b9218644613e920c7e75109",
+        "telemetry": "fb17fd90a1749219b7eac3c647afd960c984d5cfbecab4f4eebe6b2ddd803b4c",
+        "feature": "3d5685ebc40ec6273df663738de9f6f5ca6608156821123c0338b8b107a7d0e4",
+        "feature_engine": "ce3d86069ab4a47ff88eb66bd4b23873595f9fd5dd29900a69075172bb45832d",
+        "feature_windows": "bfbce677891ac185e7693dda98be4199a24f6f5a213297c64c4b18f81900689e",
+        "feature_checks": "58305d9f2c8a5c79d92dc31f65cfeba7d41fb168452bbaffd97ed09704f4a311",
+        "feature_statistics": "563b2dc31abbf7a610d7772502ed468dde3a5c60114d2f331eb04f410083c411",
+        "detector_settings": "897e107d3be7953a2aacc57a832eca3da0aecba81c604af31053c1c9ed820215",
+        "detector_engine": "899408bbb75f8324ddd12a7f432348df727c736f47afa328a4415188bd91408a",
+        "detector_lifecycle": "96894e7807c5a1e64b7286cedbc466b5a9166427222d4ac36a554fbbd9ccb8b0",
+        "forecast_settings": "3071fda4e798949a6b9cde9979782c18d080a1d9e95100ed92343111df52d881",
+        "forecast_engine": "88a478b133403e973534f01d6dae2a7eaa5c480c68bbbfa420a3289ac5026431",
+        "forecast_lifecycle": "6f637b60db1d654ced0aafb24f01db483fa65a538ee5c42fab9a8a1a0e0994ec",
+        "service": "07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7",
+        "eligibility": "bb72d2b56f793c4e58a8641d0bbe69eb81d098a67593ac009179fefee4a34efb",
+        "ownership": "12650655de50867297e032677bff1d79824091c9ee602194f1964b17b2ee715e",
+        "ledger": "3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2",
+        "phase8_evidence": "b20675821a18c1b3f280d95f133e8f7118717bdc37a29abaf1a7380aab58afdb"
+      },
+      "dependencies": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.5",
+        "pydantic": "2.13.4",
+        "PyYAML": "6.0.3",
+        "fastapi": "0.141.1",
+        "uvicorn": "0.52.1"
+      },
+      "telemetry_schema": "1.0.0",
+      "feature_schema": "1.0.0",
+      "inference_api": "1.0.0",
+      "detection_fingerprint": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+      "forecast_fingerprint": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+      "detection": [
+        "cpu",
+        "disk_capacity",
+        "process"
+      ],
+      "forecasting": [
+        "process"
+      ],
+      "forecast_policy": "persistence:1800:0.65",
+      "lead_seconds": 240,
+      "version": "1.0.0",
+      "initial_state": "APPROVED_FOR_SHADOW",
+      "evaluation_reference": "phase8d-accepted"
+    },
+    {
+      "schema_version": "1.0.0",
+      "policy_id": "ultron-analytical-suite",
+      "family": "system-health",
+      "kind": "hybrid-rules-and-statistics",
+      "created_at": "2026-11-17T00:00:00Z",
+      "components": {
+        "detection": [
+          "phase45c-reduced-hybrid",
+          "phase45c-v1"
+        ],
+        "forecast": [
+          "process-persistence",
+          "phase5-targets-v1"
+        ],
+        "features": [
+          "ultron-feature-config",
+          "1.0.0"
+        ],
+        "telemetry": [
+          "ultron-telemetry",
+          "1.0.0"
+        ],
+        "service": [
+          "ultron-inference-api",
+          "1.0.0"
+        ],
+        "eligibility": [
+          "ultron-offline-notification",
+          "phase8-offline-v1"
+        ],
+        "ownership": [
+          "ultron-replay-ownership",
+          "phase6-approved-v1"
+        ]
+      },
+      "artifacts": {
+        "bundle": "eb63ffc2898bb046edf61db6d6ff210ecb18f62945a401299865fb1453b8fa81",
+        "loader": "bc1ebd65c95977d984b875520116a93d99a78cebfe58cc72edd5aebd22b5b277",
+        "engine": "2e233287bbf026ee036466868226b6ce519001d18d3a066aa760d9129c566f3c",
+        "transport": "39f7c1344a0594a556d5a6a0e1cfb786b3a649602b9218644613e920c7e75109",
+        "telemetry": "fb17fd90a1749219b7eac3c647afd960c984d5cfbecab4f4eebe6b2ddd803b4c",
+        "feature": "3d5685ebc40ec6273df663738de9f6f5ca6608156821123c0338b8b107a7d0e4",
+        "feature_engine": "ce3d86069ab4a47ff88eb66bd4b23873595f9fd5dd29900a69075172bb45832d",
+        "feature_windows": "bfbce677891ac185e7693dda98be4199a24f6f5a213297c64c4b18f81900689e",
+        "feature_checks": "58305d9f2c8a5c79d92dc31f65cfeba7d41fb168452bbaffd97ed09704f4a311",
+        "feature_statistics": "563b2dc31abbf7a610d7772502ed468dde3a5c60114d2f331eb04f410083c411",
+        "detector_settings": "897e107d3be7953a2aacc57a832eca3da0aecba81c604af31053c1c9ed820215",
+        "detector_engine": "899408bbb75f8324ddd12a7f432348df727c736f47afa328a4415188bd91408a",
+        "detector_lifecycle": "96894e7807c5a1e64b7286cedbc466b5a9166427222d4ac36a554fbbd9ccb8b0",
+        "forecast_settings": "3071fda4e798949a6b9cde9979782c18d080a1d9e95100ed92343111df52d881",
+        "forecast_engine": "88a478b133403e973534f01d6dae2a7eaa5c480c68bbbfa420a3289ac5026431",
+        "forecast_lifecycle": "6f637b60db1d654ced0aafb24f01db483fa65a538ee5c42fab9a8a1a0e0994ec",
+        "service": "07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7",
+        "eligibility": "bb72d2b56f793c4e58a8641d0bbe69eb81d098a67593ac009179fefee4a34efb",
+        "ownership": "12650655de50867297e032677bff1d79824091c9ee602194f1964b17b2ee715e",
+        "ledger": "3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2",
+        "phase8_evidence": "b20675821a18c1b3f280d95f133e8f7118717bdc37a29abaf1a7380aab58afdb"
+      },
+      "dependencies": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.5",
+        "pydantic": "2.13.4",
+        "PyYAML": "6.0.3",
+        "fastapi": "0.141.1",
+        "uvicorn": "0.52.1"
+      },
+      "telemetry_schema": "1.0.0",
+      "feature_schema": "1.0.0",
+      "inference_api": "1.0.0",
+      "detection_fingerprint": "d9c14284e9349439e07f632aaa91f077a2a8f662afb7ef9939b9666c8024ef47",
+      "forecast_fingerprint": "3a95a6eb5d0dae388f906c3ef4e14440a8d5ef0aab549a7dc34ca6f4304ed1ff",
+      "detection": [
+        "cpu",
+        "disk_capacity",
+        "process"
+      ],
+      "forecasting": [
+        "process"
+      ],
+      "forecast_policy": "persistence:1800:0.65",
+      "lead_seconds": 240,
+      "version": "1.0.1",
+      "initial_state": "EXPERIMENTAL",
+      "evaluation_reference": "phase9-alias-eval"
+    }
+  ]
+}
