@@ -1,0 +1,96 @@
+{
+  "assessment_type": "Code and historical-evidence based; prospective options are not measured implementations.",
+  "options": {
+    "A": "Retain current same-database cooperative admission",
+    "B": "Shared Node-owned writer coordinator",
+    "C": "Separate Node-owned shadow SQLite database",
+    "D": "Reduce frequency or defer advisory persistence"
+  },
+  "criteria": [
+    {
+      "criterion": "Deterministic independence",
+      "A": "No explicit dependency on Python; shared SQLite lock still couples latency.",
+      "B": "Collector depends on a coordinator for durable success; do not silently fall back to concurrent direct writes.",
+      "C": "Collector keeps its writer and does not await shadow acknowledgments; shared hardware remains.",
+      "D": "Collector stays independent, but same-database collision remains on any admitted write."
+    },
+    {
+      "criterion": "Added deterministic p95",
+      "A": "Measured mixed: latest pairs 4/5, including 30.8624 ms over 25 ms.",
+      "B": "Unmeasured; ordering can avoid multiple coordinator writers but adds IPC and queue delay.",
+      "C": "Unmeasured; removes advisory write-lock sharing, not read, CPU, disk or checkpoint I/O costs.",
+      "D": "Unmeasured frequency changes; fewer attempts may reduce exposure, not bound an individual collision."
+    },
+    {
+      "criterion": "Worst-case contention",
+      "A": "Cannot preempt a shadow writer; heartbeat and API writes are not signalled.",
+      "B": "Current transaction remains nonpreemptible; all relevant writers must join the protocol.",
+      "C": "Separate locks; same-device disk stalls and long source readers can still degrade health commits.",
+      "D": "Same nonpreemptible writer; repeated deferral may starve shadow persistence."
+    },
+    {
+      "criterion": "Crash consistency",
+      "A": "One transaction for shadow ledger and checkpoint; failure status is best-effort outside it.",
+      "B": "Requires commit acknowledgments, idempotent submissions and coordinator restart handling.",
+      "C": "One shadow-ledger transaction, no assumed cross-file commit; generation fence and reconciliation required.",
+      "D": "Discard volatile uncommitted work; restart from last durable checkpoint, not a memory cursor."
+    },
+    {
+      "criterion": "Durable event consumption",
+      "A": "Existing event digest and conflict tests apply.",
+      "B": "Keep event IDs, conflict checks and transactional receipts at the writer.",
+      "C": "Keep event digests, receipts and eligibility in the shadow database; no second health-side event ledger.",
+      "D": "Re-export committed history; retention may remove evidence before recovery."
+    },
+    {
+      "criterion": "Replay checkpoint atomicity",
+      "A": "Checkpoint and sample existence checked under the same immediate write transaction.",
+      "B": "Keep these checks inside the coordinator transaction, not before queueing.",
+      "C": "Local shadow checkpoint CAS remains atomic, but current same-database sample checks must be redesigned.",
+      "D": "Advance only with the whole successful consume transaction; never pre-acknowledge deferred writes."
+    },
+    {
+      "criterion": "Duplicate prevention",
+      "A": "Controlled replay is tested; live duplicate-notice blocker remains.",
+      "B": "Retries need idempotent commit receipts; queue delivery is not exactly once.",
+      "C": "Preserve IDs on migration, fence dataset resets and mismatched restores; unknown provenance is ineligible.",
+      "D": "Replay and rebase guards remain necessary after outages or delayed writes."
+    },
+    {
+      "criterion": "Migration complexity",
+      "A": "None for retention of current design.",
+      "B": "High: inventory and route collector, heartbeat, API, maintenance and shadow writes.",
+      "C": "Moderate to high: split connections, provenance fence, idempotent import, read and clear compatibility.",
+      "D": "Lower code footprint but changes freshness and recovery semantics; separate approval still required."
+    },
+    {
+      "criterion": "Restart behavior",
+      "A": "New activity word; durable checkpoint survives; stale worker lock rules unchanged.",
+      "B": "Coordinator availability and queue receipts must recover before acknowledging writes.",
+      "C": "Validate dataset generation, schema and last receipt; health collection does not wait for shadow startup.",
+      "D": "Bounded recomputation from history; expired anchors need conservative bootstrap."
+    },
+    {
+      "criterion": "Security and privacy",
+      "A": "Existing authenticated loopback export and read-only dashboard.",
+      "B": "IPC authorization, bounded typed operations and secret-safe failure paths are new surfaces.",
+      "C": "Fixed local paths, source read-only connection, second file and WAL sidecars in retention/backup/deletion scope.",
+      "D": "Bounded memory must not retain raw telemetry or tokens in logs; existing transport stays unchanged."
+    },
+    {
+      "criterion": "Operational complexity",
+      "A": "Lowest; track stalls and freshness, keep activation blocked.",
+      "B": "Highest: central availability, queue admission, control-plane calls and drain semantics.",
+      "C": "Two database lifecycles but no mandatory shared writer broker.",
+      "D": "Small implementation, complex starvation and freshness interpretation."
+    },
+    {
+      "criterion": "Maintainability",
+      "A": "Simple but recurring shared-writer failures remain.",
+      "B": "Strong writer ownership only if every caller is covered; intrusive for a local assistant.",
+      "C": "Clear authoritative/advisory ownership fits failure isolation, contingent on explicit cross-store lifecycle.",
+      "D": "Useful complementary budget policy, not a replacement for isolation."
+    }
+  ],
+  "recommendation": "C is preferred for a separately approved prototype and validation phase, not immediate activation. Keep A unchanged until then; use bounded D-style throttling only as a future complement."
+}

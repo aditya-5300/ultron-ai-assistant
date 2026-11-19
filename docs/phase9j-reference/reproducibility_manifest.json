@@ -1,0 +1,48 @@
+{
+  "baseline": "e219197b4494b125c0c15df301af0466b4bd1da9",
+  "assessment_only": true,
+  "new_architecture_implemented": false,
+  "source_sha256": {
+    "app/api/monitor/route.ts": "df06f269c5b515eae48e86681230428bdce56800441729d44d5acea20b05a135",
+    "app/api/monitor/shadow/route.ts": "b5a1630381ce4e0da9066a77109a96b49d237d5d95a125404c61b9744ec41562",
+    "lib/health/core.cjs": "b3554aff5ecc53ee02340451a83ba926ca5d656cac4c84d54c539d40fbb77a26",
+    "lib/health/shadow/admission.cjs": "539459e56692e702e79568f11e5cb2bc1d39fb6bd1164afccc004d4d7acae557",
+    "lib/health/shadow/client.cjs": "45cf9944bcab6c1fc742ea89507567786129c82394f340e79fa21c7be158728e",
+    "lib/health/shadow/eligibility.cjs": "bb72d2b56f793c4e58a8641d0bbe69eb81d098a67593ac009179fefee4a34efb",
+    "lib/health/shadow/export.cjs": "8cd9581d3416438f4080a31217b0d27b0a3206f8f02f0c9afbebfdbc4e786de4",
+    "lib/health/shadow/job.cjs": "e2af5442ebff08a336c3bab201ac1854ab3a04ddd550f3409ba100dc2a35d61f",
+    "lib/health/shadow/observe.cjs": "0d38071ce6dfe8bd5f97b6becee0774c553bfdadfca63bbe5559ec4bd89fe384",
+    "lib/health/shadow/scheduler.cjs": "933fee348642010e202574c201e225a3a2c3082f6c5564b07596be3de3f0e5bf",
+    "lib/health/shadow/store.cjs": "3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2",
+    "lib/health/shadow/thread.cjs": "dec6217233ae4cceae9d87c3a52575ca720b93caea5bef27af12bfe49bd2376c",
+    "ml/src/ultron_health_ml/governance/registry.py": "7422df3106f0ae1e1b0961dd386b76630542d1999c01d2fead4a03cc0229d715",
+    "ml/src/ultron_health_ml/service/schema.py": "07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7",
+    "scripts/health-worker.cjs": "54cced29990be3fdca95213bc2d4c4e6bc4dd2abe1bca2a6be273f363e0067ed",
+    "scripts/phase8-shadow.test.cjs": "1ff3e8a9ccf509c364060591dad1117a46d949494061b5be41705160c40b8586",
+    "scripts/phase8d-timing.cjs": "7f888061e83f102e83bfda42007a7102e16e16b15dcec618ba6e1e3e6232b2f4",
+    "scripts/phase8d.test.cjs": "d082989bb8a40d9fba1a66c5ffb21a0a8c68218b41378ab44fa9c9f401d5b8bd"
+  },
+  "assessment_sha256": {
+    "assessment_scope.json": "036196af5a186a8ab9b42b7414da6ea4cff8770b50e1994cd71679921256e82b",
+    "option_comparison.json": "e0c9ba6aefd81bf82c488ab71277e343f98848f30ab5abab36b2d96a8a437f7d",
+    "proposed_stages_and_gates.json": "c477fa8d1da03e8eb15e9b44467f65345aabb9d61fdcca140075fe355d8dbfd4"
+  },
+  "report_sha256": "b0589316196509ad9fbf76e8ec8a00646338b31fc4aaf74a265cfec8caaff6b0",
+  "audit_script_sha256": "f51a202e4a3cfacfeacf91950da25cf9cc88963a2444bb5a2e072e3cac22ab8e",
+  "new_regression_tap_sha256": {
+    "replay.tap": "95d4865bcd58402716926077edcb90e2645a0278dc819291b6311df26cdc23e7",
+    "admission.tap": "974cfdc8e1af5127a5cec77b8277e0ec6e081aa02cbf950b296d740e71d54b07",
+    "coordinator.tap": "429c4637230c30f0b2a99a82266f579aad811ff7ea15955a10135a56cc7de790",
+    "ownership.tap": "d78af4a5dda9978893bf883640f0d29d8b01e4b55673c16f3eb42a93d029aa84",
+    "atomicity.tap": "ebeb3a686df3143ca2d87f25131b7fb64b451c3892686c24ae3cb0993b2cfabf",
+    "http.tap": "84563e145cc4e7b129345c2b25358efc16c9f4bde12dfba61181a65e668fc8bf"
+  },
+  "output_sha256": {
+    "frozen_integrity.json": "03fc195884fa06b66aa3ccb6682fe8e763fde9220ec5d5281edeb491d42066ff",
+    "historical_failure_reference.json": "4be6c5d8382eaa11c48cc3a20365518ec9583222fe9fb87c1259d52a31eb822c",
+    "integration_paired_results.csv": "bf305958279e0fea8f2f9af1691920f00b2508aa62f9ea6ffe04dbbd83a62288",
+    "integration_writer_metrics.csv": "1b951eeb382591655f426bf1b47736909713a569d8d2d2e985a502d9284c0b5f",
+    "source_inventory.csv": "e1249551dfcf975ae18aa50264cda2e41f0a74afb79bc32daa7d375a7ff844fd",
+    "validation_results.json": "0e90aa1c5774eda862a9dccca76bc94828b16bedd1b7f18626fba7e87025f3dc"
+  }
+}

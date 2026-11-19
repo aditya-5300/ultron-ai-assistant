@@ -1,0 +1,29 @@
+{
+  "phase": "9-J",
+  "baseline": "e219197b4494b125c0c15df301af0466b4bd1da9",
+  "branch": "feature/phase-9-writer-architecture",
+  "mode": "architecture assessment only",
+  "decision": "RECOMMEND ARCHITECTURAL CHANGE",
+  "preferred_option": "C",
+  "proposal": "Separate advisory shadow SQLite storage; retain the authoritative health database and independent collector.",
+  "implementation_approved": false,
+  "candidate_performance_measured": false,
+  "new_performance_benchmarks": false,
+  "existing_threshold_ms": 25,
+  "validation": "Serial existing Node regression checks, excluding the already-preserved legacy latency gate. Python, build, types, Edge and self-checks begin after Node completion. No benchmark reruns to replace failures.",
+  "interpretation": "The isolated legacy gate is not equivalent to the independent-writer Phase 8-D comparison. Existing measurements support a shared-lock risk, not a measured speedup for an unimplemented alternative.",
+  "constraints": {
+    "deterministic_authoritative": true,
+    "python_advisory": true,
+    "shadow_default": "disabled",
+    "detection": ["cpu", "disk_capacity", "process"],
+    "forecasting": ["process"],
+    "forecast_policy": "persistence:1800:0.65",
+    "minimum_useful_lead_seconds": 240,
+    "eligibility": "phase8-offline-v1",
+    "live_notifications": false,
+    "remediation": false,
+    "runtime_promotion_or_rollback": false,
+    "phase10_started": false
+  }
+}

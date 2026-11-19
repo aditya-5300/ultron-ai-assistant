@@ -1,0 +1,54 @@
+path,line,marker,sha256
+scripts/health-worker.cjs,27,function heartbeat(,54cced29990be3fdca95213bc2d4c4e6bc4dd2abe1bca2a6be273f363e0067ed
+scripts/health-worker.cjs,42,"markDeterministic(activity, true)",54cced29990be3fdca95213bc2d4c4e6bc4dd2abe1bca2a6be273f363e0067ed
+scripts/health-worker.cjs,48,store.saveSample(sample),54cced29990be3fdca95213bc2d4c4e6bc4dd2abe1bca2a6be273f363e0067ed
+scripts/health-worker.cjs,52,shadow?.submit(sample.id),54cced29990be3fdca95213bc2d4c4e6bc4dd2abe1bca2a6be273f363e0067ed
+lib/health/core.cjs,147,function createStore(,b3554aff5ecc53ee02340451a83ba926ca5d656cac4c84d54c539d40fbb77a26
+lib/health/core.cjs,153,PRAGMA journal_mode=WAL,b3554aff5ecc53ee02340451a83ba926ca5d656cac4c84d54c539d40fbb77a26
+lib/health/core.cjs,162,function saveSample(,b3554aff5ecc53ee02340451a83ba926ca5d656cac4c84d54c539d40fbb77a26
+lib/health/core.cjs,202,clear(),b3554aff5ecc53ee02340451a83ba926ca5d656cac4c84d54c539d40fbb77a26
+lib/health/shadow/scheduler.cjs,4,function scheduler(,933fee348642010e202574c201e225a3a2c3082f6c5564b07596be3de3f0e5bf
+lib/health/shadow/scheduler.cjs,13,submit(id),933fee348642010e202574c201e225a3a2c3082f6c5564b07596be3de3f0e5bf
+lib/health/shadow/scheduler.cjs,50,function createShadowScheduler(,933fee348642010e202574c201e225a3a2c3082f6c5564b07596be3de3f0e5bf
+lib/health/shadow/thread.cjs,7,new DatabaseSync(workerData.path),dec6217233ae4cceae9d87c3a52575ca720b93caea5bef27af12bfe49bd2376c
+lib/health/shadow/thread.cjs,8,PRAGMA busy_timeout=50,dec6217233ae4cceae9d87c3a52575ca720b93caea5bef27af12bfe49bd2376c
+lib/health/shadow/thread.cjs,24,parentPort.on(,dec6217233ae4cceae9d87c3a52575ca720b93caea5bef27af12bfe49bd2376c
+lib/health/shadow/job.cjs,11,function createJob(,e2af5442ebff08a336c3bab201ac1854ab3a04ddd550f3409ba100dc2a35d61f
+lib/health/shadow/job.cjs,27,await client.infer(,e2af5442ebff08a336c3bab201ac1854ab3a04ddd550f3409ba100dc2a35d61f
+lib/health/shadow/job.cjs,18,await admission.wait(),e2af5442ebff08a336c3bab201ac1854ab3a04ddd550f3409ba100dc2a35d61f
+lib/health/shadow/job.cjs,36,const counts = consume(,e2af5442ebff08a336c3bab201ac1854ab3a04ddd550f3409ba100dc2a35d61f
+lib/health/shadow/admission.cjs,5,const MAX_DEFERRAL_MS,539459e56692e702e79568f11e5cb2bc1d39fb6bd1164afccc004d4d7acae557
+lib/health/shadow/admission.cjs,6,const RETRY_MS,539459e56692e702e79568f11e5cb2bc1d39fb6bd1164afccc004d4d7acae557
+lib/health/shadow/admission.cjs,17,async wait(),539459e56692e702e79568f11e5cb2bc1d39fb6bd1164afccc004d4d7acae557
+lib/health/shadow/store.cjs,13,function transaction(,3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2
+lib/health/shadow/store.cjs,57,function migrateObservability(,3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2
+lib/health/shadow/store.cjs,87,function consume(,3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2
+lib/health/shadow/store.cjs,109,sampleExists.get(,3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2
+lib/health/shadow/store.cjs,179,function clearShadow(,3326f91f5c09d211158f135a262863f35611f7d72f2d5e1e763d2d465dc0b8c2
+lib/health/shadow/export.cjs,23,function exportReplay(,8cd9581d3416438f4080a31217b0d27b0a3206f8f02f0c9afbebfdbc4e786de4
+lib/health/shadow/export.cjs,58,const replayId = hash(,8cd9581d3416438f4080a31217b0d27b0a3206f8f02f0c9afbebfdbc4e786de4
+lib/health/shadow/export.cjs,29,const history = db.prepare(,8cd9581d3416438f4080a31217b0d27b0a3206f8f02f0c9afbebfdbc4e786de4
+lib/health/shadow/observe.cjs,49,function readShadow(,0d38071ce6dfe8bd5f97b6becee0774c553bfdadfca63bbe5559ec4bd89fe384
+lib/health/shadow/observe.cjs,56,readOnly: true,0d38071ce6dfe8bd5f97b6becee0774c553bfdadfca63bbe5559ec4bd89fe384
+lib/health/shadow/observe.cjs,80,const anchorExists,0d38071ce6dfe8bd5f97b6becee0774c553bfdadfca63bbe5559ec4bd89fe384
+lib/health/shadow/observe.cjs,118,function handleShadow(,0d38071ce6dfe8bd5f97b6becee0774c553bfdadfca63bbe5559ec4bd89fe384
+lib/health/shadow/eligibility.cjs,2,const NOTIFICATION_POLICY,bb72d2b56f793c4e58a8641d0bbe69eb81d098a67593ac009179fefee4a34efb
+lib/health/shadow/eligibility.cjs,13,function recordOpening(,bb72d2b56f793c4e58a8641d0bbe69eb81d098a67593ac009179fefee4a34efb
+lib/health/shadow/client.cjs,4,function createClient(,45cf9944bcab6c1fc742ea89507567786129c82394f340e79fa21c7be158728e
+lib/health/shadow/client.cjs,11,agent: false,45cf9944bcab6c1fc742ea89507567786129c82394f340e79fa21c7be158728e
+app/api/monitor/route.ts,32,"body.action === ""start""",df06f269c5b515eae48e86681230428bdce56800441729d44d5acea20b05a135
+app/api/monitor/route.ts,70,"body.action === ""clear""",df06f269c5b515eae48e86681230428bdce56800441729d44d5acea20b05a135
+app/api/monitor/route.ts,66,store.saveAnalysis(,df06f269c5b515eae48e86681230428bdce56800441729d44d5acea20b05a135
+app/api/monitor/shadow/route.ts,6,export function GET(,b5a1630381ce4e0da9066a77109a96b49d237d5d95a125404c61b9744ec41562
+ml/src/ultron_health_ml/service/schema.py,14,MAX_ROWS =,07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7
+ml/src/ultron_health_ml/service/schema.py,15,MAX_HISTORY_SECONDS =,07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7
+ml/src/ultron_health_ml/service/schema.py,16,MAX_BODY_BYTES =,07255bfb81dd36ab06abd4f195dbdf410a182d5a97027f9215a96efa0d94ddf7
+ml/src/ultron_health_ml/governance/registry.py,19,APPROVED_IDENTITY =,7422df3106f0ae1e1b0961dd386b76630542d1999c01d2fead4a03cc0229d715
+ml/src/ultron_health_ml/governance/registry.py,20,ARTIFACTS =,7422df3106f0ae1e1b0961dd386b76630542d1999c01d2fead4a03cc0229d715
+ml/src/ultron_health_ml/governance/registry.py,40,"""ledger"":",7422df3106f0ae1e1b0961dd386b76630542d1999c01d2fead4a03cc0229d715
+ml/src/ultron_health_ml/governance/registry.py,163,def verify(,7422df3106f0ae1e1b0961dd386b76630542d1999c01d2fead4a03cc0229d715
+scripts/phase8-shadow.test.cjs,201,equivalent deterministic workloads,1ff3e8a9ccf509c364060591dad1117a46d949494061b5be41705160c40b8586
+scripts/phase8-shadow.test.cjs,239,const p95 = mode,1ff3e8a9ccf509c364060591dad1117a46d949494061b5be41705160c40b8586
+scripts/phase8d.test.cjs,19,async function workload(,d082989bb8a40d9fba1a66c5ffb21a0a8c68218b41378ab44fa9c9f401d5b8bd
+scripts/phase8d.test.cjs,66,five paired repetitions,d082989bb8a40d9fba1a66c5ffb21a0a8c68218b41378ab44fa9c9f401d5b8bd
+scripts/phase8d-timing.cjs,3,function traceTransactions(,7f888061e83f102e83bfda42007a7102e16e16b15dcec618ba6e1e3e6232b2f4

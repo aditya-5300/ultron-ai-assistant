@@ -1,0 +1,23 @@
+{
+  "historical": {
+    "historical": 583,
+    "phase8_outputs": 39,
+    "phase9_results": 13
+  },
+  "additional": [
+    {
+      "phase": "phase9h",
+      "output_hashes": 7,
+      "configuration": "MATCH"
+    },
+    {
+      "phase": "phase9i",
+      "output_hashes": 8,
+      "configuration": "MATCH"
+    }
+  ],
+  "phase9i_archived_tap_hashes": 15,
+  "http_original_and_matrix_tap": "MATCH",
+  "original_legacy_failure": "30.9497 ms FAIL preserved",
+  "integration_failure": "30.8624 ms FAIL preserved"
+}

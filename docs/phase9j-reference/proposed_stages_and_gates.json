@@ -1,0 +1,78 @@
+{
+  "implementation_requires_separate_approval": true,
+  "stages": [
+    {
+      "stage": 1,
+      "work": "Specify split-store contracts and dataset-generation lifecycle; inventory all writers, readers, clear, backup and retention paths.",
+      "approval_gate": "Review source identity, reset fencing, migration receipts, fresh versus historical eligibility and rollback plan before code."
+    },
+    {
+      "stage": 2,
+      "work": "Implement an isolated opt-in prototype with a read-only source connection and one advisory database writer; retain shadow ledger transaction semantics.",
+      "approval_gate": "Fault injection and parity pass with no changes to deterministic policy or Python contract; no deployment."
+    },
+    {
+      "stage": 3,
+      "work": "Add resumable off-line import, schema versions, read-only dashboard routing and deletion/backup reconciliation.",
+      "approval_gate": "Prove stop-before-migration, unchanged health telemetry, preserved IDs, crash-safe cutover and conservative restore behavior."
+    },
+    {
+      "stage": 4,
+      "work": "Run predeclared equivalent performance and reliability comparisons, then request a separate release decision.",
+      "approval_gate": "All critical integrity, latency, compatibility and isolation gates pass. No persistent inference or alerts implied."
+    }
+  ],
+  "required_tests": [
+    {
+      "id": "LATENCY",
+      "gate": "Five independent repetitions per approved equivalent workload; every added deterministic persistence p95 <=25 ms. Report absolute p50/p95/max, acquisition wait, hold, overruns, source read duration, WAL growth and both databases' checkpoint I/O. No favorable-run replacement.",
+      "note": "Retain same-database historical comparators. The candidate necessarily routes the same advisory workload to another file; do not pretend it is the unchanged historical test."
+    },
+    {
+      "id": "INTEGRITY",
+      "gate": "Zero lost samples and critical findings, successful quick_check on both files, and zero false persistence acknowledgments."
+    },
+    {
+      "id": "LOCK_ISOLATION",
+      "gate": "Hold, stall, exhaust and corrupt advisory storage in disposable fixtures; health writer must remain usable without waiting for an advisory release. Measure remaining hardware interference, including slow I/O."
+    },
+    {
+      "id": "LEDGER_ATOMICITY",
+      "gate": "Kill before and after consume commit; all findings, transitions, digests, eligibility, rebase guard, run status and checkpoint move together or not at all."
+    },
+    {
+      "id": "PROVENANCE",
+      "gate": "Source clear, prune, restore, lost anchor, source deletion, modified snapshot and dataset-generation change reject or quarantine uncertain work; do not classify absence as healthy."
+    },
+    {
+      "id": "OWNERSHIP",
+      "gate": "Preserve installation/replay IDs where provable; overlaps, escalation, restart and recurrence produce zero duplicate logical/hypothetical openings. Uncertain rebases never gain eligibility."
+    },
+    {
+      "id": "MIGRATION",
+      "gate": "Kill import before/after receipt and cutover; resume idempotently, preserve evidence/IDs and authoritative data. No concurrent dual write or silent recreation of an empty healthy source."
+    },
+    {
+      "id": "CLEAR_RESTORE",
+      "gate": "Test both orders of partial backup/restore and interrupted two-file deletion; generation-mismatched records are not current/eligible. Clear completion waits for verifiable cleanup, not just an in-memory flag."
+    },
+    {
+      "id": "FAILURE_ISOLATION",
+      "gate": "Bounded one-job scheduling, disk-full/read-only/denied permissions, Python down, invalid token and incompatible shadow schema cannot disable deterministic monitoring."
+    },
+    {
+      "id": "SECURITY_COMPATIBILITY",
+      "gate": "Authenticated IPv4 loopback, origin rejection, 2 MiB request/5 MiB response caps, 1800 rows/12 hours, fingerprints and approved analytical scope remain. Publish new storage compatibility metadata, never rewrite frozen governance pins."
+    },
+    {
+      "id": "OBSERVABILITY",
+      "gate": "Read-only same-origin pagination and sanitized payloads preserved; distinguish absent, incompatible, stale, partially deleted and failed advisory stores. No live notifications."
+    }
+  ],
+  "remaining_blockers": [
+    "Same-database writer contention persists until a validated migration, with shared disk/CPU contention remaining after any split.",
+    "Historical 12 duplicate notices: about 1.48 interruptions/device-day versus 0.5 target; controlled replay does not resolve live delivery safety.",
+    "Real-device inference accuracy, drift calibration and notification safety remain unvalidated.",
+    "Cross-store generation, deletion, backup/restore and cutover protocol is proposed, not implemented or verified."
+  ]
+}
